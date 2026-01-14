@@ -1,0 +1,3775 @@
+<!-- index.html — Pet Shop Cung Cung (Self-contained, no CDN) -->
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Pet Shop Cung Cung — Combo thú cưng tiết kiệm, giao nhanh</title>
+  <meta name="description" content="Pet Shop Cung Cung chuyên combo thức ăn, đồ chơi, vật dụng cho chó mèo. Tiết kiệm chi phí, giao hàng nhanh. Mua trên Website, Shopee, TikTok Shop." />
+  <meta name="keywords" content="pet shop, combo thú cưng, thức ăn chó mèo, đồ chơi thú cưng, vật dụng thú cưng, pet shop online, mua hàng thú cưng" />
+  <meta name="author" content="Pet Shop Cung Cung" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cungcung.pet" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cungcung.pet" />
+  <meta property="og:title" content="Pet Shop Cung Cung — Combo thú cưng tiết kiệm, giao nhanh" />
+  <meta property="og:description" content="Chuyên combo thức ăn, đồ chơi, vật dụng cho chó mèo. Tiết kiệm chi phí, giao hàng nhanh." />
+  <meta property="og:image" content="https://cungcung.pet/og-image.jpg" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://cungcung.pet" />
+  <meta property="twitter:title" content="Pet Shop Cung Cung — Combo thú cưng tiết kiệm" />
+  <meta property="twitter:description" content="Chuyên combo thức ăn, đồ chơi, vật dụng cho chó mèo. Tiết kiệm chi phí, giao hàng nhanh." />
+  <meta property="twitter:image" content="https://cungcung.pet/og-image.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff6b9d' d='M7.4 10.2c-1.1 0-2-.95-2-2.25S6.3 5.7 7.4 5.7s2 .95 2 2.25-.9 2.25-2 2.25Zm9.2 0c-1.1 0-2-.95-2-2.25s.9-2.25 2-2.25 2 .95 2 2.25-.9 2.25-2 2.25ZM10 8.8c-1.05 0-1.9-.95-1.9-2.2S8.95 4.4 10 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2Zm4 0c-1.05 0-1.9-.95-1.9-2.2S12.95 4.4 14 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2ZM12 20c-1.8 0-3.4-.7-4.7-1.6-1.2-.85-1.1-2.65.2-3.3 1.1-.55 2.5-1.1 4.5-1.1s3.4.55 4.5 1.1c1.3.65 1.4 2.45.2 3.3C15.4 19.3 13.8 20 12 20Z'/%3E%3C/svg%3E" />
+
+  <style>
+    :root{
+      --brand:#f1e9b9;
+      --brand2:#e8d89a;
+      --brand3:#d4c47a;
+      --pink:#ffb3d1;
+      --pink-light:#ffe0ec;
+      --orange:#ffc8a3;
+      --orange-light:#ffe8d6;
+      --mint:#a8e6cf;
+      --mint-light:#d4f4e8;
+      --bg:#fefcf5;
+      --surface:#ffffff;
+      --card:#fffef8;
+      --muted:#8b7d6a;
+      --text:#4a3f2f;
+      --line:rgba(241,233,185,.4);
+      --shadow: 0 8px 32px rgba(241,233,185,.25);
+      --shadow2: 0 4px 20px rgba(232,216,154,.2);
+      --shadow-cute: 0 12px 40px rgba(255,179,211,.2);
+      --radius: 32px;
+      --radius2: 28px;
+      --radius-cute: 24px;
+      --focus: 0 0 0 4px rgba(241,233,185,.4), 0 0 0 8px rgba(232,216,154,.25);
+      --max: 1280px;
+    }
+    
+    @keyframes wobble{
+      0%, 100%{ transform: rotate(0deg); }
+      25%{ transform: rotate(-1deg); }
+      75%{ transform: rotate(1deg); }
+    }
+    @keyframes draw{
+      0%{ stroke-dashoffset: 1000; }
+      100%{ stroke-dashoffset: 0; }
+    }
+    
+    @keyframes float{
+      0%, 100%{ transform: translateY(0px); }
+      50%{ transform: translateY(-12px); }
+    }
+    @keyframes bounce{
+      0%, 100%{ transform: translateY(0); }
+      50%{ transform: translateY(-8px); }
+    }
+    @keyframes pulse{
+      0%, 100%{ transform: scale(1); opacity: 1; }
+      50%{ transform: scale(1.05); opacity: 0.9; }
+    }
+    @keyframes wiggle{
+      0%, 100%{ transform: rotate(0deg); }
+      25%{ transform: rotate(-3deg); }
+      75%{ transform: rotate(3deg); }
+    }
+    @keyframes sparkle{
+      0%, 100%{ opacity: 0.3; transform: scale(0.8); }
+      50%{ opacity: 1; transform: scale(1.2); }
+    }
+    @keyframes cute-bounce{
+      0%, 100%{ transform: translateY(0) scale(1); }
+      50%{ transform: translateY(-10px) scale(1.05); }
+    }
+    @keyframes gentle-rotate{
+      0%, 100%{ transform: rotate(0deg); }
+      25%{ transform: rotate(-2deg); }
+      75%{ transform: rotate(2deg); }
+    }
+    @keyframes heart-beat{
+      0%, 100%{ transform: scale(1); }
+      50%{ transform: scale(1.1); }
+    }
+
+    *{ 
+      box-sizing:border-box; 
+    }
+    *:focus-visible{
+      outline:3px solid var(--pink);
+      outline-offset:2px;
+      border-radius:4px;
+    }
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+      outline-width:3px;
+    }
+    html{ 
+      scroll-behavior:smooth; 
+      scroll-padding-top: 100px;
+    }
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+      background:
+        radial-gradient(1400px 800px at 10% 5%, rgba(255,179,211,.12), transparent 70%),
+        radial-gradient(1200px 700px at 90% 8%, rgba(255,200,163,.15), transparent 70%),
+        radial-gradient(1000px 600px at 50% 95%, rgba(168,230,207,.1), transparent 70%),
+        radial-gradient(800px 500px at 20% 50%, rgba(241,233,185,.08), transparent 60%),
+        linear-gradient(180deg, #fefcf5 0%, #ffffff 40%, #fff8f0 100%);
+      color:var(--text);
+      line-height:1.7;
+      overflow-x:hidden;
+      position:relative;
+    }
+    
+    body::before{
+      content:'';
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,20 Q30,10 40,20 T60,20' stroke='rgba(241,233,185,.1)' fill='none' stroke-width='2'/%3E%3C/svg%3E"),
+        radial-gradient(circle at 20% 30%, rgba(241,233,185,.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(232,216,154,.12) 0%, transparent 50%);
+      background-size: 200px 200px, 100%, 100%;
+      pointer-events:none;
+      z-index:0;
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    body::after{
+      content:'🐾 🐾 🐾';
+      position:fixed;
+      top:20px;
+      right:20px;
+      font-size:28px;
+      opacity:0.12;
+      z-index:0;
+      pointer-events:none;
+      animation: cute-bounce 4s ease-in-out infinite;
+      filter: drop-shadow(0 2px 4px rgba(255,179,211,.2));
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ 
+      max-width:100%; 
+      display:block; 
+      height:auto;
+    }
+    img[loading="lazy"]{
+      opacity:0;
+      transition:opacity 0.4s ease;
+      background: linear-gradient(135deg, rgba(241,233,185,.2), rgba(255,248,240,.3));
+    }
+    img[loading="lazy"].loaded{
+      opacity:1;
+    }
+    img[loading="lazy"]:not(.loaded){
+      filter:blur(4px);
+    }
+    button, input, select, textarea{
+      font:inherit;
+      color:inherit;
+    }
+    button:disabled{
+      opacity:0.6;
+      cursor:not-allowed;
+      pointer-events:none;
+    }
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:8px;
+      background:#ffffff;
+      color:#2c241f;
+      padding:12px 16px;
+      border-radius:16px;
+      z-index:9999;
+      box-shadow:0 4px 16px rgba(255,107,157,.15);
+      border:3px solid var(--brand);
+      font-weight:700;
+      font-size:15px;
+      transition:left 0.3s ease;
+    }
+    .skip-link:focus{ 
+      left:10px; 
+      outline:none;
+      box-shadow:0 6px 20px rgba(255,107,157,.25);
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin-inline:auto;
+      padding-inline: 20px;
+    }
+    
+    @media (min-width: 1280px){
+      .container{
+        padding-inline: 40px;
+      }
+    }
+
+    /* Topbar */
+    .nav-wrap{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(24px) saturate(180%);
+      background: rgba(254,252,245,.98);
+      border-bottom: 4px solid var(--brand);
+      box-shadow: 0 4px 24px rgba(241,233,185,.25), 0 2px 8px rgba(255,179,211,.1);
+      transition: all .3s ease;
+      position:relative;
+    }
+    .nav-wrap::before{
+      content:'';
+      position:absolute;
+      bottom:-2px;
+      left:0;
+      right:0;
+      height:3px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--brand) 0px,
+        var(--brand) 10px,
+        var(--brand2) 10px,
+        var(--brand2) 20px
+      );
+      opacity:0.6;
+    }
+    .nav-wrap:hover{
+      box-shadow: 0 6px 28px rgba(241,233,185,.25);
+      border-bottom-color: var(--brand2);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:max-content;
+    }
+    .brand .mark{
+      width:60px;height:60px;
+      border-radius:20px 24px 20px 24px;
+      background: linear-gradient(135deg, var(--pink-light), var(--brand), var(--orange-light));
+      box-shadow: 0 8px 28px rgba(255,179,211,.3), 0 4px 12px rgba(241,233,185,.4);
+      display:grid;
+      place-items:center;
+      border:4px solid var(--brand3);
+      transform: rotate(-6deg);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: gentle-rotate 4s ease-in-out infinite;
+      clip-path: polygon(
+        0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+        100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+      );
+    }
+    .brand:hover .mark{ 
+      transform: rotate(0deg) scale(1.15); 
+      animation: bounce 0.5s ease;
+    }
+    .brand .name{
+      display:flex;
+      flex-direction:column;
+      line-height:1.2;
+    }
+    .brand strong{ 
+      font-weight:900; 
+      letter-spacing:.4px; 
+      font-size:22px; 
+      color:var(--text); 
+      transition:all .3s ease; 
+      text-shadow: 2px 2px 0 rgba(241,233,185,.5), 0 0 20px rgba(255,179,211,.2); 
+    }
+    .brand:hover strong{ transform: scale(1.05); }
+    .brand span{ font-size:13px; color:var(--muted); font-weight:500; }
+
+    .menu{
+      display:none;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .menu a{
+      font-size:15px;
+      color:var(--text);
+      padding:12px 20px;
+      border-radius:28px;
+      border:2px solid transparent;
+      transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      font-weight:600;
+      position:relative;
+      overflow:hidden;
+      background: rgba(255,255,255,.6);
+    }
+    .menu a::before{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:50%;
+      width:0;
+      height:4px;
+      background:linear-gradient(90deg, var(--pink), var(--orange));
+      transform:translateX(-50%);
+      transition:width .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border-radius:2px;
+      box-shadow: 0 2px 8px rgba(255,179,211,.4);
+    }
+    .menu a:hover{
+      background: linear-gradient(135deg, rgba(255,179,211,.2), rgba(255,200,163,.15));
+      border-color: rgba(255,179,211,.4);
+      transform: translateY(-3px) scale(1.05);
+      color:#ff6b9d;
+      box-shadow: 0 6px 20px rgba(255,179,211,.25);
+      animation: cute-bounce 0.5s ease;
+    }
+    .menu a:hover::before{
+      width:80%;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .icon-btn{
+      width:48px;height:48px;
+      border-radius:18px;
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,248,240,.8));
+      border:3px solid rgba(255,179,211,.25);
+      box-shadow: 0 4px 16px rgba(255,179,211,.2);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .icon-btn:hover{ 
+      transform: translateY(-3px) scale(1.1) rotate(5deg); 
+      background: linear-gradient(135deg, rgba(255,179,211,.2), rgba(255,200,163,.15)); 
+      border-color: rgba(255,179,211,.4); 
+      box-shadow: 0 8px 24px rgba(255,179,211,.3);
+      animation: cute-bounce 0.4s ease;
+    }
+    .icon-btn:focus-visible{ 
+      outline:none; 
+      box-shadow: var(--focus), 0 0 0 3px rgba(255,179,211,.3);
+    }
+    .icon-btn svg{ width:20px;height:20px; stroke:var(--text); }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border-radius: 32px;
+      padding: 16px 28px;
+      border:4px solid transparent;
+      background: linear-gradient(135deg, var(--pink), #ff6b9d, var(--orange));
+      background-size: 200% 200%;
+      color:#ffffff;
+      font-weight:800;
+      letter-spacing:.4px;
+      cursor:pointer;
+      box-shadow: 0 10px 32px rgba(255,107,157,.4), 0 6px 16px rgba(255,179,211,.35), inset 0 1px 0 rgba(255,255,255,.3);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      white-space:nowrap;
+      font-size:16px;
+      position:relative;
+      overflow:hidden;
+      text-transform:none;
+    }
+    .hero .cta{
+      font-size:18px;
+      padding:20px 40px;
+      box-shadow: 0 12px 40px rgba(255,107,157,.45), 0 8px 20px rgba(255,179,211,.4), inset 0 2px 0 rgba(255,255,255,.4);
+      animation: pulse 2.5s ease-in-out infinite;
+      position:relative;
+      z-index:1;
+    }
+    .hero .cta::after{
+      content:'';
+      position:absolute;
+      inset:-4px;
+      border-radius:36px;
+      background:linear-gradient(135deg, var(--pink), #ff6b9d, var(--orange));
+      opacity:0.3;
+      z-index:-1;
+      filter:blur(12px);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @media (min-width:768px){
+      .hero .cta{
+        font-size:20px;
+        padding:22px 44px;
+      }
+    }
+    .cta::before{
+      content:'';
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:0;
+      height:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.3);
+      transform:translate(-50%, -50%);
+      transition:width .6s, height .6s;
+      z-index:0;
+    }
+    .cta > *{
+      position:relative;
+      z-index:1;
+    }
+    .cta:hover{ 
+      transform: translateY(-5px) scale(1.08); 
+      box-shadow: 0 16px 48px rgba(255,107,157,.5), 0 10px 24px rgba(255,179,211,.45), inset 0 2px 0 rgba(255,255,255,.5);
+      animation: cute-bounce 0.6s ease;
+      background-position: 100% 0%;
+    }
+    .hero .cta:hover{
+      transform: translateY(-6px) scale(1.1);
+      box-shadow: 0 20px 56px rgba(255,107,157,.55), 0 12px 28px rgba(255,179,211,.5), inset 0 2px 0 rgba(255,255,255,.5);
+    }
+    .cta:hover::before{
+      width:300px;
+      height:300px;
+    }
+    .cta:focus-visible{ 
+      outline:none; 
+      box-shadow: var(--focus), 0 0 0 3px rgba(255,179,211,.3);
+    }
+
+    .cta.secondary{
+      background: rgba(255,255,255,.98);
+      color: #ff6b9d;
+      font-weight:700;
+      border:3px solid rgba(255,179,211,.4);
+      box-shadow: 0 6px 20px rgba(255,107,157,.2), inset 0 1px 0 rgba(255,255,255,.8);
+    }
+    .cta.secondary:hover{ 
+      background: linear-gradient(135deg, rgba(255,179,211,.15), rgba(255,200,163,.1)); 
+      border-color: rgba(255,107,157,.5);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 24px rgba(255,107,157,.3);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 20px;
+      border-radius: 28px;
+      border:3px solid rgba(255,200,163,.4);
+      background: linear-gradient(135deg, rgba(255,200,163,.2), rgba(255,179,211,.15));
+      color: #ff8c42;
+      font-size:15px;
+      width:max-content;
+      font-weight:700;
+      box-shadow: 0 4px 16px rgba(255,200,163,.2);
+      transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .pill:hover{
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(255,200,163,.3);
+      animation: cute-bounce 0.4s ease;
+    }
+    .pill svg{ width:20px;height:20px; }
+
+    /* Mobile menu drawer */
+    .drawer{
+      position:fixed;
+      inset: 0;
+      z-index:80;
+      display:none;
+    }
+    .drawer.open{ display:block; }
+    .drawer .backdrop{
+      position:absolute;
+      inset:0;
+      background: rgba(44,36,31,.4);
+      backdrop-filter: blur(8px);
+    }
+    .drawer .panel{
+      position:absolute;
+      top:0; right:0;
+      width:min(92vw, 380px);
+      height:100%;
+      background: linear-gradient(180deg, #fff8f0, #ffffff);
+      border-left:2px solid rgba(255,107,157,.2);
+      box-shadow: -12px 0 48px rgba(255,107,157,.15);
+      padding:20px;
+      transform: translateX(6px);
+      animation: slideIn .22s ease-out both;
+    }
+    @keyframes slideIn{
+      from{ transform: translateX(30px); opacity:.0; }
+      to{ transform: translateX(0); opacity:1; }
+    }
+    .drawer-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      margin-bottom:12px;
+    }
+    .drawer nav{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      padding: 8px 0;
+    }
+    .drawer nav a{
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition: background .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .drawer nav a:hover{ background: rgba(255,255,255,.05); transform: translateY(-1px); border-color: rgba(255,255,255,.12); }
+    .drawer nav a:focus-visible{ outline:none; box-shadow: var(--focus); }
+
+    /* Sections */
+    main{ padding-bottom: 80px; }
+    section{ padding: 80px 0; }
+    .section-head{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      margin-bottom:48px;
+      text-align:center;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: clamp(32px, 3.5vw, 48px);
+      letter-spacing:.5px;
+      color:#3d2f2a;
+      font-weight:900;
+      animation: float 8s ease-in-out infinite;
+      text-shadow: 0 2px 12px rgba(255,179,211,.15);
+      position:relative;
+      display:inline-block;
+    }
+    .section-head h2::after{
+      content:'';
+      position:absolute;
+      bottom:-8px;
+      left:50%;
+      transform:translateX(-50%);
+      width:60px;
+      height:4px;
+      background:linear-gradient(90deg, var(--pink), var(--orange));
+      border-radius:2px;
+      opacity:0.6;
+    }
+    .section-head p{
+      margin:16px auto 0;
+      color: var(--muted);
+      max-width: 70ch;
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    /* Hero */
+    .hero{
+      padding-top: 100px;
+      padding-bottom: 80px;
+      position:relative;
+    }
+    @media (min-width:768px){
+      .hero{
+        padding-top: 120px;
+        padding-bottom: 100px;
+      }
+    }
+    .hero::before{
+      content:'🐾';
+      position:absolute;
+      top:120px;
+      left:5%;
+      font-size:40px;
+      opacity:0.1;
+      animation: cute-bounce 5s ease-in-out infinite;
+      z-index:0;
+      pointer-events:none;
+    }
+    .hero::after{
+      content:'🐾';
+      position:absolute;
+      top:200px;
+      right:8%;
+      font-size:32px;
+      opacity:0.08;
+      animation: cute-bounce 6s ease-in-out infinite 1s;
+      z-index:0;
+      pointer-events:none;
+    }
+    @media (max-width:768px){
+      .hero::before, .hero::after{
+        display:none;
+      }
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    @media (min-width:768px){
+      .hero-grid{
+        gap: 48px;
+      }
+    }
+    .hero h1{
+      margin: 0 0 24px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height:1.2;
+      letter-spacing: .3px;
+      color:#3d2f2a;
+      font-weight:900;
+      animation: float 6s ease-in-out infinite;
+      text-shadow: 0 4px 16px rgba(255,179,211,.25), 0 2px 8px rgba(241,233,185,.3);
+    }
+    .hero h1 span{
+      display:inline-block;
+      background: linear-gradient(135deg, #ff6b9d 0%, #ff9ec4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .hero p.lead{
+      margin:0 0 32px;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 50ch;
+      line-height:1.7;
+      font-weight:500;
+    }
+
+    .hero-cta-row{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top: 0;
+    }
+    @media (min-width:768px){
+      .hero-cta-row{
+        flex-direction:row;
+        align-items:center;
+        gap:16px;
+      }
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mock{
+      border-radius: var(--radius);
+      border:3px solid rgba(255,179,211,.2);
+      background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,248,240,.95), rgba(255,254,248,.9));
+      box-shadow: var(--shadow), 0 4px 16px rgba(255,179,211,.15);
+      padding: 28px;
+      overflow:hidden;
+      position:relative;
+    }
+    .mock:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius: var(--radius);
+      pointer-events:none;
+      background: linear-gradient(90deg, rgba(255,107,157,.2), rgba(255,179,71,.15), rgba(168,230,207,.1));
+      mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+      -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+      padding:2px;
+      opacity:.6;
+    }
+
+    .mock-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .mock-top .title{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .mock-top strong{ font-weight:700; color:#ff6b9d; font-size:18px; }
+    .mock-top span{ color: var(--muted); font-size:13px; }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:24px;
+      border:3px solid rgba(255,179,211,.3);
+      background: linear-gradient(135deg, rgba(255,179,211,.15), rgba(255,200,163,.1));
+      font-size:14px;
+      color: #ff6b9d;
+      white-space:nowrap;
+      font-weight:700;
+      box-shadow: 0 4px 12px rgba(255,179,211,.2);
+      transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .chip:hover{
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(255,179,211,.3);
+      animation: cute-bounce 0.4s ease;
+    }
+    .chip svg{ width:16px; height:16px; }
+
+    .mock-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    .combo-card{
+      border-radius: 24px;
+      border:3px solid rgba(255,179,211,.2);
+      background: linear-gradient(135deg, #ffffff, rgba(255,248,240,.5));
+      box-shadow: var(--shadow2), 0 2px 8px rgba(255,179,211,.1);
+      padding: 24px;
+      position:relative;
+      overflow:hidden;
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor:pointer;
+    }
+    @media (hover: hover){
+      .combo-card:hover{
+        cursor:pointer;
+      }
+    }
+    .combo-card:focus-visible{
+      outline:4px solid var(--pink);
+      outline-offset:4px;
+      box-shadow: var(--focus), var(--shadow2), 0 0 0 4px rgba(255,179,211,.2);
+      transform: translateY(-2px);
+    }
+    .combo-card::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      right:-50%;
+      width:200%;
+      height:200%;
+      background: radial-gradient(circle, rgba(255,179,211,.1) 0%, transparent 70%);
+      opacity:0;
+      transition:opacity .4s ease;
+      pointer-events:none;
+    }
+    @media (hover: hover){
+      .combo-card:hover{
+        transform: translateY(-6px) scale(1.02);
+        border-color: rgba(255,179,211,.5);
+        background: linear-gradient(135deg, rgba(255,248,240,.8), rgba(255,254,248,.9));
+        box-shadow: var(--shadow-cute), 0 8px 32px rgba(255,179,211,.25);
+      }
+      .combo-card:hover::before{
+        opacity:1;
+      }
+    }
+    .combo-card:focus-within{
+      box-shadow: var(--focus), var(--shadow2);
+      border-color: rgba(255,179,211,.5);
+      transform: translateY(-2px);
+    }
+    .combo-card .row{
+      display:block;
+    }
+    .combo-card .row > div:first-child{
+      margin-bottom:0;
+    }
+    .tag{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:12px;
+      background: rgba(139,125,106,.08);
+      font-size:11px;
+      color: var(--muted);
+      width:max-content;
+      margin-bottom:12px;
+      font-weight:500;
+      letter-spacing:.2px;
+      text-transform:uppercase;
+    }
+    .tag svg{ display:none; }
+    .combo-card h3{
+      margin:0 0 8px;
+      font-size: 20px;
+      letter-spacing:-.2px;
+      color:#2c241f;
+      font-weight:800;
+      line-height:1.3;
+    }
+    .combo-card p{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height:1.6;
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    @media (min-width:768px){
+      .combo-card p{
+        min-height:3.2em;
+      }
+    }
+    .price{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:6px;
+      text-align:left;
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid rgba(139,125,106,.12);
+    }
+    .price .now{
+      font-weight:900;
+      letter-spacing:-.5px;
+      color: #ff6b9d;
+      font-size:32px;
+      line-height:1;
+    }
+    .price .was{
+      font-size:14px;
+      color: var(--muted);
+      text-decoration: line-through;
+      display:inline-block;
+    }
+    .price .save{
+      font-size:12px;
+      color: var(--muted);
+      font-weight:500;
+      display:inline-block;
+      margin-left:8px;
+    }
+    .price .save svg{ display:none; }
+    .submeta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid rgba(139,125,106,.08);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    @media (max-width:768px){
+      .submeta{
+        font-size:11px;
+        gap:10px;
+      }
+    }
+    .submeta span{
+      display:inline;
+      padding:0;
+      border:none;
+      background:none;
+      font-size:12px;
+      color: var(--muted);
+    }
+    .submeta svg{ display:none; }
+    
+    /* Combo Images */
+    .combo-image{
+      width:calc(100% + 48px);
+      height:220px;
+      border-radius: 20px;
+      overflow:hidden;
+      margin: -24px 0 20px -24px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      position:relative;
+      display:block;
+    }
+    @media (max-width:768px){
+      .combo-image{
+        height:180px;
+        width:calc(100% + 40px);
+        margin: -20px 0 16px -20px;
+      }
+    }
+    .combo-image::before{
+      display:none;
+    }
+    .combo-image::after{
+      display:none;
+    }
+    .combo-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      transition: opacity 0.4s ease;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+    .combo-image img:not(.loaded){
+      filter:blur(6px);
+    }
+    @media (hover: hover){
+      .combo-card:hover .combo-image img{
+        opacity:0.95;
+      }
+    }
+    
+    /* Hero Slider */
+    .hero-slider{
+      position:relative;
+      width:100%;
+      border-radius: 20px;
+      overflow:hidden;
+      margin-bottom:20px;
+      box-shadow: 0 12px 40px rgba(255,107,157,.2);
+    }
+    .slider-container{
+      position:relative;
+      width:100%;
+      height:400px;
+      overflow:hidden;
+    }
+    .slider-container .slide{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      opacity:0;
+      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+      transform: translateX(30px);
+    }
+    .slider-container .slide.active{
+      opacity:1;
+      transform: translateX(0);
+      z-index:2;
+    }
+    .slider-container .slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .slider-controls{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      padding:0 16px;
+      z-index:10;
+      pointer-events:none;
+    }
+    .slider-btn{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      border:4px solid rgba(255,179,211,.4);
+      background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,248,240,.9));
+      color:#ff6b9d;
+      font-size:32px;
+      font-weight:bold;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events:auto;
+      box-shadow:0 8px 24px rgba(255,179,211,.35), 0 4px 12px rgba(255,107,157,.2);
+      position:relative;
+      overflow:hidden;
+    }
+    .slider-btn::before{
+      content:'';
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:0;
+      height:0;
+      border-radius:50%;
+      background:rgba(255,158,196,.2);
+      transform:translate(-50%, -50%);
+      transition:width 0.5s, height 0.5s;
+    }
+    .slider-btn:hover{
+      background:linear-gradient(135deg, rgba(255,179,211,.2), rgba(255,200,163,.15));
+      transform:scale(1.2) rotate(8deg);
+      box-shadow:0 12px 32px rgba(255,179,211,.45), 0 6px 16px rgba(255,107,157,.3);
+      animation: cute-bounce 0.5s ease;
+      border-color: rgba(255,179,211,.6);
+    }
+    .slider-btn:hover::before{
+      width:150px;
+      height:150px;
+    }
+    .slider-dots{
+      position:absolute;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:8px;
+      z-index:10;
+    }
+    .slider-dots .dot{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      border:2px solid rgba(255,255,255,.6);
+      background:rgba(255,255,255,.6);
+      cursor:pointer;
+      transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      padding:0;
+      box-shadow:0 2px 6px rgba(255,179,211,.3);
+    }
+    .slider-dots .dot:hover{
+      transform: scale(1.4);
+      background:rgba(255,255,255,.9);
+      box-shadow:0 4px 10px rgba(255,179,211,.4);
+      animation: cute-bounce 0.3s ease;
+    }
+    .slider-dots .dot.active{
+      background:linear-gradient(135deg, #ffffff, rgba(255,248,240,.9));
+      width:28px;
+      border-radius:6px;
+      border-color:#ffffff;
+      box-shadow:0 4px 12px rgba(255,179,211,.5);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    /* Gallery Section */
+    .gallery-section{
+      background:linear-gradient(180deg, rgba(255,248,240,.5), #ffffff);
+      padding:80px 0;
+    }
+    .gallery-slider{
+      position:relative;
+      max-width:900px;
+      margin:0 auto;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 16px 48px rgba(255,107,157,.15);
+    }
+    .gallery-container{
+      position:relative;
+      width:100%;
+      height:500px;
+      overflow:hidden;
+    }
+    .gallery-slide{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      opacity:0;
+      transition:opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+      transform:scale(1.1);
+    }
+    .gallery-slide.active{
+      opacity:1;
+      transform:scale(1);
+      z-index:2;
+    }
+    .gallery-slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .gallery-caption{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      background:linear-gradient(to top, rgba(0,0,0,.7), transparent);
+      color:#ffffff;
+      padding:24px 20px 16px;
+      font-size:16px;
+      font-weight:600;
+      text-align:center;
+    }
+    .gallery-controls{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      padding:0 20px;
+      z-index:10;
+      pointer-events:none;
+    }
+    .gallery-btn{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      border:4px solid rgba(255,179,211,.4);
+      background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,248,240,.9));
+      color:#ff6b9d;
+      font-size:36px;
+      font-weight:bold;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events:auto;
+      box-shadow:0 8px 24px rgba(255,179,211,.35), 0 4px 12px rgba(255,107,157,.2);
+      position:relative;
+      overflow:hidden;
+    }
+    .gallery-btn::before{
+      content:'';
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:0;
+      height:0;
+      border-radius:50%;
+      background:rgba(255,158,196,.2);
+      transform:translate(-50%, -50%);
+      transition:width 0.5s, height 0.5s;
+    }
+    .gallery-btn:hover{
+      background:linear-gradient(135deg, rgba(255,179,211,.2), rgba(255,200,163,.15));
+      transform:scale(1.25) rotate(10deg);
+      box-shadow:0 12px 36px rgba(255,179,211,.5), 0 6px 16px rgba(255,107,157,.35);
+      animation: cute-bounce 0.5s ease;
+      border-color: rgba(255,179,211,.6);
+    }
+    .gallery-btn:hover::before{
+      width:150px;
+      height:150px;
+    }
+    .gallery-dots{
+      position:absolute;
+      bottom:16px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:10px;
+      z-index:10;
+    }
+    .gallery-dot{
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      border:3px solid rgba(255,255,255,.7);
+      background:rgba(255,255,255,.7);
+      cursor:pointer;
+      transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      padding:0;
+      box-shadow:0 2px 8px rgba(255,179,211,.3);
+    }
+    .gallery-dot:hover{
+      transform: scale(1.5);
+      background:rgba(255,255,255,.95);
+      border-color:rgba(255,255,255,.9);
+      box-shadow:0 4px 12px rgba(255,179,211,.4);
+      animation: cute-bounce 0.4s ease;
+    }
+    .gallery-dot.active{
+      background:linear-gradient(135deg, #ffffff, rgba(255,248,240,.9));
+      width:36px;
+      border-radius:10px;
+      border-color:#ffffff;
+      box-shadow:0 4px 16px rgba(255,179,211,.5);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @media (max-width:768px){
+      .slider-container, .gallery-container{
+        height:300px;
+      }
+      .slider-btn, .gallery-btn{
+        width:44px;
+        height:44px;
+        font-size:22px;
+      }
+      .gallery-caption{
+        font-size:14px;
+        padding:20px 16px 12px;
+      }
+      .hero h1{
+        font-size:clamp(32px, 6vw, 48px);
+      }
+      .section-head h2{
+        font-size:clamp(24px, 5vw, 36px);
+      }
+      .combo-card{
+        padding:20px;
+      }
+      .card{
+        padding:24px;
+      }
+    }
+
+    /* Combo Section */
+    .combo-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .combo-actions{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top: 14px;
+      align-items:flex-start;
+    }
+    .filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+    }
+    .filter-btn{
+      border:3px solid rgba(255,179,211,.3);
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,248,240,.8));
+      padding: 14px 24px;
+      border-radius: 32px;
+      cursor:pointer;
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      font-weight:700;
+      font-size: 15px;
+      color: var(--text);
+      position:relative;
+      overflow:hidden;
+      box-shadow: 0 4px 12px rgba(255,179,211,.15);
+    }
+    .filter-btn::before{
+      content:'';
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:0;
+      height:0;
+      border-radius:50%;
+      background:rgba(255,158,196,.2);
+      transform:translate(-50%, -50%);
+      transition:width 0.4s, height 0.4s;
+    }
+    .filter-btn:hover{ 
+      transform: translateY(-5px) scale(1.1); 
+      background: linear-gradient(135deg, rgba(255,179,211,.2), rgba(255,200,163,.15)); 
+      border-color: rgba(255,179,211,.5);
+      box-shadow: 0 8px 20px rgba(255,179,211,.3);
+      animation: cute-bounce 0.5s ease;
+    }
+    .filter-btn:hover::before{
+      width:200px;
+      height:200px;
+    }
+    .filter-btn[aria-pressed="true"]{
+      background: linear-gradient(135deg, var(--pink), #ff6b9d, var(--orange));
+      background-size: 200% 200%;
+      border-color: transparent;
+      box-shadow: 0 8px 28px rgba(255,107,157,.4), 0 4px 12px rgba(255,179,211,.3);
+      color:#ffffff;
+      animation: pulse 2s ease-in-out infinite;
+      font-weight:800;
+    }
+    .filter-btn:focus-visible{ 
+      outline:none; 
+      box-shadow: var(--focus), 0 0 0 3px rgba(255,179,211,.3);
+    }
+
+    /* Benefits */
+    .grid-4{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .card{
+      border-radius: var(--radius-cute);
+      border:3px solid var(--brand);
+      background: linear-gradient(135deg, var(--card), rgba(255,254,248,.8));
+      padding: 32px;
+      box-shadow: var(--shadow2), 0 2px 8px rgba(255,179,211,.1);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position:relative;
+      overflow:visible;
+      clip-path: polygon(
+        0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+        100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+      );
+    }
+    .card::before{
+      content:'';
+      position:absolute;
+      top:-2px;
+      left:-2px;
+      right:-2px;
+      bottom:-2px;
+      border:4px solid var(--brand2);
+      border-radius: var(--radius2);
+      clip-path: polygon(
+        0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+        100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+      );
+      opacity:0.3;
+      z-index:-1;
+      animation: wobble 4s ease-in-out infinite;
+    }
+    .card::after{
+      content:'🐾';
+      position:absolute;
+      top:10px;
+      right:10px;
+      font-size:20px;
+      opacity:0.2;
+      animation: wobble 3s ease-in-out infinite;
+    }
+    @media (hover: hover){
+      .card:hover{
+        transform: translateY(-10px) scale(1.04) rotate(0.5deg);
+        border-color: var(--brand2);
+        background: linear-gradient(135deg, rgba(255,254,248,.98), rgba(255,248,240,.9));
+        box-shadow: var(--shadow-cute), 0 16px 48px rgba(241,233,185,.35);
+        animation: cute-bounce 0.6s ease;
+      }
+    }
+    .card:hover::before{
+      opacity:0.5;
+      animation: wobble 2s ease-in-out infinite;
+    }
+    .card:hover::after{
+      opacity:0.4;
+      transform: scale(1.2);
+    }
+    .card h3{ margin:12px 0 8px; font-size: 18px; color:#2c241f; font-weight:700; }
+    .card p{ margin:0; color: var(--muted); font-size: 14px; line-height:1.6; }
+    .card .icon{
+      width:70px; height:70px;
+      border-radius: 28px;
+      display:grid;
+      place-items:center;
+      border:4px solid rgba(255,179,211,.3);
+      background: linear-gradient(135deg, rgba(255,179,211,.25), rgba(255,200,163,.2), rgba(168,230,207,.15));
+      box-shadow: 0 8px 24px rgba(255,179,211,.3), inset 0 2px 4px rgba(255,255,255,.5);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: float 3s ease-in-out infinite;
+    }
+    @media (hover: hover){
+      .card:hover .icon{
+        transform: scale(1.2) rotate(8deg);
+        animation: cute-bounce 0.6s ease;
+        box-shadow: 0 12px 32px rgba(255,179,211,.4), inset 0 2px 4px rgba(255,255,255,.6);
+      }
+    }
+    .card .icon svg{ width:28px; height:28px; stroke:#ff9ec4; transition:all .3s ease; }
+    .card:hover .icon svg{
+      transform: scale(1.1);
+    }
+
+    /* Features */
+    .features-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .feature{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .feature .fi{
+      flex: 0 0 auto;
+      width:60px;height:60px;
+      border-radius: 24px;
+      display:grid;
+      place-items:center;
+      border:3px solid rgba(255,158,196,.25);
+      background: rgba(255,158,196,.15);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: float 4s ease-in-out infinite;
+    }
+    .feature:hover .fi{
+      transform: scale(1.2) rotate(8deg);
+      animation: bounce 0.5s ease;
+    }
+    .feature .fi svg{ width:28px; height:28px; stroke:#ff9ec4; transition:all .3s ease; }
+    .feature:hover .fi svg{ transform: scale(1.15); }
+    .feature h3{ margin:6px 0 10px; font-size: 20px; color:#3d2f2a; font-weight:800; transition:all .3s ease; }
+    .feature:hover h3{ transform: scale(1.05); color:#ff9ec4; }
+    .feature p{ margin:0; color: var(--muted); font-size: 15px; line-height:1.7; }
+
+    /* Social proof */
+    .logo-strip{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+      margin: 16px 0 18px;
+    }
+    .logo-pill{
+      border-radius: 24px;
+      border:2px dashed rgba(255,107,157,.25);
+      background: rgba(255,255,255,.8);
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      color: #ff6b9d;
+      font-weight:600;
+      letter-spacing:.2px;
+      font-size: 13px;
+    }
+    .logo-pill svg{ width:18px;height:18px; stroke:#ff6b9d; }
+
+    .testi-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:24px;
+      margin-top: 20px;
+    }
+    .testi{
+      padding: 28px;
+      position:relative;
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border:3px solid rgba(255,179,211,.15);
+      border-radius: var(--radius-cute);
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,248,240,.6));
+    }
+    @media (hover: hover){
+      .testi:hover{
+        transform: translateY(-8px) scale(1.03);
+        border-color: rgba(255,179,211,.4);
+        box-shadow: var(--shadow-cute), 0 12px 40px rgba(255,179,211,.2);
+        animation: cute-bounce 0.6s ease;
+      }
+      .testi:hover .quote{
+        transform: scale(1.25) rotate(12deg);
+        animation: cute-bounce 0.6s ease;
+        box-shadow: 0 8px 20px rgba(255,179,211,.4);
+      }
+    }
+    .quote{
+      position:absolute;
+      top:24px; right:24px;
+      width:56px;height:56px;
+      border-radius: 28px;
+      display:grid;
+      place-items:center;
+      border:4px solid rgba(255,179,211,.3);
+      background: linear-gradient(135deg, rgba(255,179,211,.25), rgba(255,200,163,.2));
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: float 5s ease-in-out infinite;
+      box-shadow: 0 4px 12px rgba(255,179,211,.25);
+    }
+    .quote svg{ width:24px;height:24px; fill:#ff9ec4; transition:all .3s ease; }
+    .testi:hover .quote svg{
+      transform: scale(1.1);
+    }
+    .testi p{
+      margin:0 0 12px;
+      color: var(--text);
+      font-size: 14px;
+      line-height:1.6;
+    }
+    .who{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .avatar{
+      width:50px;height:50px;
+      border-radius: 24px;
+      border:3px solid rgba(255,158,196,.25);
+      background: linear-gradient(135deg, rgba(255,158,196,.2), rgba(255,200,163,.15));
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+      overflow:hidden;
+      transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: float 4s ease-in-out infinite;
+    }
+    .testi:hover .avatar{
+      transform: scale(1.15) rotate(5deg);
+      animation: bounce 0.5s ease;
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .avatar svg{ width:22px;height:22px; stroke:#ff9ec4; }
+    .who strong{ font-weight:700; color:#2c241f; }
+    .who span{ color: var(--muted); }
+
+    /* Pricing */
+    .pricing-top{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:flex-start;
+      margin: 12px 0 18px;
+    }
+    .toggle{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:4px;
+      border-radius: 28px;
+      border:2px solid rgba(255,107,157,.2);
+      background: rgba(255,255,255,.8);
+      width:max-content;
+    }
+    .toggle button{
+      border:0;
+      background: transparent;
+      cursor:pointer;
+      padding: 10px 18px;
+      border-radius: 24px;
+      font-weight:600;
+      font-size: 14px;
+      color: var(--text);
+      transition: all .2s ease;
+    }
+    .toggle button:hover{ transform: scale(1.05); }
+    .toggle button[aria-pressed="true"]{
+      background: linear-gradient(135deg, #ff6b9d, #ffb347);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(255,107,157,.25);
+    }
+    .toggle button:focus-visible{ 
+      outline:none; 
+      box-shadow: var(--focus), 0 0 0 3px rgba(255,179,211,.3);
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items:stretch;
+      margin-top: 6px;
+    }
+    .plan{
+      padding: 32px;
+      position:relative;
+      overflow:hidden;
+      border:3px solid rgba(255,179,211,.2);
+      background: linear-gradient(135deg, #ffffff, rgba(255,248,240,.6));
+      border-radius: var(--radius-cute);
+      box-shadow: var(--shadow2), 0 2px 8px rgba(255,179,211,.1);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @media (hover: hover){
+      .plan:hover{
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: var(--shadow-cute), 0 12px 40px rgba(255,179,211,.25);
+        border-color: rgba(255,179,211,.4);
+      }
+      .plan:hover .money{
+        transform: scale(1.1);
+        animation: bounce 0.5s ease;
+      }
+    }
+    .plan.reco{
+      border-color: var(--pink);
+      border-width: 4px;
+      background:
+        radial-gradient(600px 280px at 10% 15%, rgba(255,179,211,.15), transparent 60%),
+        radial-gradient(500px 260px at 90% 10%, rgba(255,200,163,.18), transparent 60%),
+        radial-gradient(400px 200px at 50% 50%, rgba(168,230,207,.1), transparent 60%),
+        linear-gradient(135deg, #ffffff, rgba(255,248,240,.8));
+      box-shadow: 0 16px 48px rgba(255,107,157,.3), 0 8px 24px rgba(255,179,211,.25);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .badge{
+      position:absolute;
+      top:24px; right:24px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 20px;
+      border-radius: 32px;
+      border:4px solid var(--pink);
+      background: linear-gradient(135deg, rgba(255,179,211,.3), rgba(255,200,163,.2));
+      color: #ff6b9d;
+      font-weight:900;
+      font-size: 15px;
+      animation: cute-bounce 2.5s ease-in-out infinite;
+      box-shadow: 0 6px 16px rgba(255,107,157,.4), 0 2px 8px rgba(255,179,211,.3);
+      text-shadow: 0 1px 2px rgba(255,255,255,.5);
+    }
+    .badge svg{ width:16px;height:16px; }
+    .plan h3{ margin: 0 0 8px; font-size: 20px; color:#2c241f; font-weight:700; }
+    .plan p{ margin:0 0 16px; color: var(--muted); font-size: 14px; line-height:1.5; }
+    .plan .priceRow{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      margin: 16px 0 12px;
+    }
+    .plan .money{
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing:.3px;
+      color:#ff9ec4;
+      transition: all .3s ease;
+      animation: float 4s ease-in-out infinite;
+    }
+    .plan .per{
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .plan .sub{
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 12px;
+      line-height:1.5;
+    }
+    .list{
+      margin: 16px 0 20px;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .list li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      color: var(--text);
+      font-size: 14px;
+      line-height:1.5;
+    }
+    .list svg{ width:20px; height:20px; flex: 0 0 auto; stroke:#a8e6cf; }
+    .plan .plan-cta{
+      width:100%;
+      justify-content:center;
+    }
+
+    /* FAQ */
+    .faq{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .faq-item{
+      border-radius: var(--radius-cute);
+      border:3px solid rgba(255,179,211,.25);
+      background: linear-gradient(135deg, #ffffff, rgba(255,248,240,.5));
+      overflow:hidden;
+      box-shadow: var(--shadow2), 0 2px 8px rgba(255,179,211,.1);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position:relative;
+    }
+    .faq-item::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:4px;
+      background:linear-gradient(90deg, #ff9ec4, #ffc8a3);
+      transform:scaleX(0);
+      transition:transform .4s ease;
+    }
+    @media (hover: hover){
+      .faq-item:hover{ 
+        border-color: rgba(255,179,211,.5); 
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: var(--shadow-cute), 0 12px 40px rgba(255,179,211,.25);
+        background: linear-gradient(135deg, rgba(255,248,240,.9), rgba(255,254,248,.8));
+      }
+    }
+    .faq-item:hover::before{
+      transform:scaleX(1);
+    }
+    .faq-btn{
+      width:100%;
+      text-align:left;
+      padding: 18px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      background: transparent;
+      border:0;
+      cursor:pointer;
+      color: #2c241f;
+      font-weight:700;
+      letter-spacing:.1px;
+      font-size:15px;
+    }
+    .faq-btn:focus-visible{ 
+      outline:none; 
+      box-shadow: var(--focus), 0 0 0 3px rgba(255,179,211,.3);
+    }
+    .faq-btn .q{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+    }
+    .faq-btn .q svg{ width:22px;height:22px; stroke:#ff9ec4; margin-top:1px; transition:all .3s ease; }
+    .faq-btn:hover .q svg{ transform: scale(1.1); }
+    .chev{
+      width:22px;height:22px;
+      transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      stroke:#ff9ec4;
+    }
+    .faq-item:hover .chev{
+      transform: scale(1.1);
+    }
+    .faq-item[data-open="true"] .chev{ transform: rotate(180deg); }
+    .faq-panel{
+      height:0;
+      overflow:hidden;
+      transition: height .22s ease;
+    }
+    .faq-panel-inner{
+      padding: 0 18px 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height:1.6;
+    }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+      align-items:start;
+      margin-top: 12px;
+    }
+    .form{
+      padding: 16px;
+    }
+    .form-row{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      margin-bottom: 10px;
+    }
+    label{
+      display:block;
+      font-size: 14px;
+      color: #2c241f;
+      margin-bottom: 8px;
+      font-weight:600;
+    }
+    .field{
+      width:100%;
+      border-radius: 20px;
+      border:3px solid rgba(255,179,211,.25);
+      background: linear-gradient(135deg, #ffffff, rgba(255,248,240,.3));
+      padding: 16px 20px;
+      color: var(--text);
+      transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      font-size:15px;
+      box-shadow: 0 2px 8px rgba(255,179,211,.1);
+    }
+    .field::placeholder{ color: var(--muted); opacity:0.7; }
+    .field:focus{
+      outline:none;
+      border-color: var(--pink);
+      box-shadow: var(--focus), 0 4px 16px rgba(255,179,211,.2), 0 0 0 3px rgba(255,179,211,.15);
+      background: linear-gradient(135deg, rgba(255,248,240,.8), rgba(255,254,248,.6));
+      transform: translateY(-2px);
+    }
+    .field:invalid:not(:placeholder-shown):not(:focus){
+      border-color: #ff6b9d;
+      background: rgba(255,107,157,.05);
+    }
+    .field:valid:not(:placeholder-shown){
+      border-color: var(--mint);
+      background: linear-gradient(135deg, rgba(168,230,207,.05), rgba(255,254,248,.6));
+    }
+    textarea.field{ min-height: 120px; resize: vertical; }
+    .error{
+      margin-top:8px;
+      color: #ff6b9d;
+      font-size: 13px;
+      display:none;
+      font-weight:500;
+      animation:slideDown 0.3s ease;
+      padding-left:20px;
+      position:relative;
+    }
+    .error::before{
+      content:'⚠️';
+      position:absolute;
+      left:0;
+      font-size:14px;
+    }
+    .error.show{ 
+      display:block; 
+    }
+    @keyframes slideDown{
+      from{ opacity:0; transform:translateY(-8px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+    .status{
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-height: 20px;
+      transition:all 0.3s ease;
+    }
+    .status[aria-live="assertive"]{
+      color:var(--text);
+      font-weight:600;
+    }
+    .status .dot.ok{
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .status .dot.warn{
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    .status[aria-live="assertive"] .dot.ok{
+      box-shadow:0 0 12px rgba(168,230,207,.6);
+    }
+    .status[aria-live="assertive"] .dot.warn{
+      box-shadow:0 0 12px rgba(255,179,71,.6);
+    }
+    
+    /* Loading spinner */
+    .spinner{
+      display:inline-block;
+      width:20px;
+      height:20px;
+      border:3px solid rgba(255,255,255,.3);
+      border-top-color:#ffffff;
+      border-radius:50%;
+      animation:spin 0.8s linear infinite;
+    }
+    @keyframes spin{
+      to{ transform:rotate(360deg); }
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: var(--muted);
+    }
+    .dot.ok{ background: #a8e6cf; }
+    .dot.warn{ background: #ffb347; }
+
+    .contact-side{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .info-card{
+      padding: 16px;
+    }
+    .info-card h3{ margin:0 0 12px; font-size: 18px; color:#2c241f; font-weight:700; }
+    .info-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .info-list li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .info-list svg{ width:20px;height:20px; stroke:#ff9ec4; margin-top:2px; transition:all .3s ease; }
+    .info-list li:hover svg{ transform: scale(1.15) rotate(5deg); animation: bounce 0.3s ease; }
+
+    /* Scroll to top button */
+    .scroll-top{
+      position:fixed;
+      bottom:32px;
+      right:32px;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--pink), #ff6b9d, var(--orange));
+      border:4px solid rgba(255,255,255,.9);
+      color:#ffffff;
+      font-size:24px;
+      cursor:pointer;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:40;
+      box-shadow:0 8px 24px rgba(255,107,157,.4), 0 4px 12px rgba(255,179,211,.3);
+      transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity:0;
+      transform:scale(0.8);
+    }
+    .scroll-top.show{
+      display:flex;
+      opacity:1;
+      transform:scale(1);
+    }
+    .scroll-top:hover{
+      transform:scale(1.15) translateY(-4px);
+      box-shadow:0 12px 32px rgba(255,107,157,.5), 0 6px 16px rgba(255,179,211,.4);
+      animation:cute-bounce 0.5s ease;
+    }
+    .scroll-top:active{
+      transform:scale(1.05);
+    }
+    .scroll-top:focus-visible{
+      outline:none;
+      box-shadow:var(--focus), 0 8px 24px rgba(255,107,157,.4), 0 0 0 4px rgba(255,179,211,.3);
+    }
+    
+    @media (max-width:768px){
+      .scroll-top{
+        bottom:24px;
+        right:24px;
+        width:48px;
+        height:48px;
+        font-size:20px;
+      }
+    }
+
+    /* Footer */
+    footer{
+      border-top: 4px solid rgba(255,179,211,.2);
+      background: linear-gradient(180deg, rgba(255,248,240,.8), rgba(255,254,248,.6));
+      padding: 48px 0 32px;
+      position:relative;
+      overflow:hidden;
+    }
+    footer::before{
+      content:'🐾';
+      position:absolute;
+      bottom:20px;
+      left:10%;
+      font-size:32px;
+      opacity:0.08;
+      animation: cute-bounce 5s ease-in-out infinite;
+    }
+    footer::after{
+      content:'🐾';
+      position:absolute;
+      bottom:30px;
+      right:12%;
+      font-size:28px;
+      opacity:0.06;
+      animation: cute-bounce 6s ease-in-out infinite 2s;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .foot-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot-links a{
+      padding:14px 20px;
+      border-radius:24px;
+      border:3px solid rgba(255,179,211,.3);
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,248,240,.8));
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      color:var(--text);
+      font-weight:700;
+      box-shadow: 0 4px 12px rgba(255,179,211,.15);
+    }
+    .foot-links a:hover{ 
+      transform: translateY(-5px) scale(1.08); 
+      background: linear-gradient(135deg, rgba(255,179,211,.2), rgba(255,200,163,.15)); 
+      border-color: rgba(255,179,211,.5); 
+      color:#ff6b9d;
+      box-shadow: 0 8px 20px rgba(255,179,211,.3);
+      animation: cute-bounce 0.5s ease;
+    }
+    .copy{
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Reveal */
+    .reveal{
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.in{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *, *::before, *::after{ 
+        transition-duration:0.01ms !important; 
+        animation-duration:0.01ms !important; 
+        animation-iteration-count:1 !important;
+      }
+      .reveal{ opacity:1; transform:none; }
+      .scroll-top{ 
+        transition:opacity 0.3s ease, transform 0.3s ease !important; 
+      }
+      .spinner{
+        animation:none !important;
+        border-top-color:transparent;
+      }
+    }
+    
+    /* Print styles */
+    @media print{
+      .nav-wrap, .drawer, .scroll-top, .slider-controls, .slider-dots, .gallery-controls, .gallery-dots, .cta, button, .filters{ display:none !important; }
+      body{ background:#fff; color:#000; }
+      section{ page-break-inside:avoid; padding:40px 0; }
+      .combo-card, .card{ page-break-inside:avoid; border:1px solid #ddd; }
+      a{ color:#000; text-decoration:underline; }
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast: high){
+      :root{
+        --text:#000000;
+        --muted:#333333;
+        --bg:#ffffff;
+      }
+      .card, .combo-card{ border-width:2px; }
+    }
+
+    /* Breakpoints */
+    @media (min-width: 768px){
+      .menu{ display:flex; }
+      .hero-grid{ grid-template-columns: 1.2fr .8fr; gap: 32px; align-items:center; }
+      .hero-cta-row{ flex-direction:row; align-items:center; gap:16px; }
+      .mock-grid{ grid-template-columns: 1fr; }
+      .combo-grid{ grid-template-columns: repeat(2, 1fr); gap:24px; }
+      .grid-4{ grid-template-columns: repeat(2, 1fr); gap:24px; }
+      .features-grid{ grid-template-columns: repeat(2, 1fr); gap:24px; }
+      .logo-strip{ grid-template-columns: repeat(3, 1fr); }
+      .testi-grid{ grid-template-columns: repeat(3, 1fr); gap:24px; }
+      .pricing-top{ flex-direction:row; align-items:center; justify-content:space-between; }
+      .pricing-grid{ grid-template-columns: repeat(3, 1fr); gap:20px; }
+      .contact-grid{ grid-template-columns: 1.2fr .8fr; gap:32px; }
+      .form-row.cols-2{ grid-template-columns: 1fr 1fr; }
+      .footer-grid{ grid-template-columns: 1.3fr .7fr; gap:32px; }
+      .section-head{ margin-bottom:56px; }
+      .section-head h2::after{ width:80px; }
+    }
+    @media (min-width: 1024px){
+      .hero-grid{ gap: 48px; }
+      .combo-grid{ gap:28px; }
+      .grid-4{ gap:28px; }
+      .features-grid{ gap:28px; }
+      section{ padding: 100px 0; }
+    }
+    @media (min-width: 1280px){
+      section{ padding: 120px 0; }
+      .combo-grid{ grid-template-columns: repeat(3, 1fr); gap:32px; }
+      .grid-4{ grid-template-columns: repeat(4, 1fr); gap:32px; }
+      .features-grid{ grid-template-columns: repeat(3, 1fr); gap:32px; }
+      .logo-strip{ grid-template-columns: repeat(6, 1fr); }
+      .hero-grid{ gap: 64px; }
+      .section-head{ margin-bottom:64px; }
+      .section-head h2{ font-size: clamp(40px, 4vw, 56px); }
+      .section-head p{ font-size:18px; max-width:80ch; }
+    }
+    @media (min-width: 1440px){
+      .container{ max-width:1400px; }
+      section{ padding: 140px 0; }
+    }
+  </style>
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PetStore",
+    "name": "Pet Shop Cung Cung",
+    "description": "Chuyên combo thức ăn, đồ chơi, vật dụng cho chó mèo. Tiết kiệm chi phí, giao hàng nhanh.",
+    "url": "https://cungcung.pet",
+    "logo": "https://cungcung.pet/logo.png",
+    "image": "https://cungcung.pet/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "TP.HCM",
+      "addressCountry": "VN"
+    },
+    "telephone": "028-9999-6868",
+    "email": "support@cungcung.pet",
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://shopee.vn/cungcung",
+      "https://www.tiktok.com/@cungcung"
+    ]
+  }
+  </script>
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng, tới nội dung chính</a>
+
+  <!-- Drawer (mobile) -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="backdrop" data-close-drawer tabindex="-1" aria-label="Đóng menu"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-label="Menu điều hướng">
+      <div class="drawer-header">
+        <div class="brand" aria-label="Pet Shop Cung Cung">
+          <div class="mark" aria-hidden="true">
+            <!-- paw mark -->
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7.4 10.2c-1.1 0-2-.95-2-2.25S6.3 5.7 7.4 5.7s2 .95 2 2.25-.9 2.25-2 2.25Zm9.2 0c-1.1 0-2-.95-2-2.25s.9-2.25 2-2.25 2 .95 2 2.25-.9 2.25-2 2.25ZM10 8.8c-1.05 0-1.9-.95-1.9-2.2S8.95 4.4 10 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2Zm4 0c-1.05 0-1.9-.95-1.9-2.2S12.95 4.4 14 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2ZM12 20c-1.8 0-3.4-.7-4.7-1.6-1.2-.85-1.1-2.65.2-3.3 1.1-.55 2.5-1.1 4.5-1.1s3.4.55 4.5 1.1c1.3.65 1.4 2.45.2 3.3C15.4 19.3 13.8 20 12 20Z" fill="rgba(255,255,255,.92)"/>
+            </svg>
+          </div>
+          <div class="name">
+            <strong>Cung Cung</strong>
+            <span>Healthy pets!</span>
+          </div>
+        </div>
+        <button class="icon-btn" type="button" id="drawerClose" aria-label="Đóng menu">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav aria-label="Điều hướng chính">
+        <a href="#combo" data-link>Combo</a>
+        <a href="#loi-ich" data-link>Lợi ích</a>
+        <a href="#tinh-nang" data-link>Tính năng</a>
+        <a href="#danh-gia" data-link>Đánh giá</a>
+        <a href="#gia" data-link>Giá</a>
+        <a href="#faq" data-link>FAQ</a>
+        <a href="#lien-he" data-link>Liên hệ</a>
+      </nav>
+
+      <div style="margin-top:12px; display:flex; gap:10px; flex-direction:column;">
+        <a class="cta" href="#combo">Xem combo</a>
+        <a class="cta secondary" href="#lien-he">Liên hệ tư vấn</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="nav-wrap">
+    <div class="container">
+      <div class="nav" role="navigation" aria-label="Thanh điều hướng">
+        <a class="brand" href="#top" aria-label="Về đầu trang - Pet Shop Cung Cung">
+          <div class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7.4 10.2c-1.1 0-2-.95-2-2.25S6.3 5.7 7.4 5.7s2 .95 2 2.25-.9 2.25-2 2.25Zm9.2 0c-1.1 0-2-.95-2-2.25s.9-2.25 2-2.25 2 .95 2 2.25-.9 2.25-2 2.25ZM10 8.8c-1.05 0-1.9-.95-1.9-2.2S8.95 4.4 10 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2Zm4 0c-1.05 0-1.9-.95-1.9-2.2S12.95 4.4 14 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2ZM12 20c-1.8 0-3.4-.7-4.7-1.6-1.2-.85-1.1-2.65.2-3.3 1.1-.55 2.5-1.1 4.5-1.1s3.4.55 4.5 1.1c1.3.65 1.4 2.45.2 3.3C15.4 19.3 13.8 20 12 20Z" fill="rgba(255,255,255,.92)"/>
+            </svg>
+          </div>
+          <div class="name">
+            <strong>Cung Cung</strong>
+            <span>Chuyên combo sản phẩm cho thú cưng</span>
+          </div>
+        </a>
+
+        <nav class="menu" aria-label="Menu">
+          <a href="#combo">Combo</a>
+          <a href="#loi-ich">Lợi ích</a>
+          <a href="#tinh-nang">Tính năng</a>
+          <a href="#danh-gia">Đánh giá</a>
+          <a href="#gia">Giá</a>
+          <a href="#faq">FAQ</a>
+          <a href="#lien-he">Liên hệ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" type="button" id="drawerOpen" aria-label="Mở menu">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 7h14M5 12h14M5 17h14" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <a class="cta" href="#combo" aria-label="Chọn combo cho thú cưng">Chọn combo</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="reveal">
+            <h1>
+              Không biết mua gì cho thú cưng?<br/>
+              <span style="color:#ff6b9d;">Chọn sẵn cho bạn rồi</span> 🐾
+            </h1>
+
+            <p class="lead">
+              Combo thức ăn, đồ chơi & vật dụng đã được chọn lọc sẵn.<br/>
+              Tiết kiệm chi phí · Mua nhanh chỉ 60 giây
+            </p>
+
+            <div class="hero-cta-row" role="group" aria-label="Nút kêu gọi hành động">
+              <a class="cta" href="#combo" aria-label="Chọn combo cho thú cưng">
+                Chọn combo cho bé →
+              </a>
+            </div>
+          </div>
+
+          <aside class="mock reveal" aria-label="Mockup combo minh hoạ">
+            <div class="hero-slider">
+              <div class="slider-container" id="heroSlider">
+                <div class="slide active">
+                  <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=500&fit=crop&q=80" alt="Thú cưng đáng yêu với combo sản phẩm" loading="eager" />
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&h=500&fit=crop&q=80" alt="Combo đồ dùng cho chó mới về nhà" loading="lazy" />
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&h=500&fit=crop&q=80" alt="Combo đồ dùng cho mèo mới về nhà" loading="lazy" />
+                </div>
+                <div class="slide">
+                  <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?w=800&h=500&fit=crop&q=80" alt="Đồ chơi cho thú cưng" loading="lazy" />
+                </div>
+              </div>
+              <div class="slider-controls">
+                <button class="slider-btn prev" aria-label="Ảnh trước" id="prevSlide">‹</button>
+                <button class="slider-btn next" aria-label="Ảnh sau" id="nextSlide">›</button>
+              </div>
+              <div class="slider-dots">
+                <button class="dot active" aria-label="Slide 1" data-slide="0"></button>
+                <button class="dot" aria-label="Slide 2" data-slide="1"></button>
+                <button class="dot" aria-label="Slide 3" data-slide="2"></button>
+                <button class="dot" aria-label="Slide 4" data-slide="3"></button>
+              </div>
+            </div>
+            <div class="mock-top">
+              <div class="title">
+                <strong>Combo sản phẩm nổi bật</strong>
+                <span>Combo giúp bạn tiết kiệm chi phí và mua hàng tiện lợi hơn</span>
+              </div>
+              <span class="chip" title="Dữ liệu giả hợp lý">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 21s7-4.4 7-10.6C19 6.9 16.7 5 14.8 5c-1.4 0-2.3.7-2.8 1.4C11.5 5.7 10.6 5 9.2 5 7.3 5 5 6.9 5 10.4 5 16.6 12 21 12 21Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+                Bán chạy
+              </span>
+            </div>
+
+            <div class="mock-grid">
+              <article class="combo-card" tabindex="-1">
+                <div class="combo-image">
+                  <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop&q=80" alt="Combo chăm sóc lông cho mèo" loading="lazy" />
+                </div>
+                <div class="tag" aria-label="Combo cho mèo - chăm sóc">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 10c0-3.3 2.2-6 5-6s5 2.7 5 6-2.2 6-5 6-5-2.7-5-6Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                    <path d="M9 6.2 7 4.5v3.2M15 6.2l2-1.7v3.2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Mèo · Chăm sóc lông
+                </div>
+
+                <div class="row">
+                  <div>
+                    <h3>Combo Chăm Sóc Lông Mèo</h3>
+                    <p>Gồm lược chải lông, dầu tắm và phụ kiện chăm sóc. Phù hợp mèo rụng lông theo mùa.</p>
+                  </div>
+                  <div class="price" aria-label="Giá combo">
+                    <div class="now">289.000đ</div>
+                    <div class="was">349.000đ</div>
+                    <div class="save">
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      Tiết kiệm 17%
+                    </div>
+                  </div>
+                </div>
+
+                <div class="submeta" aria-label="Thông tin bổ sung">
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                      <path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Giao 2–4 giờ (nội thành)
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
+                    </svg>
+                    620 lượt mua/tháng
+                  </span>
+                </div>
+              </article>
+
+              <article class="combo-card" tabindex="-1">
+                <div class="combo-image">
+                  <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop&q=80" alt="Combo thức ăn cho chó" loading="lazy" />
+                </div>
+                <div class="tag" aria-label="Combo cho chó - ăn uống">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7.5 11.5c-1.5 0-2.7-1.3-2.7-2.9S6 5.8 7.5 5.8s2.7 1.3 2.7 2.9-1.2 2.8-2.7 2.8Zm9 0c-1.5 0-2.7-1.3-2.7-2.9s1.2-2.9 2.7-2.9 2.7 1.3 2.7 2.9-1.2 2.8-2.7 2.8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                    <path d="M12 20c-2 0-3.8-.8-5.2-1.8-1.2-.9-1.1-2.7.2-3.4 1.2-.6 2.8-1.2 5-1.2s3.8.6 5 1.2c1.3.7 1.4 2.5.2 3.4C15.8 19.2 14 20 12 20Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                  </svg>
+                  Chó · Ăn uống
+                </div>
+
+                <div class="row">
+                  <div>
+                    <h3>Combo Thức Ăn Cho Chó</h3>
+                    <p>Thức ăn dinh dưỡng đầy đủ cho chó, phù hợp mọi giai đoạn. Bao gồm thức ăn khô và pate.</p>
+                  </div>
+                  <div class="price" aria-label="Giá combo">
+                    <div class="now">419.000đ</div>
+                    <div class="was">499.000đ</div>
+                    <div class="save">
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      Tiết kiệm 16%
+                    </div>
+                  </div>
+                </div>
+
+                <div class="submeta" aria-label="Thông tin bổ sung">
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                      <path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Giao trong ngày
+                  </span>
+                  <span>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
+                    </svg>
+                    410 lượt mua/tháng
+                  </span>
+                </div>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Combo -->
+    <section id="combo">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Combo Sản Phẩm Cho Thú Cưng 🛍️</h2>
+          <p>Đã chọn sẵn cho bạn. Chỉ cần chọn combo, đặt hàng trong 60 giây</p>
+        </div>
+
+        <div class="combo-actions reveal">
+          <div class="filters" role="group" aria-label="Bộ lọc combo">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+            <button class="filter-btn" type="button" data-filter="dog" aria-pressed="false">Chó</button>
+            <button class="filter-btn" type="button" data-filter="cat" aria-pressed="false">Mèo</button>
+          </div>
+          <div class="pill" aria-label="Gợi ý nhanh">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2.8c4.8 0 8.7 3.9 8.7 8.7S16.8 20.2 12 20.2 3.3 16.3 3.3 11.5 7.2 2.8 12 2.8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+              <path d="M12 7.2v4.7" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M12 16.3h.01" stroke="rgba(234,240,251,.86)" stroke-width="2.8" stroke-linecap="round"/>
+            </svg>
+            🐾 Mua combo để tiết kiệm chi phí và nhận nhiều sản phẩm hơn
+          </div>
+        </div>
+
+        <div class="combo-grid" id="comboGrid" aria-label="Danh sách combo">
+          <!-- 6 combo cards (data attributes for filter) -->
+          <article class="combo-card reveal" data-pet="dog" tabindex="0" aria-label="Combo chó - bé mới về nhà">
+            <div class="combo-image">
+              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop&q=80" alt="Combo đồ dùng cho chó mới về nhà" loading="lazy" />
+            </div>
+            <div class="tag">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3.5l2.3 4.7 5.2.7-3.8 3.7.9 5.2-4.6-2.5-4.6 2.5.9-5.2-3.8-3.7 5.2-.7L12 3.5Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+              Chó · Bé mới về nhà
+            </div>
+            <div class="row">
+              <div>
+                <h3>Combo Cho Chó Mới Về Nhà</h3>
+                <p>Bao gồm thức ăn, đồ chơi và vật dụng cần thiết cho chó mới về nhà</p>
+              </div>
+              <div class="price">
+                <div class="now">339.000đ</div>
+                <div class="was">399.000đ</div>
+                <div class="save">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Tiết kiệm 15%
+                </div>
+              </div>
+            </div>
+            <div class="submeta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Đặt hàng trong 60s
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                290 lượt/tháng
+              </span>
+            </div>
+          </article>
+
+          <article class="combo-card reveal" data-pet="cat" tabindex="0" aria-label="Combo mèo - bé mới về nhà">
+            <div class="combo-image">
+              <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop&q=80" alt="Combo đồ dùng cho mèo mới về nhà" loading="lazy" />
+            </div>
+            <div class="tag">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6.2 7 4.5v3.2M15 6.2l2-1.7v3.2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 11c0-3.3 2.2-6 5-6s5 2.7 5 6-2.2 6-5 6-5-2.7-5-6Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+              </svg>
+              Mèo · Bé mới về nhà
+            </div>
+            <div class="row">
+              <div>
+                <h3>Combo Cho Mèo Mới Về Nhà</h3>
+                <p>Bao gồm thức ăn dinh dưỡng, đồ chơi và vật dụng cần thiết cho mèo mới về nhà</p>
+              </div>
+              <div class="price">
+                <div class="now">299.000đ</div>
+                <div class="was">359.000đ</div>
+                <div class="save">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Tiết kiệm 17%
+                </div>
+              </div>
+            </div>
+            <div class="submeta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Giao 2–4 giờ
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                350 lượt/tháng
+              </span>
+            </div>
+          </article>
+
+          <article class="combo-card reveal" data-pet="dog" tabindex="0" aria-label="Combo chó - đồ chơi">
+            <div class="combo-image">
+              <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?w=400&h=300&fit=crop&q=80" alt="Đồ chơi cho chó năng động" loading="lazy" />
+            </div>
+            <div class="tag">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8 14c-1.7-1.7-1.7-4.3 0-6l.5-.5c1.7-1.7 4.3-1.7 6 0l.5.5c1.7 1.7 1.7 4.3 0 6l-.5.5c-1.7 1.7-4.3 1.7-6 0L8 14Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                <path d="M9.4 9.4 14.6 14.6" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              Chó · Đồ chơi
+            </div>
+            <div class="row">
+              <div>
+                <h3>Combo Đồ Chơi Cho Chó</h3>
+                <p>Đồ chơi và snack thưởng cho chó năng động, giúp thú cưng vui khỏe</p>
+              </div>
+              <div class="price">
+                <div class="now">259.000đ</div>
+                <div class="was">309.000đ</div>
+                <div class="save">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Tiết kiệm 16%
+                </div>
+              </div>
+            </div>
+            <div class="submeta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Hợp nhà nhỏ
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                240 lượt/tháng
+              </span>
+            </div>
+          </article>
+
+          <article class="combo-card reveal" data-pet="cat" tabindex="0" aria-label="Combo mèo - đồ chơi">
+            <div class="combo-image">
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop&q=80" alt="Đồ chơi cho mèo vui khỏe" loading="lazy" />
+            </div>
+            <div class="tag">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6.5 15.5c2.4-2.4 8.6-2.4 11 0" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M9 10.5h.01M15 10.5h.01" stroke="rgba(234,240,251,.86)" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M7 11c0-3.3 2.2-6 5-6s5 2.7 5 6-2.2 6-5 6-5-2.7-5-6Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+              </svg>
+              Mèo · Đồ chơi
+            </div>
+            <div class="row">
+              <div>
+                <h3>Combo Đồ Chơi Cho Mèo</h3>
+                <p>Cần câu, bóng lục lạc và catnip. Phù hợp mèo ít vận động, giúp mèo vui khỏe</p>
+              </div>
+              <div class="price">
+                <div class="now">239.000đ</div>
+                <div class="was">289.000đ</div>
+                <div class="save">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Tiết kiệm 17%
+                </div>
+              </div>
+            </div>
+            <div class="submeta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Mỗi ngày 10 phút
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                310 lượt/tháng
+              </span>
+            </div>
+          </article>
+
+          <article class="combo-card reveal" data-pet="dog" tabindex="0" aria-label="Combo chó - chăm sóc">
+            <div class="combo-image">
+              <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop&q=80" alt="Đồ chăm sóc vệ sinh cho chó" loading="lazy" />
+            </div>
+            <div class="tag">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3.8c2.8 3 4.2 5.2 4.2 7.2 0 2.4-1.9 4.3-4.2 4.3S7.8 13.4 7.8 11c0-2 1.4-4.2 4.2-7.2Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                <path d="M7 18.6c1.6-1.4 3.3-2.1 5-2.1s3.4.7 5 2.1" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              Chó · Chăm sóc
+            </div>
+            <div class="row">
+              <div>
+                <h3>Combo Chăm Sóc Vệ Sinh Cho Chó</h3>
+                <p>Đồ chăm sóc vệ sinh và làm đẹp cho chó, giữ thú cưng sạch sẽ và thơm tho</p>
+              </div>
+              <div class="price">
+                <div class="now">319.000đ</div>
+                <div class="was">389.000đ</div>
+                <div class="save">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Tiết kiệm 18%
+                </div>
+              </div>
+            </div>
+            <div class="submeta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Có hướng dẫn dùng
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                180 lượt/tháng
+              </span>
+            </div>
+          </article>
+
+          <article class="combo-card reveal" data-pet="cat" tabindex="0" aria-label="Combo mèo - ăn uống">
+            <div class="combo-image">
+              <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop&q=80" alt="Thức ăn đầy đủ cho mèo" loading="lazy" />
+            </div>
+            <div class="tag">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3.6c4.3 0 7.8 3.5 7.8 7.8S16.3 19.2 12 19.2 4.2 15.7 4.2 11.4 7.7 3.6 12 3.6Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                <path d="M9 11.2c.8.8 1.8 1.2 3 1.2s2.2-.4 3-1.2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              Mèo · Ăn uống
+            </div>
+            <div class="row">
+              <div>
+                <h3>Combo Thức Ăn Cho Mèo</h3>
+                <p>Thức ăn dinh dưỡng đầy đủ cho mèo, phù hợp mọi giai đoạn</p>
+              </div>
+              <div class="price">
+                <div class="now">379.000đ</div>
+                <div class="was">469.000đ</div>
+                <div class="save">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Tiết kiệm 19%
+                </div>
+              </div>
+            </div>
+            <div class="submeta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Giao trong ngày
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                270 lượt/tháng
+              </span>
+            </div>
+          </article>
+        </div>
+
+        <div class="reveal" style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="cta" href="#gia" aria-label="Xem gói thành viên">Xem gói thành viên</a>
+          <a class="cta secondary" href="#lien-he" aria-label="Liên hệ tư vấn">Liên hệ tư vấn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="loi-ich">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Tại Sao Chọn Combo? 💝</h2>
+          <p>
+            Combo giúp bạn tiết kiệm chi phí và mua hàng tiện lợi hơn. 
+            Sản phẩm được lựa chọn kỹ lưỡng, phù hợp với nhu cầu chăm sóc thú cưng của bạn.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 7.5 10.5 17 4 10.5" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Tiết Kiệm Chi Phí 💰</h3>
+            <p>Giá combo hợp lý, tiết kiệm hơn mua lẻ từng món</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 6v6l4 2" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="rgba(234,240,251,.92)" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3>Mua Hàng Tiện Lợi ⚡</h3>
+            <p>Chọn combo phù hợp và đặt hàng nhanh chóng</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 12l4 4 12-12" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Sản Phẩm Phù Hợp 🎯</h3>
+            <p>Combo phù hợp với từng loài và nhu cầu, giúp bạn không mua thừa</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3.5 12.5h9.5" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M13 8.5h7l-1.2 6h-5.8" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7.5 19.2a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm10 0a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Z" fill="rgba(234,240,251,.92)"/>
+              </svg>
+            </div>
+            <h3>Giao Hàng Nhanh 🚚</h3>
+            <p>Giao hàng nhanh chóng, đảm bảo chất lượng</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="tinh-nang">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Tính Năng Nổi Bật ⭐</h2>
+          <p>Bạn có thể mua trên nhiều kênh: Website, Shopee, TikTok Shop. Cam kết chất lượng sản phẩm</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="card reveal feature">
+            <div class="fi" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 12.2 10.2 15.4 17.3 8.3" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Combo Theo Nhu Cầu</h3>
+              <p>Combo phù hợp với từng loài thú cưng và giai đoạn phát triển, đáp ứng đúng nhu cầu của bạn</p>
+            </div>
+          </article>
+
+          <article class="card reveal feature">
+            <div class="fi" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M6 10c0-2.8 2.7-5 6-5s6 2.2 6 5-2.7 5-6 5-6-2.2-6-5Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                <path d="M8 19c1.1-1.2 2.5-1.8 4-1.8s2.9.6 4 1.8" stroke="rgba(6,182,212,.96)" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Mua Hàng Linh Hoạt</h3>
+              <p>Bạn có thể mua trên Website, Shopee hoặc TikTok Shop. Chọn kênh phù hợp với bạn</p>
+            </div>
+          </article>
+
+          <article class="card reveal feature">
+            <div class="fi" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 7h10v10H7V7Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                <path d="M9 12h6" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Sản Phẩm Chất Lượng</h3>
+              <p>Sản phẩm được tuyển chọn kỹ lưỡng, đảm bảo chất lượng cho thú cưng</p>
+            </div>
+          </article>
+
+          <article class="card reveal feature">
+            <div class="fi" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 10h10M7 14h7" stroke="rgba(234,240,251,.86)" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M6 5h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H9l-3.5 2V7a2 2 0 0 1 2-2Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Chăm Sóc Khách Hàng</h3>
+              <p>Hỗ trợ tư vấn và giải đáp thắc mắc nhanh chóng</p>
+            </div>
+          </article>
+
+          <article class="card reveal feature">
+            <div class="fi" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2.8c5.1 0 9.2 4.1 9.2 9.2 0 5.1-4.1 9.2-9.2 9.2S2.8 17.1 2.8 12C2.8 6.9 6.9 2.8 12 2.8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
+                <path d="M12 7.2v5.2" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M12 16.1h.01" stroke="rgba(34,197,94,.96)" stroke-width="2.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Tư Vấn Chuyên Nghiệp</h3>
+              <p>Tư vấn chọn combo phù hợp với thú cưng và ngân sách của bạn</p>
+            </div>
+          </article>
+
+          <article class="card reveal feature">
+            <div class="fi" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s7-4.4 7-10.6C19 6.9 16.7 5 14.8 5c-1.4 0-2.3.7-2.8 1.4C11.5 5.7 10.6 5 9.2 5 7.3 5 5 6.9 5 10.4 5 16.6 12 21 12 21Z" stroke="rgba(6,182,212,.96)" stroke-width="2.2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Ưu Đãi Hấp Dẫn</h3>
+              <p>Mua combo nhận nhiều sản phẩm hơn với giá tốt hơn so với mua lẻ</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social proof -->
+    <section id="danh-gia">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Khách Hàng Nói Gì? 💬</h2>
+          <p>Phản hồi từ khách hàng đã sử dụng combo sản phẩm</p>
+        </div>
+
+        <div class="logo-strip reveal" aria-label="Logo đối tác/nhãn giả" style="display:none;">
+          <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.4 5 5.6.8-4 3.8 1 5.6-5-2.7-5 2.7 1-5.6-4-3.8 5.6-.8L12 3Z" stroke="rgba(234,240,251,.80)" stroke-width="1.6" stroke-linejoin="round"/></svg>PawCare</div>
+          <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 12c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6Z" stroke="rgba(234,240,251,.80)" stroke-width="1.6"/><path d="M9 12h6" stroke="rgba(234,240,251,.80)" stroke-width="1.6" stroke-linecap="round"/></svg>MeowMart</div>
+          <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7h10v10H7V7Z" stroke="rgba(234,240,251,.80)" stroke-width="1.6"/><path d="M8 9h8" stroke="rgba(234,240,251,.80)" stroke-width="1.6" stroke-linecap="round"/></svg>VetNest</div>
+          <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="rgba(234,240,251,.80)" stroke-width="1.6" stroke-linecap="round"/><path d="M12 5v14" stroke="rgba(234,240,251,.80)" stroke-width="1.6" stroke-linecap="round"/></svg>PurrPlus</div>
+          <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16l-1.3 10H5.3L4 8Z" stroke="rgba(234,240,251,.80)" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8l2-3h4l2 3" stroke="rgba(234,240,251,.80)" stroke-width="1.6" stroke-linecap="round"/></svg>TailCo</div>
+          <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-4.4 7-10.6C19 6.9 16.7 5 14.8 5c-1.4 0-2.3.7-2.8 1.4C11.5 5.7 10.6 5 9.2 5 7.3 5 5 6.9 5 10.4 5 16.6 12 21 12 21Z" stroke="rgba(234,240,251,.80)" stroke-width="1.6" stroke-linejoin="round"/></svg>SnackLab</div>
+        </div>
+
+        <div class="testi-grid" aria-label="Thẻ đánh giá">
+          <article class="card testi reveal">
+            <div class="quote" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 12c0-3 2-5 5-5v2c-1.6 0-2.6 1-2.9 2.4H12v7H7v-6Zm10 0c0-3 2-5 5-5v2c-1.6 0-2.6 1-2.9 2.4H22v7h-5v-6Z" fill="rgba(234,240,251,.88)"/>
+              </svg>
+            </div>
+            <p>
+              "Mua combo rất tiện lợi, đủ sản phẩm cần thiết và tiết kiệm được chi phí. Giao hàng nhanh, sản phẩm chất lượng."
+            </p>
+            <div class="who">
+              <div class="avatar" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&q=80" alt="Thu Trang" loading="lazy" />
+              </div>
+              <div>
+                <strong>Thu Trang</strong> <span>· TP.HCM</span><br/>
+                <span>Khách hàng thường xuyên mua combo cho thú cưng</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testi reveal">
+            <div class="quote" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 12c0-3 2-5 5-5v2c-1.6 0-2.6 1-2.9 2.4H12v7H7v-6Zm10 0c0-3 2-5 5-5v2c-1.6 0-2.6 1-2.9 2.4H22v7h-5v-6Z" fill="rgba(234,240,251,.88)"/>
+              </svg>
+            </div>
+            <p>
+              "Mèo mình kén ăn, mình hay mua thử lẻ tẻ rồi bỏ phí. Combo thức ăn có đúng loại pate/snack hợp,
+              dùng hết không thừa. Tiết kiệm được chi phí và không lãng phí."
+            </p>
+            <div class="who">
+              <div class="avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 12.3a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="rgba(234,240,251,.90)" stroke-width="1.8"/>
+                  <path d="M5.5 20c1.6-3.2 4.1-4.8 6.5-4.8s4.9 1.6 6.5 4.8" stroke="rgba(234,240,251,.90)" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Minh Anh</strong> <span>· Hà Nội</span><br/>
+                <span>Khách hàng thường xuyên mua combo cho mèo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testi reveal">
+            <div class="quote" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 12c0-3 2-5 5-5v2c-1.6 0-2.6 1-2.9 2.4H12v7H7v-6Zm10 0c0-3 2-5 5-5v2c-1.6 0-2.6 1-2.9 2.4H22v7h-5v-6Z" fill="rgba(234,240,251,.88)"/>
+              </svg>
+            </div>
+            <p>
+              "Chó mình hay cắn đồ lúc ở nhà một mình. Combo đồ chơi có đủ món để chơi cùng,
+              mình chơi 10 phút trước khi đi làm là đỡ phá hơn hẳn. Rất hài lòng!"
+            </p>
+            <div class="who">
+              <div class="avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 12.3a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="rgba(234,240,251,.90)" stroke-width="1.8"/>
+                  <path d="M5.5 20c1.6-3.2 4.1-4.8 6.5-4.8s4.9 1.6 6.5 4.8" stroke="rgba(234,240,251,.90)" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Quang Huy</strong> <span>· Đà Nẵng</span><br/>
+                <span>Khách hàng thường xuyên mua combo cho chó</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="gia">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Gói Thành Viên VIP 🎁</h2>
+          <p>Dành cho khách hàng thường xuyên. Tiết kiệm thêm với gói thành viên và nhiều ưu đãi hấp dẫn</p>
+        </div>
+
+        <div class="pricing-top reveal" aria-label="Bộ chuyển giá tháng/năm">
+          <div class="toggle" role="group" aria-label="Chọn chu kỳ thanh toán">
+            <button type="button" id="billMonthly" aria-pressed="true">Tháng</button>
+            <button type="button" id="billYearly" aria-pressed="false">Năm (giảm)</button>
+          </div>
+            <div class="pill" aria-label="Gợi ý chu kỳ">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Gói năm: tiết kiệm thêm so với trả theo tháng
+          </div>
+        </div>
+
+        <div class="pricing-grid" aria-label="Bảng giá">
+          <article class="card plan reveal" data-plan="basic">
+            <h3>Cơ Bản</h3>
+            <p>Dành cho khách hàng mua combo theo đợt, muốn giữ giá ổn định.</p>
+
+            <div class="priceRow" aria-label="Giá gói Cơ bản">
+              <div class="money" data-money>89.000đ</div>
+              <div class="per" data-per>/tháng</div>
+            </div>
+            <div class="sub" data-sub>Ưu đãi đặc biệt cho mọi combo</div>
+
+            <ul class="list" aria-label="Quyền lợi gói Cơ bản">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Ưu đãi đặc biệt cho mọi combo
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Gợi ý combo phù hợp
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Tích điểm và đổi quà
+              </li>
+            </ul>
+
+            <a class="cta secondary plan-cta" href="#lien-he" aria-label="Chọn gói Cơ bản">Chọn gói Cơ bản</a>
+          </article>
+
+          <article class="card plan reco reveal" data-plan="standard">
+            <div class="badge" aria-label="Gói đề xuất">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3l2.4 5 5.6.8-4 3.8 1 5.6-5-2.7-5 2.7 1-5.6-4-3.8 5.6-.8L12 3Z" stroke="rgba(234,240,251,.90)" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+              Đề xuất
+            </div>
+            <h3>Tiêu Chuẩn</h3>
+            <p>Dành cho khách hàng mua thường xuyên, 2–4 lần/tháng</p>
+
+            <div class="priceRow" aria-label="Giá gói Tiêu chuẩn">
+              <div class="money" data-money>149.000đ</div>
+              <div class="per" data-per>/tháng</div>
+            </div>
+            <div class="sub" data-sub>Ưu đãi tốt nhất + giao hàng nhanh</div>
+
+            <ul class="list" aria-label="Quyền lợi gói Tiêu chuẩn">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Ưu đãi tốt nhất cho mọi combo
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Tư vấn combo theo ngân sách
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Hỗ trợ đổi trả nhanh chóng
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Giao hàng nhanh chóng
+              </li>
+            </ul>
+
+            <a class="cta plan-cta" href="#lien-he" aria-label="Chọn gói Tiêu chuẩn">Chọn gói Tiêu chuẩn</a>
+          </article>
+
+          <article class="card plan reveal" data-plan="premium">
+            <h3>Premium</h3>
+            <p>Dành cho gia đình có nhiều thú cưng hoặc mua thường xuyên</p>
+
+            <div class="priceRow" aria-label="Giá gói Premium">
+              <div class="money" data-money>229.000đ</div>
+              <div class="per" data-per>/tháng</div>
+            </div>
+            <div class="sub" data-sub>Ưu đãi cao nhất + tư vấn chuyên sâu</div>
+
+            <ul class="list" aria-label="Quyền lợi gói Premium">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Ưu đãi cao nhất cho mọi combo
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Tư vấn chuyên sâu 1-1
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Nhắc nhở mua hàng đúng lúc
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Combo đặc biệt dành riêng
+              </li>
+            </ul>
+
+            <a class="cta secondary plan-cta" href="#lien-he" aria-label="Chọn gói Premium">Chọn gói Premium</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Câu Hỏi Thường Gặp</h2>
+        </div>
+
+        <div class="faq" aria-label="Danh sách câu hỏi">
+          <div class="faq-item reveal" data-open="false">
+            <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq1" aria-label="Mở câu hỏi 1">
+              <span class="q">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M9.7 9.3a2.5 2.5 0 1 1 3.6 2.2c-.9.4-1.3 1-1.3 1.9v.3" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round"/><path d="M12 16.8h.01" stroke="rgba(234,240,251,.86)" stroke-width="2.8" stroke-linecap="round"/></svg>
+                Combo có bắt buộc phải mua nguyên set không?
+              </span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6.5 9.5 12 15l5.5-5.5" stroke="rgba(234,240,251,.90)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq1" role="region" aria-label="Trả lời câu hỏi 1">
+              <div class="faq-panel-inner">
+                Không. Bạn có thể tùy chọn sản phẩm trong combo hoặc chọn combo khác phù hợp hơn.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-open="false">
+            <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq2" aria-label="Mở câu hỏi 2">
+              <span class="q">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Giao hàng trong bao lâu?
+              </span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6.5 9.5 12 15l5.5-5.5" stroke="rgba(234,240,251,.90)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq2" role="region" aria-label="Trả lời câu hỏi 2">
+              <div class="faq-panel-inner">
+                Thời gian giao hàng tùy thuộc vào khu vực và kênh mua hàng. Chúng tôi cam kết giao hàng nhanh chóng và đảm bảo chất lượng.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-open="false">
+            <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq3" aria-label="Mở câu hỏi 3">
+              <span class="q">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8l1.5-3h3L15 8" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round"/></svg>
+                Sản phẩm không phù hợp với thú cưng thì sao?
+              </span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6.5 9.5 12 15l5.5-5.5" stroke="rgba(234,240,251,.90)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq3" role="region" aria-label="Trả lời câu hỏi 3">
+              <div class="faq-panel-inner">
+                Chúng tôi sẽ tư vấn đổi sản phẩm phù hợp hơn hoặc hỗ trợ giải quyết theo chính sách đổi trả.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-open="false">
+            <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq4" aria-label="Mở câu hỏi 4">
+              <span class="q">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12.2 10.2 15.4 17.3 8.3" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/></svg>
+                Combo có thay đổi theo thời gian không?
+              </span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6.5 9.5 12 15l5.5-5.5" stroke="rgba(234,240,251,.90)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq4" role="region" aria-label="Trả lời câu hỏi 4">
+              <div class="faq-panel-inner">
+                Có. Combo được cập nhật thường xuyên để phù hợp với nhu cầu và mùa vụ.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-open="false">
+            <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq5" aria-label="Mở câu hỏi 5">
+              <span class="q">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.6c4.8 0 8.7 3.9 8.7 8.7S16.8 21 12 21 3.3 17.1 3.3 12.3 7.2 3.6 12 3.6Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M8.8 12.3h6.4" stroke="rgba(6,182,212,.96)" stroke-width="2.2" stroke-linecap="round"/></svg>
+                Có thể mua trên Shopee và TikTok Shop không?
+              </span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6.5 9.5 12 15l5.5-5.5" stroke="rgba(234,240,251,.90)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq5" role="region" aria-label="Trả lời câu hỏi 5">
+              <div class="faq-panel-inner">
+                Có. Bạn có thể mua trên Website, Shopee hoặc TikTok Shop. Mỗi kênh có ưu đãi và tính năng riêng.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" data-open="false">
+            <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq6" aria-label="Mở câu hỏi 6">
+              <span class="q">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 10.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5c-.8 0-1.5-.2-2.2-.4L6 17.8l.8-3.1c-.2-.7-.3-1.4-.3-2.2Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                Tư vấn cần thông tin gì?
+              </span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6.5 9.5 12 15l5.5-5.5" stroke="rgba(234,240,251,.90)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq6" role="region" aria-label="Trả lời câu hỏi 6">
+              <div class="faq-panel-inner">
+                Loại thú cưng, độ tuổi, nhu cầu và ngân sách. Chúng tôi sẽ tư vấn combo phù hợp nhất.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="lien-he">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Liên Hệ Tư Vấn 💌</h2>
+          <p>Điền form để nhận tư vấn combo phù hợp với thú cưng và ngân sách của bạn</p>
+        </div>
+
+        <div class="contact-grid">
+          <form class="card form reveal" id="contactForm" novalidate aria-label="Form tư vấn chọn combo">
+            <div class="form-row cols-2">
+              <div>
+                <label for="fullName">Họ tên</label>
+                <input class="field" id="fullName" name="fullName" type="text" placeholder="Ví dụ: Nguyễn Minh Anh" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="phone">Số điện thoại</label>
+                <input class="field" id="phone" name="phone" type="tel" placeholder="Ví dụ: 09xx xxx xxx" autocomplete="tel" pattern="[0-9]{10,11}" />
+              </div>
+            </div>
+
+            <div class="form-row cols-2">
+              <div>
+                <label for="email">Email</label>
+                <input class="field" id="email" name="email" type="email" placeholder="Ví dụ: minhanh@email.com" autocomplete="email" required aria-describedby="emailError" />
+                <div class="error" id="emailError" role="alert">Email chưa đúng định dạng. Vui lòng kiểm tra lại.</div>
+              </div>
+              <div>
+                <label for="petType">Loại thú cưng</label>
+                <select class="field" id="petType" name="petType" required>
+                  <option value="dog">Chó</option>
+                  <option value="cat">Mèo</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row cols-2">
+              <div>
+                <label for="need">Nhu cầu</label>
+                <select class="field" id="need" name="need" required>
+                  <option value="nuoi-moi">Thú cưng mới về nhà</option>
+                  <option value="an-uong">Thức ăn dinh dưỡng</option>
+                  <option value="do-choi">Đồ chơi và phụ kiện</option>
+                  <option value="cham-soc">Chăm sóc vệ sinh</option>
+                </select>
+              </div>
+              <div>
+                <label for="budget">Ngân sách dự kiến</label>
+                <select class="field" id="budget" name="budget">
+                  <option value="250-350">250.000đ – 350.000đ</option>
+                  <option value="350-450">350.000đ – 450.000đ</option>
+                  <option value="450-650">450.000đ – 650.000đ</option>
+                  <option value="650+">650.000đ trở lên</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="note">Ghi chú</label>
+                <textarea class="field" id="note" name="note" placeholder="Ví dụ: Thú cưng 6 tháng tuổi, cần combo thức ăn và đồ chơi phù hợp."></textarea>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+              <button class="cta" id="submitBtn" type="submit" aria-label="Gửi yêu cầu tư vấn">Gửi yêu cầu</button>
+              <a class="cta secondary" href="#combo" aria-label="Quay lại xem combo">Xem lại combo</a>
+            </div>
+
+            <div class="status" aria-live="polite" aria-atomic="true" id="formStatus" role="status">
+              <span class="dot" aria-hidden="true"></span>
+              <span id="statusText">Thông tin chỉ được sử dụng để tư vấn combo phù hợp.</span>
+            </div>
+          </form>
+
+          <aside class="contact-side">
+            <div class="card info-card reveal">
+              <h3>Liên Hệ Nhanh</h3>
+              <ul class="info-list" aria-label="Thông tin liên hệ">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 10.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5c-.8 0-1.5-.2-2.2-.4L6 17.8l.8-3.1c-.2-.7-.3-1.4-.3-2.2Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                  Tư vấn nhanh trong giờ làm việc
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16v10H4V8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M4.5 9.2 12 14l7.5-4.8" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Email: support@cungcung.pet
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4.5h3l1 3-2 2c1.2 2.6 3.3 4.7 5.9 5.9l2-2 3 1v3c0 1-1 1.9-2.1 1.8-8.2-.6-14.8-7.2-15.4-15.4C3.6 5.5 4.5 4.5 5.5 4.5Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                  Hotline: 028 9999 6868
+                </li>
+              </ul>
+            </div>
+
+            <div class="card info-card reveal">
+              <h3>Kênh Mua Hàng</h3>
+              <ul class="info-list" aria-label="Thông tin kênh bán">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8l1.5-3h3L15 8" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  Shopee: Mua hàng tiện lợi, nhiều ưu đãi
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.8c5.1 0 9.2 4.1 9.2 9.2 0 5.1-4.1 9.2-9.2 9.2S2.8 17.1 2.8 12C2.8 6.9 6.9 2.8 12 2.8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/><path d="M10.2 9.2 15.7 12l-5.5 2.8V9.2Z" fill="rgba(6,182,212,.92)"/></svg>
+                  TikTok Shop: Xem livestream và mua hàng trực tiếp
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12.2 10.2 15.4 17.3 8.3" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/></svg>
+                  Website: Chọn combo theo nhu cầu và nhận tư vấn
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="reveal">
+            <div class="brand" aria-label="Pet Shop Cung Cung">
+              <div class="mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7.4 10.2c-1.1 0-2-.95-2-2.25S6.3 5.7 7.4 5.7s2 .95 2 2.25-.9 2.25-2 2.25Zm9.2 0c-1.1 0-2-.95-2-2.25s.9-2.25 2-2.25 2 .95 2 2.25-.9 2.25-2 2.25ZM10 8.8c-1.05 0-1.9-.95-1.9-2.2S8.95 4.4 10 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2Zm4 0c-1.05 0-1.9-.95-1.9-2.2S12.95 4.4 14 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2ZM12 20c-1.8 0-3.4-.7-4.7-1.6-1.2-.85-1.1-2.65.2-3.3 1.1-.55 2.5-1.1 4.5-1.1s3.4.55 4.5 1.1c1.3.65 1.4 2.45.2 3.3C15.4 19.3 13.8 20 12 20Z" fill="rgba(255,255,255,.92)"/>
+                </svg>
+              </div>
+              <div class="name">
+                <strong>Cung Cung</strong>
+                <span>Chuyên combo sản phẩm cho thú cưng</span>
+              </div>
+            </div>
+
+            <div style="margin-top:10px; color:rgba(234,240,251,.72); font-size:13px;">
+              Pet Shop Cung Cung chuyên cung cấp đồ chơi, thức ăn và vật dụng cho thú cưng<br/>
+              Combo giúp bạn tiết kiệm chi phí và mua hàng tiện lợi hơn<br/>
+              Bạn có thể mua trên nhiều kênh: Website, Shopee, TikTok Shop
+            </div>
+
+            <div class="copy" style="margin-top:10px;">
+              © <span id="year"></span> Pet Shop Cung Cung. Chuyên combo sản phẩm cho thú cưng 🐾
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="foot-links" aria-label="Liên kết chân trang">
+              <a href="#terms" aria-label="Điều khoản (giả)">Terms</a>
+              <a href="#privacy" aria-label="Chính sách (giả)">Privacy</a>
+              <a href="#lien-he" aria-label="Đi tới liên hệ">Liên hệ</a>
+              <a href="#combo" aria-label="Đi tới combo">Xem combo</a>
+            </div>
+
+            <!-- Fake anchors -->
+            <div id="terms" style="margin-top:14px; padding:14px; border:1px dashed rgba(255,255,255,.14); border-radius:14px; background: rgba(255,255,255,.02); color: rgba(234,240,251,.70); font-size:12.5px;">
+              <strong style="color:rgba(234,240,251,.88);">Terms (giả)</strong><br/>
+              Demo landing page: không phải điều khoản thật. Vui lòng thay bằng nội dung pháp lý của bạn.
+            </div>
+            <div id="privacy" style="margin-top:10px; padding:14px; border:1px dashed rgba(255,255,255,.14); border-radius:14px; background: rgba(255,255,255,.02); color: rgba(234,240,251,.70); font-size:12.5px;">
+              <strong style="color:rgba(234,240,251,.88);">Privacy (giả)</strong><br/>
+              Demo landing page: không lưu dữ liệu. Vui lòng thay bằng chính sách quyền riêng tư của bạn.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Lên đầu trang" title="Lên đầu trang">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:24px;height:24px;">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script>
+    (function(){
+      const $ = (s, r=document) => r.querySelector(s);
+      const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+
+      // Year
+      $("#year").textContent = String(new Date().getFullYear());
+
+      // Drawer
+      const drawer = $("#drawer");
+      const openBtn = $("#drawerOpen");
+      const closeBtn = $("#drawerClose");
+      let lastFocus = null;
+
+      function openDrawer(){
+        lastFocus = document.activeElement;
+        drawer.classList.add("open");
+        drawer.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+      }
+      function closeDrawer(){
+        drawer.classList.remove("open");
+        drawer.setAttribute("aria-hidden","true");
+        document.body.style.overflow = "";
+        if(lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+      openBtn.addEventListener("click", openDrawer);
+      closeBtn.addEventListener("click", closeDrawer);
+      drawer.addEventListener("click", (e)=>{
+        if(e.target && e.target.matches("[data-close-drawer]")) closeDrawer();
+      });
+      window.addEventListener("keydown", (e)=>{
+        if(drawer.classList.contains("open") && e.key === "Escape") closeDrawer();
+      });
+      $$("#drawer [data-link]").forEach(a => a.addEventListener("click", closeDrawer));
+
+      // Hide drawer open button on desktop (menu visible)
+      function syncDrawerBtn(){
+        const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+        openBtn.style.display = isDesktop ? "none" : "grid";
+      }
+      syncDrawerBtn();
+      window.addEventListener("resize", syncDrawerBtn);
+
+      // Scroll reveal
+      const revealEls = $$(".reveal");
+      if("IntersectionObserver" in window){
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(en=>{
+            if(en.isIntersecting){
+              en.target.classList.add("in");
+              io.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el=>io.observe(el));
+      } else {
+        revealEls.forEach(el=>el.classList.add("in"));
+      }
+
+      // Combo filters
+      const filterBtns = $$(".filter-btn");
+      const comboCards = $$("#comboGrid .combo-card");
+      function setFilter(key){
+        filterBtns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.filter === key)));
+        comboCards.forEach(card=>{
+          const ok = (key === "all") || (card.dataset.pet === key);
+          card.style.display = ok ? "" : "none";
+        });
+      }
+      filterBtns.forEach(btn=>{
+        btn.addEventListener("click", ()=> setFilter(btn.dataset.filter));
+      });
+
+      // Pricing toggle
+      const billMonthly = $("#billMonthly");
+      const billYearly = $("#billYearly");
+
+      const pricing = {
+        monthly: {
+          basic: { money: 89000, sub: "Ưu đãi: giảm thêm 5% khi mua combo trên website.", per: "/tháng" },
+          standard:{ money:149000, sub:"Ưu đãi: giảm thêm 10% + ưu tiên giao nhanh nội thành.", per: "/tháng" },
+          premium:{ money:229000, sub:"Ưu đãi: giảm thêm 15% + set combo theo lịch (nhắc mua).", per: "/tháng" }
+        },
+        yearly: {
+          // ~15% off vs monthly * 12
+          basic: { money: Math.round(89000*12*0.85), sub: "Trả theo năm: tương đương ~63.000đ/tháng (minh hoạ).", per: "/năm" },
+          standard:{ money: Math.round(149000*12*0.85), sub:"Trả theo năm: tương đương ~106.000đ/tháng (minh hoạ).", per: "/năm" },
+          premium:{ money: Math.round(229000*12*0.85), sub:"Trả theo năm: tương đương ~162.000đ/tháng (minh hoạ).", per: "/năm" }
+        }
+      };
+
+      function formatVND(n){
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "đ";
+      }
+
+      function applyBilling(mode){
+        billMonthly.setAttribute("aria-pressed", String(mode==="monthly"));
+        billYearly.setAttribute("aria-pressed", String(mode==="yearly"));
+
+        $$(".plan").forEach(plan=>{
+          const key = plan.dataset.plan;
+          const p = pricing[mode][key];
+          const moneyEl = plan.querySelector("[data-money]");
+          const perEl = plan.querySelector("[data-per]");
+          const subEl = plan.querySelector("[data-sub]");
+          moneyEl.textContent = formatVND(p.money);
+          perEl.textContent = p.per;
+          subEl.textContent = p.sub;
+        });
+      }
+
+      billMonthly.addEventListener("click", ()=> applyBilling("monthly"));
+      billYearly.addEventListener("click", ()=> applyBilling("yearly"));
+
+      // FAQ accordion
+      const faqItems = $$(".faq-item");
+      function closeItem(item){
+        item.dataset.open = "false";
+        const btn = item.querySelector(".faq-btn");
+        const panel = item.querySelector(".faq-panel");
+        btn.setAttribute("aria-expanded","false");
+        btn.setAttribute("aria-label", (btn.getAttribute("aria-label") || "").replace("Đóng","Mở") || "Mở câu hỏi");
+        panel.style.height = "0px";
+      }
+      function openItem(item){
+        item.dataset.open = "true";
+        const btn = item.querySelector(".faq-btn");
+        const panel = item.querySelector(".faq-panel");
+        const inner = item.querySelector(".faq-panel-inner");
+        btn.setAttribute("aria-expanded","true");
+        btn.setAttribute("aria-label", (btn.getAttribute("aria-label") || "").replace("Mở","Đóng") || "Đóng câu hỏi");
+        panel.style.height = inner.scrollHeight + "px";
+      }
+
+      faqItems.forEach(item=>{
+        const btn = item.querySelector(".faq-btn");
+        const panel = item.querySelector(".faq-panel");
+        // Ensure initial state
+        panel.style.height = "0px";
+        btn.addEventListener("click", ()=>{
+          const isOpen = item.dataset.open === "true";
+          // close others
+          faqItems.forEach(it=>{ if(it!==item) closeItem(it); });
+          if(isOpen) closeItem(item);
+          else openItem(item);
+        });
+      });
+
+      window.addEventListener("resize", ()=>{
+        // Keep open panel heights correct on resize
+        faqItems.forEach(item=>{
+          if(item.dataset.open === "true"){
+            const panel = item.querySelector(".faq-panel");
+            const inner = item.querySelector(".faq-panel-inner");
+            panel.style.height = inner.scrollHeight + "px";
+          }
+        });
+      });
+
+      // Contact form: email validation + simulated submit
+      const form = $("#contactForm");
+      const email = $("#email");
+      const emailError = $("#emailError");
+      const submitBtn = $("#submitBtn");
+      const status = $("#formStatus");
+      const statusDot = status?.querySelector(".dot");
+
+      function isValidEmail(value){
+        // practical email regex
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(value).trim());
+      }
+      function setEmailError(show){
+        emailError.classList.toggle("show", !!show);
+      }
+
+      function setStatus(kind, text){
+        if(!status || !statusDot) return;
+        statusDot.classList.remove("ok","warn");
+        if(kind) statusDot.classList.add(kind);
+        const statusTextEl = status.querySelector("#statusText") || status.querySelector("span:last-child");
+        if(statusTextEl) statusTextEl.textContent = text;
+        status.setAttribute("aria-live", "assertive");
+        setTimeout(()=>{
+          status.setAttribute("aria-live", "polite");
+        }, 1000);
+      }
+
+      email.addEventListener("input", ()=>{
+        const v = email.value.trim();
+        if(!v) { setEmailError(false); return; }
+        setEmailError(!isValidEmail(v));
+        if(isValidEmail(v)){
+          email.setAttribute("aria-invalid", "false");
+        } else {
+          email.setAttribute("aria-invalid", "true");
+        }
+      });
+      email.addEventListener("blur", ()=>{
+        const v = email.value.trim();
+        if(!v) { 
+          setEmailError(true); 
+          email.setAttribute("aria-invalid", "true");
+          return; 
+        }
+        const valid = isValidEmail(v);
+        setEmailError(!valid);
+        email.setAttribute("aria-invalid", String(!valid));
+      });
+
+      form.addEventListener("submit", (e)=>{
+        e.preventDefault();
+
+        const v = email.value.trim();
+        const valid = isValidEmail(v);
+        setEmailError(!valid);
+
+        if(!valid){
+          setStatus("warn","Email chưa đúng. Vui lòng sửa lại.");
+          email.setAttribute("aria-invalid", "true");
+          email.focus();
+          email.scrollIntoView({behavior:"smooth", block:"center"});
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner" aria-hidden="true"></span> Đang gửi…';
+        submitBtn.style.opacity = "0.7";
+        submitBtn.style.cursor = "not-allowed";
+        setStatus("", "Đang gửi yêu cầu…");
+
+        setTimeout(()=>{
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = "Gửi yêu cầu";
+          submitBtn.style.opacity = "";
+          submitBtn.style.cursor = "";
+          setStatus("ok","Gửi thành công! Chúng tôi sẽ phản hồi sớm.");
+          form.reset();
+          setEmailError(false);
+          email.removeAttribute("aria-invalid");
+          // Scroll to status message
+          setTimeout(()=>{
+            status.scrollIntoView({behavior:"smooth", block:"nearest"});
+          }, 100);
+        }, 1200);
+      });
+
+      // Scroll to top button
+      const scrollTopBtn = $("#scrollTop");
+      function toggleScrollTop(){
+        if(window.scrollY > 400){
+          scrollTopBtn.classList.add("show");
+        } else {
+          scrollTopBtn.classList.remove("show");
+        }
+      }
+      window.addEventListener("scroll", toggleScrollTop, {passive:true});
+      scrollTopBtn.addEventListener("click", ()=>{
+        window.scrollTo({top:0, behavior:"smooth"});
+      });
+
+      // Lazy loading images with fade-in effect
+      function loadImage(img){
+        if(img.complete && img.naturalHeight !== 0){
+          img.classList.add("loaded");
+        } else {
+          img.addEventListener("load", ()=>{
+            img.classList.add("loaded");
+          }, {once:true});
+          img.addEventListener("error", ()=>{
+            img.classList.add("loaded");
+          }, {once:true});
+        }
+      }
+      
+      if("IntersectionObserver" in window){
+        const imageObserver = new IntersectionObserver((entries, observer)=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){
+              const img = entry.target;
+              if(img.dataset.src){
+                const tempImg = new Image();
+                tempImg.onload = ()=>{
+                  img.src = img.dataset.src;
+                  img.removeAttribute("data-src");
+                  loadImage(img);
+                };
+                tempImg.onerror = ()=>{
+                  loadImage(img);
+                };
+                tempImg.src = img.dataset.src;
+              } else {
+                loadImage(img);
+              }
+              observer.unobserve(img);
+            }
+          });
+        }, {rootMargin:"50px"});
+        
+        $$("img[loading='lazy']").forEach(img=>{
+          loadImage(img);
+          imageObserver.observe(img);
+        });
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        $$("img[loading='lazy']").forEach(img=>{
+          loadImage(img);
+        });
+      }
+
+      // Improve keyboard navigation for combo cards
+      $$("#comboGrid .combo-card").forEach(card=>{
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.addEventListener("keydown", (e)=>{
+          if(e.key === "Enter" || e.key === " "){
+            e.preventDefault();
+            document.querySelector("#gia")?.scrollIntoView({behavior:"smooth", block:"start"});
+          }
+        });
+        card.addEventListener("click", (e)=>{
+          if(!e.ctrlKey && !e.metaKey){
+            document.querySelector("#gia")?.scrollIntoView({behavior:"smooth", block:"start"});
+          }
+        });
+      });
+      
+      // Hero Slider
+      const heroSlides = $$("#heroSlider .slide");
+      const heroDots = $$("#heroSlider .slider-dots .dot");
+      let currentHeroSlide = 0;
+      
+      function showHeroSlide(index){
+        heroSlides.forEach((slide, i)=>{
+          slide.classList.toggle("active", i === index);
+        });
+        heroDots.forEach((dot, i)=>{
+          dot.classList.toggle("active", i === index);
+        });
+        currentHeroSlide = index;
+      }
+      
+      function nextHeroSlide(){
+        const next = (currentHeroSlide + 1) % heroSlides.length;
+        showHeroSlide(next);
+      }
+      
+      function prevHeroSlide(){
+        const prev = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+        showHeroSlide(prev);
+      }
+      
+      $("#nextSlide")?.addEventListener("click", nextHeroSlide);
+      $("#prevSlide")?.addEventListener("click", prevHeroSlide);
+      
+      heroDots.forEach((dot, i)=>{
+        dot.addEventListener("click", ()=> showHeroSlide(i));
+      });
+      
+      // Auto-play hero slider
+      let heroInterval = setInterval(nextHeroSlide, 4000);
+      const heroSliderEl = $("#heroSlider");
+      if(heroSliderEl){
+        heroSliderEl.addEventListener("mouseenter", ()=> clearInterval(heroInterval));
+        heroSliderEl.addEventListener("mouseleave", ()=> {
+          heroInterval = setInterval(nextHeroSlide, 4000);
+        });
+      }
+      
+      // Gallery Slider
+      const gallerySlides = $$("#gallerySlider .gallery-slide");
+      const galleryDots = $$("#gallerySlider .gallery-dots .gallery-dot");
+      let currentGallerySlide = 0;
+      
+      function showGallerySlide(index){
+        gallerySlides.forEach((slide, i)=>{
+          slide.classList.toggle("active", i === index);
+        });
+        galleryDots.forEach((dot, i)=>{
+          dot.classList.toggle("active", i === index);
+        });
+        currentGallerySlide = index;
+      }
+      
+      function nextGallerySlide(){
+        const next = (currentGallerySlide + 1) % gallerySlides.length;
+        showGallerySlide(next);
+      }
+      
+      function prevGallerySlide(){
+        const prev = (currentGallerySlide - 1 + gallerySlides.length) % gallerySlides.length;
+        showGallerySlide(prev);
+      }
+      
+      $("#nextGallery")?.addEventListener("click", nextGallerySlide);
+      $("#prevGallery")?.addEventListener("click", prevGallerySlide);
+      
+      galleryDots.forEach((dot, i)=>{
+        dot.addEventListener("click", ()=> showGallerySlide(i));
+      });
+      
+      // Auto-play gallery slider
+      let galleryInterval = setInterval(nextGallerySlide, 5000);
+      const gallerySliderEl = $("#gallerySlider");
+      if(gallerySliderEl){
+        gallerySliderEl.addEventListener("mouseenter", ()=> clearInterval(galleryInterval));
+        gallerySliderEl.addEventListener("mouseleave", ()=> {
+          galleryInterval = setInterval(nextGallerySlide, 5000);
+        });
+      }
+
+      // Smooth scroll for anchor links
+      $$('a[href^="#"]').forEach(anchor=>{
+        anchor.addEventListener("click", function(e){
+          const href = this.getAttribute("href");
+          if(href === "#" || href === "#top"){
+            e.preventDefault();
+            window.scrollTo({top:0, behavior:"smooth"});
+            return;
+          }
+          const target = document.querySelector(href);
+          if(target){
+            e.preventDefault();
+            const navHeight = document.querySelector(".nav-wrap")?.offsetHeight || 80;
+            const offsetTop = target.offsetTop - navHeight;
+            window.scrollTo({
+              top: Math.max(0, offsetTop),
+              behavior: "smooth"
+            });
+            // Update URL without triggering scroll
+            if(history.pushState){
+              history.pushState(null, null, href);
+            }
+          }
+        });
+      });
+
+      // Add loading state to form submission (already handled in form submit handler)
+
+      // Preload critical images
+      if("requestIdleCallback" in window){
+        requestIdleCallback(()=>{
+          const criticalImages = [
+            "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=500&fit=crop&q=80"
+          ];
+          criticalImages.forEach(src=>{
+            const link = document.createElement("link");
+            link.rel = "preload";
+            link.as = "image";
+            link.href = src;
+            document.head.appendChild(link);
+          });
+        });
+      }
+
+      // Add error boundary for images
+      $$("img").forEach(img=>{
+        if(!img.hasAttribute("data-error-handled")){
+          img.setAttribute("data-error-handled", "true");
+          img.addEventListener("error", function(){
+            if(!this.dataset.failed){
+              this.dataset.failed = "true";
+              this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f1e9b9;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23e8d89a;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23grad)' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%238b7d6a' font-family='sans-serif' font-size='32'%3E🐾%3C/text%3E%3C/svg%3E";
+              this.alt = "Ảnh không tải được";
+              this.classList.add("loaded");
+            }
+          }, {once:true});
+        }
+      });
+
+      // Performance: Debounce scroll events for scroll top button
+      let scrollTimeout;
+      window.removeEventListener("scroll", toggleScrollTop);
+      window.addEventListener("scroll", ()=>{
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(toggleScrollTop, 10);
+      }, {passive:true});
+    })();
+  </script>
+</body>
+</html>

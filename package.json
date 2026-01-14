@@ -1,0 +1,17 @@
+{
+  "name": "pet-shop-cung-cung",
+  "version": "1.0.0",
+  "description": "Pet Shop Cung Cung - Landing page for pet product combos",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "pet-shop",
+    "landing-page",
+    "vercel"
+  ],
+  "author": "Pet Shop Cung Cung",
+  "license": "MIT"
+}
