@@ -120,6 +120,7 @@
       margin:0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
       background:
+        url('backgroundPETSHOP.svg') center/cover no-repeat,
         radial-gradient(1400px 800px at 10% 5%, rgba(255,179,211,.12), transparent 70%),
         radial-gradient(1200px 700px at 90% 8%, rgba(255,200,163,.15), transparent 70%),
         radial-gradient(1000px 600px at 50% 95%, rgba(168,230,207,.1), transparent 70%),
@@ -210,14 +211,27 @@
     }
 
     .container{
-      width:min(var(--max), calc(100% - 40px));
+      width:100%;
+      max-width: var(--max);
       margin-inline:auto;
       padding-inline: 20px;
+      box-sizing: border-box;
     }
     
+    @media (min-width: 768px){
+      .container{
+        padding-inline: 32px;
+      }
+    }
     @media (min-width: 1280px){
       .container{
         padding-inline: 40px;
+        max-width: 1280px;
+      }
+    }
+    @media (min-width: 1440px){
+      .container{
+        max-width: 1400px;
       }
     }
 
@@ -253,6 +267,42 @@
       box-shadow: 0 6px 28px rgba(241,233,185,.25);
       border-bottom-color: var(--brand2);
     }
+    
+    /* Free Ship Banner */
+    .freeship-banner{
+      width:100%;
+      background: linear-gradient(135deg, rgba(255,179,211,.1), rgba(255,200,163,.08));
+      padding: 12px 0;
+      text-align:center;
+      position:relative;
+      z-index:10;
+      border-bottom: 2px solid rgba(255,179,211,.2);
+    }
+    .freeship-banner .container{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .freeship-banner img{
+      max-width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+      box-shadow: 0 2px 12px rgba(255,179,211,.2);
+      transition: transform .3s ease;
+    }
+    .freeship-banner img:hover{
+      transform: scale(1.02);
+    }
+    @media (max-width: 767px){
+      .freeship-banner{
+        padding: 8px 0;
+      }
+      .freeship-banner img{
+        border-radius:8px;
+      }
+    }
+    
     .nav{
       display:flex;
       align-items:center;
@@ -281,6 +331,12 @@
         0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
         100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
       );
+      overflow:hidden;
+      padding:4px;
+    }
+    .brand .mark img{
+      background:rgba(255,255,255,.95);
+      border-radius:16px 20px 16px 20px;
     }
     .brand:hover .mark{ 
       transform: rotate(0deg) scale(1.15); 
@@ -1409,22 +1465,26 @@
     .feature .fi{
       flex: 0 0 auto;
       width:60px;height:60px;
-      border-radius: 24px;
+      border-radius: 20px;
       display:grid;
       place-items:center;
-      border:3px solid rgba(255,158,196,.25);
-      background: rgba(255,158,196,.15);
+      border:2px solid rgba(255,179,211,.4);
+      background: linear-gradient(135deg, rgba(255,200,163,.2), rgba(255,179,211,.15));
+      box-shadow: 0 4px 12px rgba(255,179,211,.2), inset 0 1px 0 rgba(255,255,255,.5);
       transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
       animation: float 4s ease-in-out infinite;
     }
     .feature:hover .fi{
-      transform: scale(1.2) rotate(8deg);
+      transform: scale(1.15) rotate(5deg);
       animation: bounce 0.5s ease;
+      background: linear-gradient(135deg, rgba(255,200,163,.3), rgba(255,179,211,.25));
+      box-shadow: 0 6px 20px rgba(255,179,211,.35), inset 0 1px 0 rgba(255,255,255,.6);
+      border-color: rgba(255,179,211,.6);
     }
-    .feature .fi svg{ width:28px; height:28px; stroke:#ff9ec4; transition:all .3s ease; }
-    .feature:hover .fi svg{ transform: scale(1.15); }
+    .feature .fi svg{ width:32px; height:32px; transition:all .3s ease; }
+    .feature:hover .fi svg{ transform: scale(1.1); }
     .feature h3{ margin:6px 0 10px; font-size: 20px; color:#3d2f2a; font-weight:800; transition:all .3s ease; }
-    .feature:hover h3{ transform: scale(1.05); color:#ff9ec4; }
+    .feature:hover h3{ transform: scale(1.03); color:#ff6b9d; }
     .feature p{ margin:0; color: var(--muted); font-size: 15px; line-height:1.7; }
 
     /* Social proof */
@@ -1534,148 +1594,294 @@
     .who span{ color: var(--muted); }
 
     /* Pricing */
+    .pricing-banner{
+      width:100%;
+      margin: 0 0 32px;
+      border-radius: 20px;
+      overflow:hidden;
+      box-shadow: 0 8px 32px rgba(255,179,211,.2), 0 2px 12px rgba(255,179,211,.1);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .pricing-banner:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 12px 48px rgba(255,179,211,.3), 0 4px 16px rgba(255,179,211,.15);
+    }
+    .pricing-banner img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius: 20px;
+    }
+    @media (max-width: 767px){
+      .pricing-banner{
+        margin-bottom: 24px;
+        border-radius: 16px;
+      }
+      .pricing-banner img{
+        border-radius: 16px;
+      }
+    }
     .pricing-top{
       display:flex;
       flex-direction:column;
-      gap:12px;
+      gap:16px;
       align-items:flex-start;
-      margin: 12px 0 18px;
+      margin: 16px 0 24px;
+      width:100%;
     }
     .toggle{
       display:flex;
       align-items:center;
       gap:6px;
-      padding:4px;
-      border-radius: 28px;
-      border:2px solid rgba(255,107,157,.2);
-      background: rgba(255,255,255,.8);
+      padding:5px;
+      border-radius: 32px;
+      border:3px solid rgba(255,107,157,.25);
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,248,240,.85));
       width:max-content;
+      box-shadow: 0 4px 20px rgba(255,179,211,.15), inset 0 1px 2px rgba(255,255,255,.8);
+      transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .toggle:hover{
+      border-color: rgba(255,107,157,.35);
+      box-shadow: 0 6px 24px rgba(255,179,211,.2), inset 0 1px 2px rgba(255,255,255,.9);
     }
     .toggle button{
       border:0;
       background: transparent;
       cursor:pointer;
-      padding: 10px 18px;
-      border-radius: 24px;
-      font-weight:600;
-      font-size: 14px;
+      padding: 12px 22px;
+      border-radius: 28px;
+      font-weight:700;
+      font-size: 15px;
       color: var(--text);
-      transition: all .2s ease;
+      transition: all .35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position:relative;
     }
-    .toggle button:hover{ transform: scale(1.05); }
+    .toggle button:hover{ 
+      transform: scale(1.08);
+      color: #ff6b9d;
+    }
     .toggle button[aria-pressed="true"]{
-      background: linear-gradient(135deg, #ff6b9d, #ffb347);
+      background: linear-gradient(135deg, #ff6b9d, #ffb347, #ffc8a3);
+      background-size: 200% 200%;
       color: #ffffff;
-      box-shadow: 0 4px 16px rgba(255,107,157,.25);
+      box-shadow: 0 6px 24px rgba(255,107,157,.4), 0 2px 8px rgba(255,179,211,.3), inset 0 1px 2px rgba(255,255,255,.3);
+      animation: gradient-shift 3s ease infinite;
+      transform: scale(1.05);
+    }
+    @keyframes gradient-shift{
+      0%, 100%{ background-position: 0% 50%; }
+      50%{ background-position: 100% 50%; }
     }
     .toggle button:focus-visible{ 
       outline:none; 
-      box-shadow: var(--focus), 0 0 0 3px rgba(255,179,211,.3);
+      box-shadow: var(--focus), 0 0 0 4px rgba(255,179,211,.4);
     }
 
     .pricing-grid{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 20px;
       align-items:stretch;
-      margin-top: 6px;
+      margin-top: 12px;
+      width:100%;
     }
     .plan{
-      padding: 32px;
+      padding: 36px;
       position:relative;
       overflow:hidden;
-      border:3px solid rgba(255,179,211,.2);
-      background: linear-gradient(135deg, #ffffff, rgba(255,248,240,.6));
+      min-width:0;
+      width:100%;
+      border:3px solid rgba(255,179,211,.25);
+      background: 
+        radial-gradient(circle at 0% 0%, rgba(255,248,240,.6), transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(255,228,225,.4), transparent 50%),
+        linear-gradient(135deg, #ffffff, rgba(255,248,240,.7));
       border-radius: var(--radius-cute);
-      box-shadow: var(--shadow2), 0 2px 8px rgba(255,179,211,.1);
-      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 
+        0 8px 32px rgba(255,179,211,.12),
+        0 2px 12px rgba(255,179,211,.08),
+        inset 0 1px 0 rgba(255,255,255,.9);
+      transition: all .45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .plan::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+      transition: left .6s ease;
     }
     @media (hover: hover){
       .plan:hover{
-        transform: translateY(-6px) scale(1.02);
-        box-shadow: var(--shadow-cute), 0 12px 40px rgba(255,179,211,.25);
-        border-color: rgba(255,179,211,.4);
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 
+          0 20px 60px rgba(255,179,211,.3),
+          0 8px 24px rgba(255,107,157,.2),
+          inset 0 1px 0 rgba(255,255,255,.95);
+        border-color: rgba(255,179,211,.5);
+      }
+      .plan:hover::before{
+        left:100%;
       }
       .plan:hover .money{
-        transform: scale(1.1);
-        animation: bounce 0.5s ease;
+        transform: scale(1.12);
+        animation: bounce 0.6s ease;
+      }
+      .plan:hover .list li{
+        transform: translateX(4px);
       }
     }
     .plan.reco{
       border-color: var(--pink);
       border-width: 4px;
       background:
-        radial-gradient(600px 280px at 10% 15%, rgba(255,179,211,.15), transparent 60%),
-        radial-gradient(500px 260px at 90% 10%, rgba(255,200,163,.18), transparent 60%),
-        radial-gradient(400px 200px at 50% 50%, rgba(168,230,207,.1), transparent 60%),
-        linear-gradient(135deg, #ffffff, rgba(255,248,240,.8));
-      box-shadow: 0 16px 48px rgba(255,107,157,.3), 0 8px 24px rgba(255,179,211,.25);
-      animation: pulse 3s ease-in-out infinite;
+        radial-gradient(700px 320px at 8% 12%, rgba(255,179,211,.2), transparent 65%),
+        radial-gradient(600px 300px at 92% 8%, rgba(255,200,163,.22), transparent 65%),
+        radial-gradient(500px 250px at 50% 50%, rgba(168,230,207,.12), transparent 70%),
+        linear-gradient(135deg, #ffffff, rgba(255,248,240,.85));
+      box-shadow: 
+        0 24px 64px rgba(255,107,157,.35),
+        0 12px 32px rgba(255,179,211,.3),
+        inset 0 1px 0 rgba(255,255,255,.95);
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+    @keyframes pulse-glow{
+      0%, 100%{ 
+        transform: scale(1);
+        box-shadow: 
+          0 24px 64px rgba(255,107,157,.35),
+          0 12px 32px rgba(255,179,211,.3),
+          inset 0 1px 0 rgba(255,255,255,.95);
+      }
+      50%{ 
+        transform: scale(1.01);
+        box-shadow: 
+          0 28px 72px rgba(255,107,157,.4),
+          0 14px 36px rgba(255,179,211,.35),
+          inset 0 1px 0 rgba(255,255,255,.95);
+      }
     }
     .badge{
       position:absolute;
-      top:24px; right:24px;
+      top:28px; right:28px;
       display:inline-flex;
       align-items:center;
       gap:10px;
-      padding: 12px 20px;
-      border-radius: 32px;
+      padding: 14px 24px;
+      border-radius: 36px;
       border:4px solid var(--pink);
-      background: linear-gradient(135deg, rgba(255,179,211,.3), rgba(255,200,163,.2));
+      background: linear-gradient(135deg, rgba(255,179,211,.35), rgba(255,200,163,.25), rgba(255,179,211,.3));
+      background-size: 200% 200%;
       color: #ff6b9d;
       font-weight:900;
       font-size: 15px;
-      animation: cute-bounce 2.5s ease-in-out infinite;
-      box-shadow: 0 6px 16px rgba(255,107,157,.4), 0 2px 8px rgba(255,179,211,.3);
-      text-shadow: 0 1px 2px rgba(255,255,255,.5);
+      animation: badge-float 3s ease-in-out infinite, gradient-shift 4s ease infinite;
+      box-shadow: 
+        0 8px 24px rgba(255,107,157,.45),
+        0 4px 12px rgba(255,179,211,.35),
+        inset 0 1px 2px rgba(255,255,255,.6);
+      text-shadow: 0 1px 3px rgba(255,255,255,.7);
+      z-index:2;
     }
-    .badge svg{ width:16px;height:16px; }
-    .plan h3{ margin: 0 0 8px; font-size: 20px; color:#2c241f; font-weight:700; }
-    .plan p{ margin:0 0 16px; color: var(--muted); font-size: 14px; line-height:1.5; }
+    @keyframes badge-float{
+      0%, 100%{ transform: translateY(0) scale(1); }
+      50%{ transform: translateY(-8px) scale(1.05); }
+    }
+    .badge svg{ 
+      width:18px;
+      height:18px;
+      filter: drop-shadow(0 1px 2px rgba(255,255,255,.5));
+    }
+    .plan h3{ 
+      margin: 0 0 10px; 
+      font-size: 24px; 
+      color:#2c241f; 
+      font-weight:800;
+      letter-spacing:-0.3px;
+      background: linear-gradient(135deg, #2c241f, #4a3d35);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .plan p{ 
+      margin:0 0 20px; 
+      color: var(--muted); 
+      font-size: 14.5px; 
+      line-height:1.6; 
+    }
     .plan .priceRow{
       display:flex;
       align-items:baseline;
-      gap:8px;
-      margin: 16px 0 12px;
+      gap:10px;
+      margin: 20px 0 14px;
     }
     .plan .money{
-      font-size: 42px;
+      font-size: 48px;
       font-weight: 900;
-      letter-spacing:.3px;
-      color:#ff9ec4;
-      transition: all .3s ease;
-      animation: float 4s ease-in-out infinite;
+      letter-spacing:-1px;
+      background: linear-gradient(135deg, #ff9ec4, #ff6b9d, #ffb347);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: money-gradient 5s ease infinite, float 4s ease-in-out infinite;
+      filter: drop-shadow(0 2px 4px rgba(255,107,157,.2));
+    }
+    @keyframes money-gradient{
+      0%, 100%{ background-position: 0% 50%; }
+      50%{ background-position: 100% 50%; }
     }
     .plan .per{
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
+      font-weight:600;
     }
     .plan .sub{
       color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 12px;
-      line-height:1.5;
+      font-size: 13.5px;
+      margin-bottom: 16px;
+      line-height:1.6;
+      font-weight:500;
     }
     .list{
-      margin: 16px 0 20px;
+      margin: 20px 0 24px;
       padding:0;
       list-style:none;
       display:flex;
       flex-direction:column;
-      gap:10px;
+      gap:12px;
     }
     .list li{
       display:flex;
-      gap:12px;
+      gap:14px;
       align-items:flex-start;
       color: var(--text);
-      font-size: 14px;
-      line-height:1.5;
+      font-size: 14.5px;
+      line-height:1.6;
+      transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      font-weight:500;
     }
-    .list svg{ width:20px; height:20px; flex: 0 0 auto; stroke:#a8e6cf; }
+    .list svg{ 
+      width:22px; 
+      height:22px; 
+      flex: 0 0 auto; 
+      stroke:#a8e6cf;
+      filter: drop-shadow(0 1px 2px rgba(168,230,207,.3));
+      transition: all .3s ease;
+    }
+    .plan:hover .list svg{
+      transform: scale(1.15);
+      stroke:#7dd3a0;
+      filter: drop-shadow(0 2px 4px rgba(168,230,207,.4));
+    }
     .plan .plan-cta{
       width:100%;
       justify-content:center;
+      margin-top: 4px;
     }
 
     /* FAQ */
@@ -1914,6 +2120,56 @@
     .info-list li:hover svg{ transform: scale(1.15) rotate(5deg); animation: bounce 0.3s ease; }
 
     /* Scroll to top button */
+    /* Hotline Floating Button */
+    .hotline-btn{
+      position:fixed;
+      bottom:32px;
+      left:32px;
+      min-width:56px;
+      height:56px;
+      padding:0 16px;
+      border-radius:28px;
+      background:linear-gradient(135deg, #22c55e, #16a34a);
+      border:4px solid rgba(255,255,255,.9);
+      color:#ffffff;
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      z-index:40;
+      box-shadow:0 8px 24px rgba(34,197,94,.4), 0 4px 12px rgba(22,163,74,.3);
+      transition:all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      text-decoration:none;
+      animation:pulse 2s ease-in-out infinite;
+    }
+    .hotline-btn:hover{
+      transform:scale(1.1) translateY(-4px);
+      box-shadow:0 12px 32px rgba(34,197,94,.5), 0 6px 16px rgba(22,163,74,.4);
+      animation:cute-bounce 0.5s ease;
+    }
+    .hotline-btn:active{
+      transform:scale(1.05);
+    }
+    .hotline-btn:focus-visible{
+      outline:none;
+      box-shadow:var(--focus), 0 8px 24px rgba(34,197,94,.4), 0 0 0 4px rgba(22,163,74,.3);
+    }
+    .hotline-btn .hotline-text{
+      display:none;
+    }
+    @media (min-width: 768px){
+      .hotline-btn .hotline-text{
+        display:inline;
+      }
+    }
+    @keyframes pulse{
+      0%, 100%{ box-shadow:0 8px 24px rgba(34,197,94,.4), 0 4px 12px rgba(22,163,74,.3); }
+      50%{ box-shadow:0 8px 24px rgba(34,197,94,.6), 0 4px 12px rgba(22,163,74,.5), 0 0 0 8px rgba(34,197,94,.1); }
+    }
+    
     .scroll-top{
       position:fixed;
       bottom:32px;
@@ -2082,8 +2338,17 @@
       .features-grid{ grid-template-columns: repeat(2, 1fr); gap:24px; }
       .logo-strip{ grid-template-columns: repeat(3, 1fr); }
       .testi-grid{ grid-template-columns: repeat(3, 1fr); gap:24px; }
-      .pricing-top{ flex-direction:row; align-items:center; justify-content:space-between; }
-      .pricing-grid{ grid-template-columns: repeat(3, 1fr); gap:20px; }
+      .pricing-top{ 
+        flex-direction:row; 
+        align-items:center; 
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .pricing-grid{ 
+        grid-template-columns: repeat(3, 1fr); 
+        gap:20px;
+        min-width:0;
+      }
       .contact-grid{ grid-template-columns: 1.2fr .8fr; gap:32px; }
       .form-row.cols-2{ grid-template-columns: 1fr 1fr; }
       .footer-grid{ grid-template-columns: 1.3fr .7fr; gap:32px; }
@@ -2107,10 +2372,11 @@
       .section-head{ margin-bottom:64px; }
       .section-head h2{ font-size: clamp(40px, 4vw, 56px); }
       .section-head p{ font-size:18px; max-width:80ch; }
+      .pricing-grid{ gap:24px; }
     }
     @media (min-width: 1440px){
-      .container{ max-width:1400px; }
       section{ padding: 140px 0; }
+      .pricing-grid{ gap:28px; }
     }
   </style>
   <!-- Structured Data for SEO -->
@@ -2121,7 +2387,7 @@
     "name": "Pet Shop Cung Cung",
     "description": "Chuyên combo thức ăn, đồ chơi, vật dụng cho chó mèo. Tiết kiệm chi phí, giao hàng nhanh.",
     "url": "https://cungcung.pet",
-    "logo": "https://cungcung.pet/logo.png",
+    "logo": "LOGO-CUNGCUNG.png",
     "image": "https://cungcung.pet/og-image.jpg",
     "address": {
       "@type": "PostalAddress",
@@ -2155,10 +2421,7 @@
       <div class="drawer-header">
         <div class="brand" aria-label="Pet Shop Cung Cung">
           <div class="mark" aria-hidden="true">
-            <!-- paw mark -->
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7.4 10.2c-1.1 0-2-.95-2-2.25S6.3 5.7 7.4 5.7s2 .95 2 2.25-.9 2.25-2 2.25Zm9.2 0c-1.1 0-2-.95-2-2.25s.9-2.25 2-2.25 2 .95 2 2.25-.9 2.25-2 2.25ZM10 8.8c-1.05 0-1.9-.95-1.9-2.2S8.95 4.4 10 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2Zm4 0c-1.05 0-1.9-.95-1.9-2.2S12.95 4.4 14 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2ZM12 20c-1.8 0-3.4-.7-4.7-1.6-1.2-.85-1.1-2.65.2-3.3 1.1-.55 2.5-1.1 4.5-1.1s3.4.55 4.5 1.1c1.3.65 1.4 2.45.2 3.3C15.4 19.3 13.8 20 12 20Z" fill="rgba(255,255,255,.92)"/>
-            </svg>
+            <img src="LOGO-CUNGCUNG.png" alt="Pet Shop Cung Cung" style="width:100%; height:100%; object-fit:contain; border-radius:inherit;" loading="eager" />
           </div>
           <div class="name">
             <strong>Cung Cung</strong>
@@ -2175,7 +2438,6 @@
       <nav aria-label="Điều hướng chính">
         <a href="#combo" data-link>Combo</a>
         <a href="#loi-ich" data-link>Lợi ích</a>
-        <a href="#tinh-nang" data-link>Tính năng</a>
         <a href="#danh-gia" data-link>Đánh giá</a>
         <a href="#gia" data-link>Giá</a>
         <a href="#faq" data-link>FAQ</a>
@@ -2195,9 +2457,7 @@
       <div class="nav" role="navigation" aria-label="Thanh điều hướng">
         <a class="brand" href="#top" aria-label="Về đầu trang - Pet Shop Cung Cung">
           <div class="mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7.4 10.2c-1.1 0-2-.95-2-2.25S6.3 5.7 7.4 5.7s2 .95 2 2.25-.9 2.25-2 2.25Zm9.2 0c-1.1 0-2-.95-2-2.25s.9-2.25 2-2.25 2 .95 2 2.25-.9 2.25-2 2.25ZM10 8.8c-1.05 0-1.9-.95-1.9-2.2S8.95 4.4 10 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2Zm4 0c-1.05 0-1.9-.95-1.9-2.2S12.95 4.4 14 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2ZM12 20c-1.8 0-3.4-.7-4.7-1.6-1.2-.85-1.1-2.65.2-3.3 1.1-.55 2.5-1.1 4.5-1.1s3.4.55 4.5 1.1c1.3.65 1.4 2.45.2 3.3C15.4 19.3 13.8 20 12 20Z" fill="rgba(255,255,255,.92)"/>
-            </svg>
+            <img src="LOGO-CUNGCUNG.png" alt="Pet Shop Cung Cung" style="width:100%; height:100%; object-fit:contain; border-radius:inherit;" loading="eager" />
           </div>
           <div class="name">
             <strong>Cung Cung</strong>
@@ -2208,7 +2468,6 @@
         <nav class="menu" aria-label="Menu">
           <a href="#combo">Combo</a>
           <a href="#loi-ich">Lợi ích</a>
-          <a href="#tinh-nang">Tính năng</a>
           <a href="#danh-gia">Đánh giá</a>
           <a href="#gia">Giá</a>
           <a href="#faq">FAQ</a>
@@ -2226,6 +2485,13 @@
       </div>
     </div>
   </header>
+
+  <!-- Free Ship Banner -->
+  <div class="freeship-banner" aria-label="Miễn phí vận chuyển cho đơn hàng từ 500K">
+    <div class="container">
+      <img src="FREESHIP_500K.jpg" alt="Miễn phí vận chuyển cho đơn hàng từ 500K" loading="eager" />
+    </div>
+  </div>
 
   <main id="main">
     <!-- Hero -->
@@ -2250,20 +2516,17 @@
             </div>
           </div>
 
-          <aside class="mock reveal" aria-label="Mockup combo minh hoạ">
+          <aside class="mock reveal" aria-label="Hình ảnh thú cưng">
             <div class="hero-slider">
               <div class="slider-container" id="heroSlider">
                 <div class="slide active">
-                  <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=500&fit=crop&q=80" alt="Thú cưng đáng yêu với combo sản phẩm" loading="eager" />
+                  <img src="COMBO CHÓ MÈO.jpg" alt="Combo chó mèo" loading="eager" />
                 </div>
                 <div class="slide">
-                  <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&h=500&fit=crop&q=80" alt="Combo đồ dùng cho chó mới về nhà" loading="lazy" />
+                  <img src="COMBO CHÓ MÈO 2 .jpg" alt="Combo chó mèo 2" loading="lazy" />
                 </div>
                 <div class="slide">
-                  <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&h=500&fit=crop&q=80" alt="Combo đồ dùng cho mèo mới về nhà" loading="lazy" />
-                </div>
-                <div class="slide">
-                  <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?w=800&h=500&fit=crop&q=80" alt="Đồ chơi cho thú cưng" loading="lazy" />
+                  <img src="COMBO CHÓ MÈO 3.jpg" alt="Combo chó mèo 3" loading="lazy" />
                 </div>
               </div>
               <div class="slider-controls">
@@ -2274,114 +2537,7 @@
                 <button class="dot active" aria-label="Slide 1" data-slide="0"></button>
                 <button class="dot" aria-label="Slide 2" data-slide="1"></button>
                 <button class="dot" aria-label="Slide 3" data-slide="2"></button>
-                <button class="dot" aria-label="Slide 4" data-slide="3"></button>
               </div>
-            </div>
-            <div class="mock-top">
-              <div class="title">
-                <strong>Combo sản phẩm nổi bật</strong>
-                <span>Combo giúp bạn tiết kiệm chi phí và mua hàng tiện lợi hơn</span>
-              </div>
-              <span class="chip" title="Dữ liệu giả hợp lý">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 21s7-4.4 7-10.6C19 6.9 16.7 5 14.8 5c-1.4 0-2.3.7-2.8 1.4C11.5 5.7 10.6 5 9.2 5 7.3 5 5 6.9 5 10.4 5 16.6 12 21 12 21Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
-                </svg>
-                Bán chạy
-              </span>
-            </div>
-
-            <div class="mock-grid">
-              <article class="combo-card" tabindex="-1">
-                <div class="combo-image">
-                  <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop&q=80" alt="Combo chăm sóc lông cho mèo" loading="lazy" />
-                </div>
-                <div class="tag" aria-label="Combo cho mèo - chăm sóc">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M7 10c0-3.3 2.2-6 5-6s5 2.7 5 6-2.2 6-5 6-5-2.7-5-6Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-                    <path d="M9 6.2 7 4.5v3.2M15 6.2l2-1.7v3.2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  Mèo · Chăm sóc lông
-                </div>
-
-                <div class="row">
-                  <div>
-                    <h3>Combo Chăm Sóc Lông Mèo</h3>
-                    <p>Gồm lược chải lông, dầu tắm và phụ kiện chăm sóc. Phù hợp mèo rụng lông theo mùa.</p>
-                  </div>
-                  <div class="price" aria-label="Giá combo">
-                    <div class="now">289.000đ</div>
-                    <div class="was">349.000đ</div>
-                    <div class="save">
-                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                      Tiết kiệm 17%
-                    </div>
-                  </div>
-                </div>
-
-                <div class="submeta" aria-label="Thông tin bổ sung">
-                  <span>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-                      <path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Giao 2–4 giờ (nội thành)
-                  </span>
-                  <span>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
-                    </svg>
-                    620 lượt mua/tháng
-                  </span>
-                </div>
-              </article>
-
-              <article class="combo-card" tabindex="-1">
-                <div class="combo-image">
-                  <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop&q=80" alt="Combo thức ăn cho chó" loading="lazy" />
-                </div>
-                <div class="tag" aria-label="Combo cho chó - ăn uống">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M7.5 11.5c-1.5 0-2.7-1.3-2.7-2.9S6 5.8 7.5 5.8s2.7 1.3 2.7 2.9-1.2 2.8-2.7 2.8Zm9 0c-1.5 0-2.7-1.3-2.7-2.9s1.2-2.9 2.7-2.9 2.7 1.3 2.7 2.9-1.2 2.8-2.7 2.8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-                    <path d="M12 20c-2 0-3.8-.8-5.2-1.8-1.2-.9-1.1-2.7.2-3.4 1.2-.6 2.8-1.2 5-1.2s3.8.6 5 1.2c1.3.7 1.4 2.5.2 3.4C15.8 19.2 14 20 12 20Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-                  </svg>
-                  Chó · Ăn uống
-                </div>
-
-                <div class="row">
-                  <div>
-                    <h3>Combo Thức Ăn Cho Chó</h3>
-                    <p>Thức ăn dinh dưỡng đầy đủ cho chó, phù hợp mọi giai đoạn. Bao gồm thức ăn khô và pate.</p>
-                  </div>
-                  <div class="price" aria-label="Giá combo">
-                    <div class="now">419.000đ</div>
-                    <div class="was">499.000đ</div>
-                    <div class="save">
-                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M7 12l3 3 7-7" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                      Tiết kiệm 16%
-                    </div>
-                  </div>
-                </div>
-
-                <div class="submeta" aria-label="Thông tin bổ sung">
-                  <span>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-                      <path d="M12 7v5l3 2" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Giao trong ngày
-                  </span>
-                  <span>
-                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M12 17.2l-5.3 3 1.3-6-4.6-4 6.1-.7L12 3.8l2.5 5.7 6.1.7-4.6 4 1.3 6-5.3-3Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
-                    </svg>
-                    410 lượt mua/tháng
-                  </span>
-                </div>
-              </article>
             </div>
           </aside>
         </div>
@@ -2416,7 +2572,7 @@
           <!-- 6 combo cards (data attributes for filter) -->
           <article class="combo-card reveal" data-pet="dog" tabindex="0" aria-label="Combo chó - bé mới về nhà">
             <div class="combo-image">
-              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop&q=80" alt="Combo đồ dùng cho chó mới về nhà" loading="lazy" />
+              <img src="Cho-Bemoivenha.jpg" alt="Combo đồ dùng cho chó mới về nhà" loading="lazy" />
             </div>
             <div class="tag">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -2452,7 +2608,7 @@
 
           <article class="combo-card reveal" data-pet="cat" tabindex="0" aria-label="Combo mèo - bé mới về nhà">
             <div class="combo-image">
-              <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop&q=80" alt="Combo đồ dùng cho mèo mới về nhà" loading="lazy" />
+              <img src="Meo-Bemoivenha.jpg" alt="Combo đồ dùng cho mèo mới về nhà" loading="lazy" />
             </div>
             <div class="tag">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -2489,7 +2645,7 @@
 
           <article class="combo-card reveal" data-pet="dog" tabindex="0" aria-label="Combo chó - đồ chơi">
             <div class="combo-image">
-              <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?w=400&h=300&fit=crop&q=80" alt="Đồ chơi cho chó năng động" loading="lazy" />
+              <img src="Chó · Đồ chơiCombo Đồ Chơi Cho Chó.jpg" alt="Đồ chơi cho chó năng động" loading="lazy" />
             </div>
             <div class="tag">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -2526,7 +2682,7 @@
 
           <article class="combo-card reveal" data-pet="cat" tabindex="0" aria-label="Combo mèo - đồ chơi">
             <div class="combo-image">
-              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop&q=80" alt="Đồ chơi cho mèo vui khỏe" loading="lazy" />
+              <img src="Mèo · Đồ chowiCombo đồ chơi.jpg" alt="Đồ chơi cho mèo vui khỏe" loading="lazy" />
             </div>
             <div class="tag">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -2564,7 +2720,7 @@
 
           <article class="combo-card reveal" data-pet="dog" tabindex="0" aria-label="Combo chó - chăm sóc">
             <div class="combo-image">
-              <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop&q=80" alt="Đồ chăm sóc vệ sinh cho chó" loading="lazy" />
+              <img src="Chó · Chăm sócCombo Chăm Sóc Vệ Sinh Cho Chó.jpg" alt="Đồ chăm sóc vệ sinh cho chó" loading="lazy" />
             </div>
             <div class="tag">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -2601,7 +2757,7 @@
 
           <article class="combo-card reveal" data-pet="cat" tabindex="0" aria-label="Combo mèo - ăn uống">
             <div class="combo-image">
-              <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop&q=80" alt="Thức ăn đầy đủ cho mèo" loading="lazy" />
+              <img src="Mèo · Ăn uốngCombo Thức Ăn Cho Mèo.jpg" alt="Thức ăn đầy đủ cho mèo" loading="lazy" />
             </div>
             <div class="tag">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -2645,147 +2801,85 @@
     </section>
 
     <!-- Benefits -->
+    <!-- Benefits - Merged section with direct selling tone -->
     <section id="loi-ich">
       <div class="container">
         <div class="section-head reveal">
-          <h2>Tại Sao Chọn Combo? 💝</h2>
+          <h2>
+            Tại Sao Chọn Combo?
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:inline-block; width:32px; height:32px; vertical-align:middle; margin-left:8px;">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6Z" stroke="rgba(234,240,251,.92)" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M3 6h18" stroke="rgba(234,240,251,.92)" stroke-width="1.8"/>
+              <path d="M8 10a4 4 0 1 1 8 0" stroke="rgba(234,240,251,.92)" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </h2>
           <p>
-            Combo giúp bạn tiết kiệm chi phí và mua hàng tiện lợi hơn. 
-            Sản phẩm được lựa chọn kỹ lưỡng, phù hợp với nhu cầu chăm sóc thú cưng của bạn.
+            Tiết kiệm chi phí · Mua hàng tiện lợi · Sản phẩm phù hợp với thú cưng của bạn
           </p>
         </div>
 
         <div class="grid-4">
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M20 7.5 10.5 17 4 10.5" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <img src="Tiết Kiệm Chi Phí .png" alt="Tiết Kiệm Chi Phí" style="width:100%; height:100%; object-fit:contain;" loading="lazy" />
             </div>
-            <h3>Tiết Kiệm Chi Phí 💰</h3>
-            <p>Giá combo hợp lý, tiết kiệm hơn mua lẻ từng món</p>
+            <h3>Tiết Kiệm Chi Phí</h3>
+            <p>Giá combo tốt hơn mua lẻ, tiết kiệm 15-20% mỗi đơn hàng</p>
           </article>
 
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 6v6l4 2" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="rgba(234,240,251,.92)" stroke-width="1.8"/>
-              </svg>
+              <img src="Đặt hàng Nhanh.png" alt="Đặt Hàng Nhanh" style="width:100%; height:100%; object-fit:contain;" loading="lazy" />
             </div>
-            <h3>Mua Hàng Tiện Lợi ⚡</h3>
-            <p>Chọn combo phù hợp và đặt hàng nhanh chóng</p>
+            <h3>Đặt Hàng Nhanh</h3>
+            <p>Chọn combo và đặt hàng trong 60 giây, không cần suy nghĩ nhiều</p>
           </article>
 
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M4 12l4 4 12-12" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <img src="Combo Phù Hợp .png" alt="Combo Phù Hợp" style="width:100%; height:100%; object-fit:contain;" loading="lazy" />
             </div>
-            <h3>Sản Phẩm Phù Hợp 🎯</h3>
-            <p>Combo phù hợp với từng loài và nhu cầu, giúp bạn không mua thừa</p>
+            <h3>Combo Phù Hợp</h3>
+            <p>Đã chọn sẵn theo loài và nhu cầu, bạn không cần lo mua thừa hay thiếu</p>
           </article>
 
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M3.5 12.5h9.5" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M13 8.5h7l-1.2 6h-5.8" stroke="rgba(234,240,251,.92)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7.5 19.2a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm10 0a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Z" fill="rgba(234,240,251,.92)"/>
-              </svg>
+              <img src="Giao Hàng Nhanh .png" alt="Giao Hàng Nhanh" style="width:100%; height:100%; object-fit:contain;" loading="lazy" />
             </div>
-            <h3>Giao Hàng Nhanh 🚚</h3>
-            <p>Giao hàng nhanh chóng, đảm bảo chất lượng</p>
+            <h3>Giao Hàng Nhanh</h3>
+            <p>Giao trong 2-4 giờ (nội thành), đảm bảo chất lượng sản phẩm</p>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- Features -->
-    <section id="tinh-nang">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Tính Năng Nổi Bật ⭐</h2>
-          <p>Bạn có thể mua trên nhiều kênh: Website, Shopee, TikTok Shop. Cam kết chất lượng sản phẩm</p>
-        </div>
-
-        <div class="features-grid">
+        <div class="features-grid" style="margin-top: 60px;">
           <article class="card reveal feature">
             <div class="fi" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 12.2 10.2 15.4 17.3 8.3" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-              </svg>
+              <img src="Chọn lọc kỹ lưỡng.png" alt="Chọn Lọc Kỹ Lưỡng" style="width:100%; height:100%; object-fit:contain;" loading="lazy" />
             </div>
             <div>
-              <h3>Combo Theo Nhu Cầu</h3>
-              <p>Combo phù hợp với từng loài thú cưng và giai đoạn phát triển, đáp ứng đúng nhu cầu của bạn</p>
+              <h3>Chọn Lọc Kỹ Lưỡng</h3>
+              <p>Mỗi sản phẩm đều được chúng tôi kiểm tra kỹ, đảm bảo an toàn cho bé cưng của bạn</p>
             </div>
           </article>
 
           <article class="card reveal feature">
             <div class="fi" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 10c0-2.8 2.7-5 6-5s6 2.2 6 5-2.7 5-6 5-6-2.2-6-5Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-                <path d="M8 19c1.1-1.2 2.5-1.8 4-1.8s2.9.6 4 1.8" stroke="rgba(6,182,212,.96)" stroke-width="2.2" stroke-linecap="round"/>
-              </svg>
+              <img src="đa nền tảng.png" alt="Mua Ở Đâu Cũng Được" style="width:100%; height:100%; object-fit:contain;" loading="lazy" />
             </div>
             <div>
-              <h3>Mua Hàng Linh Hoạt</h3>
-              <p>Bạn có thể mua trên Website, Shopee hoặc TikTok Shop. Chọn kênh phù hợp với bạn</p>
+              <h3>Mua Ở Đâu Cũng Được</h3>
+              <p>Website, Shopee hay TikTok Shop - bạn mua ở đâu cũng được, chúng tôi đều giao hàng tận tay</p>
             </div>
           </article>
 
           <article class="card reveal feature">
             <div class="fi" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 7h10v10H7V7Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-                <path d="M9 12h6" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round"/>
-              </svg>
+              <img src="Luôn Sẵn Sàng Hỗ Trợ.png" alt="Luôn Sẵn Sàng Hỗ Trợ" style="width:100%; height:100%; object-fit:contain;" loading="lazy" />
             </div>
             <div>
-              <h3>Sản Phẩm Chất Lượng</h3>
-              <p>Sản phẩm được tuyển chọn kỹ lưỡng, đảm bảo chất lượng cho thú cưng</p>
-            </div>
-          </article>
-
-          <article class="card reveal feature">
-            <div class="fi" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 10h10M7 14h7" stroke="rgba(234,240,251,.86)" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M6 5h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H9l-3.5 2V7a2 2 0 0 1 2-2Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Chăm Sóc Khách Hàng</h3>
-              <p>Hỗ trợ tư vấn và giải đáp thắc mắc nhanh chóng</p>
-            </div>
-          </article>
-
-          <article class="card reveal feature">
-            <div class="fi" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 2.8c5.1 0 9.2 4.1 9.2 9.2 0 5.1-4.1 9.2-9.2 9.2S2.8 17.1 2.8 12C2.8 6.9 6.9 2.8 12 2.8Z" stroke="rgba(234,240,251,.86)" stroke-width="1.8"/>
-                <path d="M12 7.2v5.2" stroke="rgba(34,197,94,.96)" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M12 16.1h.01" stroke="rgba(34,197,94,.96)" stroke-width="2.8" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Tư Vấn Chuyên Nghiệp</h3>
-              <p>Tư vấn chọn combo phù hợp với thú cưng và ngân sách của bạn</p>
-            </div>
-          </article>
-
-          <article class="card reveal feature">
-            <div class="fi" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 21s7-4.4 7-10.6C19 6.9 16.7 5 14.8 5c-1.4 0-2.3.7-2.8 1.4C11.5 5.7 10.6 5 9.2 5 7.3 5 5 6.9 5 10.4 5 16.6 12 21 12 21Z" stroke="rgba(6,182,212,.96)" stroke-width="2.2" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Ưu Đãi Hấp Dẫn</h3>
-              <p>Mua combo nhận nhiều sản phẩm hơn với giá tốt hơn so với mua lẻ</p>
+              <h3>Luôn Sẵn Sàng Hỗ Trợ</h3>
+              <p>Không biết chọn combo nào? Nhắn tin cho chúng tôi, chúng tôi sẽ tư vấn miễn phí cho bạn</p>
             </div>
           </article>
         </div>
@@ -2842,13 +2936,10 @@
             </p>
             <div class="who">
               <div class="avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 12.3a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="rgba(234,240,251,.90)" stroke-width="1.8"/>
-                  <path d="M5.5 20c1.6-3.2 4.1-4.8 6.5-4.8s4.9 1.6 6.5 4.8" stroke="rgba(234,240,251,.90)" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
+                <img src="KH-Timtran.png" alt="Tim Tran" loading="lazy" />
               </div>
               <div>
-                <strong>Minh Anh</strong> <span>· Hà Nội</span><br/>
+                <strong>Tim Tran</strong> <span>· TP.HCM</span><br/>
                 <span>Khách hàng thường xuyên mua combo cho mèo</span>
               </div>
             </div>
@@ -2866,13 +2957,10 @@
             </p>
             <div class="who">
               <div class="avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 12.3a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="rgba(234,240,251,.90)" stroke-width="1.8"/>
-                  <path d="M5.5 20c1.6-3.2 4.1-4.8 6.5-4.8s4.9 1.6 6.5 4.8" stroke="rgba(234,240,251,.90)" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
+                <img src="KH-STMTP (1).png" alt="Sơn Tùng M-TP" loading="lazy" />
               </div>
               <div>
-                <strong>Quang Huy</strong> <span>· Đà Nẵng</span><br/>
+                <strong>Sơn Tùng M-TP</strong> <span>· Thái Bình</span><br/>
                 <span>Khách hàng thường xuyên mua combo cho chó</span>
               </div>
             </div>
@@ -2884,9 +2972,8 @@
     <!-- Pricing -->
     <section id="gia">
       <div class="container">
-        <div class="section-head reveal">
-          <h2>Gói Thành Viên VIP 🎁</h2>
-          <p>Dành cho khách hàng thường xuyên. Tiết kiệm thêm với gói thành viên và nhiều ưu đãi hấp dẫn</p>
+        <div class="pricing-banner reveal" aria-label="Banner gói thành viên VIP">
+          <img src="gói thành viên vip.jpg" alt="Gói Thành Viên VIP" loading="lazy" />
         </div>
 
         <div class="pricing-top reveal" aria-label="Bộ chuyển giá tháng/năm">
@@ -3240,9 +3327,7 @@
           <div class="reveal">
             <div class="brand" aria-label="Pet Shop Cung Cung">
               <div class="mark" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M7.4 10.2c-1.1 0-2-.95-2-2.25S6.3 5.7 7.4 5.7s2 .95 2 2.25-.9 2.25-2 2.25Zm9.2 0c-1.1 0-2-.95-2-2.25s.9-2.25 2-2.25 2 .95 2 2.25-.9 2.25-2 2.25ZM10 8.8c-1.05 0-1.9-.95-1.9-2.2S8.95 4.4 10 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2Zm4 0c-1.05 0-1.9-.95-1.9-2.2S12.95 4.4 14 4.4s1.9.95 1.9 2.2-.85 2.2-1.9 2.2ZM12 20c-1.8 0-3.4-.7-4.7-1.6-1.2-.85-1.1-2.65.2-3.3 1.1-.55 2.5-1.1 4.5-1.1s3.4.55 4.5 1.1c1.3.65 1.4 2.45.2 3.3C15.4 19.3 13.8 20 12 20Z" fill="rgba(255,255,255,.92)"/>
-                </svg>
+                <img src="LOGO-CUNGCUNG.png" alt="Pet Shop Cung Cung" style="width:100%; height:100%; object-fit:contain; border-radius:inherit;" loading="lazy" />
               </div>
               <div class="name">
                 <strong>Cung Cung</strong>
@@ -3285,6 +3370,14 @@
   </main>
 
   <!-- Scroll to top button -->
+  <!-- Hotline Floating Button -->
+  <a href="tel:02899996868" class="hotline-btn" aria-label="Gọi hotline 028 9999 6868" title="Gọi hotline 028 9999 6868">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:24px;height:24px;">
+      <path d="M7 4.5h3l1 3-2 2c1.2 2.6 3.3 4.7 5.9 5.9l2-2 3 1v3c0 1-1 1.9-2.1 1.8-8.2-.6-14.8-7.2-15.4-15.4C3.6 5.5 4.5 4.5 5.5 4.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+    <span class="hotline-text">Hotline</span>
+  </a>
+
   <button class="scroll-top" id="scrollTop" aria-label="Lên đầu trang" title="Lên đầu trang">
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:24px;height:24px;">
       <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3609,12 +3702,14 @@
         card.addEventListener("keydown", (e)=>{
           if(e.key === "Enter" || e.key === " "){
             e.preventDefault();
-            document.querySelector("#gia")?.scrollIntoView({behavior:"smooth", block:"start"});
+            // Scroll to contact form instead of pricing
+            document.querySelector("#lien-he")?.scrollIntoView({behavior:"smooth", block:"start"});
           }
         });
         card.addEventListener("click", (e)=>{
           if(!e.ctrlKey && !e.metaKey){
-            document.querySelector("#gia")?.scrollIntoView({behavior:"smooth", block:"start"});
+            // Scroll to contact form instead of pricing
+            document.querySelector("#lien-he")?.scrollIntoView({behavior:"smooth", block:"start"});
           }
         });
       });
