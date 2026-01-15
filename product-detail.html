@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm - Pet Shop Cung Cung</title>
+  <link rel="stylesheet" href="index.html">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #fffef8;
+      color: #2c241f;
+    }
+    .product-detail-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      color: #ff6b9d;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .back-link:hover {
+      gap: 12px;
+      color: #ff9ec4;
+    }
+    .product-detail-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      background: white;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    @media (min-width: 768px) {
+      .product-detail-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+      }
+    }
+    .product-image-section {
+      position: relative;
+    }
+    .product-main-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #ffb3d3, #ffc8a3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 18px;
+    }
+    .product-info-section h1 {
+      font-size: 32px;
+      margin: 0 0 16px;
+      color: #2c241f;
+      line-height: 1.3;
+    }
+    .product-category {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(255,179,211,0.1);
+      color: #ff6b9d;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .product-price {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .price-current {
+      font-size: 36px;
+      font-weight: 800;
+      color: #ff6b9d;
+    }
+    .price-old {
+      font-size: 20px;
+      color: #999;
+      text-decoration: line-through;
+    }
+    .product-description {
+      margin: 32px 0;
+      line-height: 1.8;
+      color: #555;
+      font-size: 16px;
+    }
+    .product-description h3 {
+      color: #2c241f;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+    .product-description ul {
+      padding-left: 24px;
+      margin: 12px 0;
+    }
+    .product-description li {
+      margin: 8px 0;
+    }
+    .product-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .btn {
+      flex: 1;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #ff6b9d, #ff9ec4);
+      color: white;
+      box-shadow: 0 4px 12px rgba(255,107,157,0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255,107,157,0.4);
+    }
+    .btn-secondary {
+      background: white;
+      color: #ff6b9d;
+      border: 2px solid #ff6b9d;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,179,211,0.1);
+    }
+    .loading {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-detail-page">
+    <a href="index.html#san-pham" class="back-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Quay lại danh sách sản phẩm
+    </a>
+    <div id="productDetailContainer" class="loading">
+      Đang tải thông tin sản phẩm...
+    </div>
+  </div>
+
+  <script>
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'));
+    
+    // Products data (should match index.html)
+    const products = [
+      {id:1, name:"Thức ăn khô cho chó trưởng thành", category:"thuc-an", price:250000, oldPrice:300000, description:"Thức ăn khô dinh dưỡng đầy đủ cho chó trưởng thành, giàu protein và vitamin, hỗ trợ hệ tiêu hóa khỏe mạnh", image:"", fullDescription:""},
+      {id:2, name:"Thức ăn khô cho mèo trưởng thành", category:"thuc-an", price:220000, oldPrice:280000, description:"Thức ăn khô dinh dưỡng đầy đủ cho mèo trưởng thành, giàu protein từ cá và thịt, tốt cho sức khỏe", image:"", fullDescription:""},
+      {id:3, name:"Bóng tennis cho chó", category:"do-choi", price:35000, oldPrice:45000, description:"Bóng tennis cao cấp, bền chắc, phù hợp chơi ném và đuổi bắt, giúp chó vận động và vui chơi", image:"", fullDescription:""},
+      {id:4, name:"Cần câu có lông vũ cho mèo", category:"do-choi", price:55000, oldPrice:70000, description:"Cần câu có lông vũ kích thích mèo vui chơi, rèn luyện phản xạ và săn mồi, giúp mèo năng động hơn", image:"", fullDescription:""},
+      {id:5, name:"Sữa tắm cho chó", category:"cham-soc", price:120000, oldPrice:150000, description:"Sữa tắm dịu nhẹ cho da chó nhạy cảm, làm sạch sâu và khử mùi hôi, giữ lông mềm mượt", image:"", fullDescription:""},
+      {id:6, name:"Lược chải lông cho mèo", category:"cham-soc", price:80000, oldPrice:100000, description:"Lược chải lông chuyên dụng cho mèo, giảm rụng lông và búi lông, giữ lông mèo mềm mượt", image:"", fullDescription:""},
+      {id:7, name:"Bát ăn inox cho chó mèo", category:"do-dung", price:95000, oldPrice:120000, description:"Bát inox không gỉ, dễ vệ sinh, chống trượt, thiết kế phù hợp cho cả chó và mèo", image:"", fullDescription:""},
+      {id:8, name:"Hạt Cho Mèo Mọi Lứa Tuổi Mr.Vet G1, Vị Cá Ngừ, Grain Free - 1KG", category:"thuc-an", price:140000, oldPrice:null, description:"Hạt Cho Mèo Mọi Lứa Tuổi Mr.Vet G1 – Vị Cá Ngừ – Grain Free 1kg được nghiên cứu với công thức giàu đạm cá ngừ, không chứa ngũ cốc, giúp mèo ăn ngon miệng và hấp thu dưỡng chất tốt hơn.", image:"", fullDescription:`<h3>Ưu điểm nổi bật của Mr.Vet G1 Vị Cá Ngừ</h3>
+<ul>
+<li><strong>Grain Free – không ngũ cốc:</strong> Hạn chế dị ứng, phù hợp cho mèo có hệ tiêu hóa nhạy cảm.</li>
+<li><strong>Đạm cá ngừ chất lượng cao:</strong> Giàu protein, dễ tiêu, hỗ trợ phát triển cơ bắp.</li>
+<li><strong>Dùng cho mọi lứa tuổi:</strong> Phù hợp cho mèo con, mèo trưởng thành và mèo lớn tuổi.</li>
+<li><strong>Hỗ trợ tiêu hóa & miễn dịch:</strong> Bổ sung vitamin và khoáng chất thiết yếu.</li>
+<li><strong>Dưỡng da – mượt lông:</strong> Giúp lông bóng mượt, da khỏe mạnh.</li>
+</ul>
+<h3>Lợi ích khi sử dụng</h3>
+<ul>
+<li>Giúp mèo ăn ngon miệng, hạn chế kén ăn.</li>
+<li>Cung cấp năng lượng ổn định cho sinh hoạt hằng ngày.</li>
+<li>Hỗ trợ sức khỏe tổng thể, giúp mèo năng động, linh hoạt.</li>
+<li>Phù hợp cho mèo nuôi trong nhà và ngoài trời.</li>
+</ul>`},
+      {id:9, name:"Thức Ăn Hạt Cho Mèo Mọi Lứa Tuổi Hello Cat - 1.2KG", category:"thuc-an", price:110000, oldPrice:null, description:"Hello Cat Pro Tuna là dòng thức ăn hạt khô dinh dưỡng được thiết kế đặc biệt để đáp ứng nhu cầu năng lượng cho mèo ở mọi giống loài (All Breeds).", image:"Thức Ăn Hạt Cho Mèo Mọi Lứa Tuổi Hello Cat - 1.2KG.jpg", fullDescription:`<h3>ĐẶC ĐIỂM NỔI BẬT:</h3>
+<p><strong>Hương Vị Cá Ngừ (Pro Tuna):</strong> Chế biến với hương vị cá ngừ đặc trưng, kích thích sự thèm ăn và phù hợp với khẩu vị của đại đa số các bé mèo.</p>
+<p><strong>Công Thức Giàu Vitamin (D-E-B):</strong> Sản phẩm bổ sung tổ hợp Vitamin D, E và B, hỗ trợ tối ưu cho sức khỏe tổng thể:</p>
+<ul>
+<li>Hỗ trợ da và lông khỏe mạnh.</li>
+<li>Tăng cường quá trình chuyển hóa năng lượng.</li>
+<li>Củng cố hệ xương răng.</li>
+</ul>
+<p><strong>Năng Lượng Dồi Dào:</strong> Cung cấp mức năng lượng chuyển hóa 325.00 kcal/100g, đảm bảo mèo cưng luôn năng động và hoạt bát suốt cả ngày.</p>
+<p><strong>Phù Hợp Mọi Giống Mèo (All Breeds):</strong> Kết cấu hạt và công thức dinh dưỡng được nghiên cứu để phù hợp với tất cả các giống mèo khác nhau, từ mèo ta đến mèo ngoại nhập.</p>`},
+      {id:10, name:"Gel Dinh Dưỡng Cho Mèo KitCat Singapore 120g", category:"thuc-an", price:110000, oldPrice:null, description:"Gel dinh dưỡng cao cấp cho mèo, bổ sung vitamin và khoáng chất thiết yếu, giúp mèo khỏe mạnh và năng động.", image:"Gel Dinh Dưỡng Cho Mèo KitCat Singapore 120g.jpg", fullDescription:"<p>Gel dinh dưỡng KitCat Singapore là sản phẩm bổ sung dinh dưỡng dạng gel, dễ sử dụng và hấp thu nhanh. Sản phẩm phù hợp cho mèo mọi lứa tuổi, đặc biệt là mèo con và mèo lớn tuổi cần bổ sung dinh dưỡng.</p>"},
+      {id:11, name:"Pate Apro IQ Dành Cho Chó Trưởng Thành - Lon 400G", category:"thuc-an", price:40000, oldPrice:null, description:"Pate APro IQ Dog là thức ăn ướt giàu dinh dưỡng dành cho chó trưởng thành trên 12 tháng tuổi, nổi bật với thành phần thịt thật (gà/bò) và sốt thơm ngon.", image:"Pate Apro IQ Dành Cho Chó Trưởng Thành - Lon 400G.jpg", fullDescription:`<h3>Đặc Điểm Nổi Bật</h3>
+<ul>
+<li><strong>Hương vị thơm ngon & Kết cấu đa dạng:</strong> Kết hợp giữa thịt thật (thân gà, gan bò) và sốt, có dạng viên hoặc nhuyễn, tạo hương vị đậm đà kích thích vị giác, phù hợp cho chó kén ăn</li>
+<li><strong>Chăm sóc Da & Lông:</strong> Bổ sung các chất béo tốt và vitamin giúp nuôi dưỡng da khỏe mạnh</li>
+<li><strong>Hệ xương răng chắc khỏe:</strong> Chứa canxi, photpho, kẽm, magie... giúp tăng cường sức khỏe hệ miễn dịch, răng và xương.</li>
+<li><strong>Dễ tiêu hóa:</strong> Công thức chứa chất xơ, hỗ trợ hệ tiêu hóa hoạt động tốt.</li>
+<li><strong>Kết hợp linh hoạt:</strong> Có thể cho ăn trực tiếp, trộn cùng hạt khô (thức ăn hạt) hoặc cơm để tăng độ ngon miệng.</li>
+</ul>`},
+      {id:12, name:"Viên Bổ Sung Canxi Cho Chó Mèo Calci Delice", category:"cham-soc", price:15000, oldPrice:null, description:"Calci Delice là viên bổ sung canxi cao cấp dành cho chó mèo mọi lứa tuổi, giúp tăng cường hệ xương – răng – khớp, hỗ trợ phát triển thể chất khỏe mạnh và phòng ngừa loãng xương, còi xương, yếu chân.", image:"Viên Bổ Sung Canxi Cho Chó Mèo Calci Delice.png", fullDescription:`<h3>Công dụng nổi bật</h3>
+<ul>
+<li>🦴 Bổ sung canxi, phốt pho & vitamin D3 giúp hấp thu khoáng chất tối đa.</li>
+<li>💪 Tăng cường xương, răng và khớp – đặc biệt hữu ích cho chó mèo con đang lớn và thú cưng sinh sản, già yếu.</li>
+<li>🐾 Giúp dáng đi vững vàng, vận động linh hoạt, giảm nguy cơ gãy xương.</li>
+<li>🌿 Hương vị thơm ngon dễ ăn, có thể cho trực tiếp hoặc trộn cùng thức ăn.</li>
+</ul>
+<h3>Cách dùng</h3>
+<ul>
+<li>Chó mèo nhỏ: 1 viên/ngày</li>
+<li>Chó mèo trung bình: 2 viên/ngày</li>
+<li>Chó lớn hoặc đang mang thai: 3 viên/ngày</li>
+</ul>
+<p><strong>Thông tin sản phẩm:</strong><br>
+Tên: Viên Bổ Sung Canxi Cho Chó Mèo Calci Delice<br>
+Thương hiệu: Calci Delice<br>
+Dạng: Viên nhai / viên nén<br>
+Dành cho: Chó mèo mọi lứa tuổi<br>
+Công dụng: Tăng cường canxi, hỗ trợ phát triển xương, răng và hệ cơ khớp</p>`},
+      {id:13, name:"Bio Milk – Sữa Bột Cho Chó Mèo Con", category:"thuc-an", price:36000, oldPrice:null, description:"BIO-MILK For Pet SỮA CAO CẤP CHUYÊN DÙNG CHO CHÓ, MÈO. Sản phẩm cung cấp các chất dinh dưỡng cần thiết, bổ sung các vitamin và khoáng chất có tác dụng như sữa mẹ nên rất tốt cho thú cưng.", image:"Bio Milk – Sữa Bột Cho Chó Mèo Con.jpg", fullDescription:`<h3>CÔNG DỤNG:</h3>
+<ul>
+<li>Cung cấp các chất dinh dưỡng cần thiết, cân đối và rất dễ tiêu hóa tương tự sữa mẹ, có tác dụng thay thế sữa mẹ trong trường hợp chó, mèo mất sữa, kem sữa hoặc thiếu sữa do bầy con quá đông</li>
+<li>Bổ sung chất dinh dưỡng cho chó mèo còi cọc, chậm lớn.</li>
+</ul>
+<h3>LIỀU LƯỢNG VÀ CÁCH DÙNG:</h3>
+<ul>
+<li><strong>Chó, mèo con dưới 1 tháng tuổi:</strong> Hòa 1 muỗng cafe (5g) sữa với 20ml nước ấm, dùng bình cho bú ngày 4-5 lần.</li>
+<li><strong>Chó, mèo con từ 1 - 2 tháng tuổi:</strong> Hòa 1 muỗng cafe (5g) sữa với 15ml nước ấm, dùng đĩa hoặc máng cho uống tự do ngày 3 - 4 lần.</li>
+<li><strong>Chó, mèo trên 2 tháng tuổi:</strong> Ngoài thức ăn thông thường, cho ăn thêm 1 muỗng cafe (5g) / kg thể trọng/ ngày, bằng cách trộn vào thức ăn hoặc hòa với nước ấm cho uống.</li>
+<li><strong>Chó, mèo còi cọc, chậm lớn hoặc đang mắc bệnh:</strong> Ngoài thức ăn thông thường cho ăn thêm 2 muỗng cafe (10g) / kg thể trọng/ ngày, bằng cách trộn vào thức ăn hoặc hòa với nước ấm cho uống.</li>
+</ul>
+<p><strong>Bảo quản:</strong> Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp.<br>
+<strong>Xuất xứ:</strong> Việt Nam.</p>`}
+    ];
+
+    function formatVND(amount) {
+      return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+    }
+
+    function getCategoryName(category) {
+      const names = {
+        'thuc-an': 'Thức ăn',
+        'do-choi': 'Đồ chơi',
+        'cham-soc': 'Chăm sóc',
+        'do-dung': 'Đồ dùng'
+      };
+      return names[category] || category;
+    }
+
+    function renderProduct() {
+      if (!productId) {
+        document.getElementById('productDetailContainer').innerHTML = '<div class="loading">Không tìm thấy sản phẩm</div>';
+        return;
+      }
+
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        document.getElementById('productDetailContainer').innerHTML = '<div class="loading">Sản phẩm không tồn tại</div>';
+        return;
+      }
+
+      // Handle image paths - remove absolute paths and use relative paths
+      let imageSrc = '';
+      if (product.image) {
+        if (product.image.startsWith('C:\\') || product.image.startsWith('E:\\')) {
+          // Extract just the filename from absolute path
+          imageSrc = product.image.split('\\').pop();
+        } else {
+          imageSrc = product.image;
+        }
+      }
+
+      const imageHtml = imageSrc 
+        ? `<img src="${imageSrc}" alt="${product.name}" class="product-main-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />`
+        : '';
+
+      const container = document.getElementById('productDetailContainer');
+      container.className = 'product-detail-container';
+      container.innerHTML = `
+        <div class="product-image-section">
+          ${imageHtml}
+          <div class="product-main-image" style="${imageSrc ? 'display:none;' : ''}">
+            Hình ảnh sản phẩm
+          </div>
+        </div>
+        <div class="product-info-section">
+          <div class="product-category">${getCategoryName(product.category)}</div>
+          <h1>${product.name}</h1>
+          <div class="product-price">
+            <span class="price-current">${formatVND(product.price)}</span>
+            ${product.oldPrice ? `<span class="price-old">${formatVND(product.oldPrice)}</span>` : ''}
+          </div>
+          <div class="product-description">
+            <p>${product.description}</p>
+            ${product.fullDescription || ''}
+          </div>
+          <div class="product-actions">
+            <button class="btn btn-secondary" onclick="addToCart(${product.id})">Thêm vào giỏ</button>
+            <button class="btn btn-primary" onclick="buyNow(${product.id})">Mua ngay</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function addToCart(productId) {
+      // Load cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Check if product already in cart
+      const existingItem = cart.find(item => !item.isCombo && item.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ id: productId, quantity: 1, isCombo: false });
+      }
+      
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Đã thêm sản phẩm vào giỏ hàng!');
+    }
+
+    function buyNow(productId) {
+      addToCart(productId);
+      window.location.href = 'index.html#checkout';
+    }
+
+    // Render product on load
+    renderProduct();
+  </script>
+</body>
+</html>
