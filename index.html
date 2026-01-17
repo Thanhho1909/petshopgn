@@ -1331,37 +1331,67 @@
     
     /* Account Modal */
     .account-content{
-      max-width:900px;
-      max-height:90vh;
+      max-width:920px;
+      width:100%;
+      max-height:92vh;
       overflow-y:auto;
       background:white;
-      border-radius:16px;
-      box-shadow:0 20px 60px rgba(0,0,0,.15);
+      border-radius:20px;
+      box-shadow:0 24px 80px rgba(0,0,0,.12), 0 8px 32px rgba(0,0,0,.08);
+      margin:20px;
+    }
+    
+    @media (min-width: 640px){
+      .account-content{
+        margin:30px auto;
+        border-radius:24px;
+      }
+    }
+    
+    @media (min-width: 1024px){
+      .account-content{
+        max-width:920px;
+      }
     }
     
     .account-container{
-      padding:24px;
+      padding:20px;
       background:white;
+    }
+    
+    @media (min-width: 640px){
+      .account-container{
+        padding:28px;
+      }
     }
     
     @media (min-width: 768px){
       .account-container{
-        padding:32px;
+        padding:36px;
       }
     }
     
     .account-header{
       display:flex;
-      gap:20px;
-      align-items:center;
+      flex-direction:column;
+      gap:16px;
+      align-items:flex-start;
       padding-bottom:24px;
       border-bottom:2px solid var(--line);
-      margin-bottom:24px;
+      margin-bottom:28px;
+    }
+    
+    @media (min-width: 640px){
+      .account-header{
+        flex-direction:row;
+        align-items:center;
+        gap:20px;
+      }
     }
     
     .account-avatar{
-      width:80px;
-      height:80px;
+      width:72px;
+      height:72px;
       border-radius:50%;
       background:linear-gradient(135deg, var(--pink), var(--orange));
       display:flex;
@@ -1369,80 +1399,173 @@
       justify-content:center;
       color:white;
       flex-shrink:0;
+      box-shadow:0 8px 24px rgba(255,179,211,.3);
+    }
+    
+    @media (min-width: 640px){
+      .account-avatar{
+        width:80px;
+        height:80px;
+      }
+    }
+    
+    @media (min-width: 768px){
+      .account-avatar{
+        width:88px;
+        height:88px;
+      }
     }
     
     .account-avatar svg{
-      width:48px;
-      height:48px;
+      width:40px;
+      height:40px;
+    }
+    
+    @media (min-width: 640px){
+      .account-avatar svg{
+        width:44px;
+        height:44px;
+      }
+    }
+    
+    @media (min-width: 768px){
+      .account-avatar svg{
+        width:48px;
+        height:48px;
+      }
     }
     
     .account-info-header{
       flex:1;
+      width:100%;
+    }
+    
+    @media (min-width: 640px){
+      .account-info-header{
+        width:auto;
+      }
     }
     
     .account-name{
-      font-size:24px;
+      font-size:20px;
       font-weight:800;
-      margin-bottom:8px;
+      margin-bottom:10px;
       color:var(--text);
+      line-height:1.3;
+      word-break:break-word;
+    }
+    
+    @media (min-width: 640px){
+      .account-name{
+        font-size:22px;
+        margin-bottom:12px;
+      }
+    }
+    
+    @media (min-width: 768px){
+      .account-name{
+        font-size:24px;
+      }
     }
     
     .account-badges{
       display:flex;
       gap:8px;
       flex-wrap:wrap;
+      align-items:center;
     }
     
     .member-badge{
-      padding:6px 12px;
+      padding:6px 14px;
       border-radius:20px;
       font-size:12px;
       font-weight:700;
       background:rgba(255,179,211,.15);
       color:var(--pink);
+      white-space:nowrap;
+    }
+    
+    @media (min-width: 640px){
+      .member-badge{
+        padding:7px 16px;
+        font-size:13px;
+      }
     }
     
     .member-badge.vip{
       background:linear-gradient(135deg, #ffd700, #ffed4e);
       color:#8b6914;
+      box-shadow:0 2px 8px rgba(255,215,0,.3);
     }
     
     .points-badge{
-      padding:6px 12px;
+      padding:6px 14px;
       border-radius:20px;
       font-size:12px;
       font-weight:700;
       background:rgba(255,200,163,.15);
       color:var(--orange);
+      white-space:nowrap;
+    }
+    
+    @media (min-width: 640px){
+      .points-badge{
+        padding:7px 16px;
+        font-size:13px;
+      }
     }
     
     .account-tabs{
       display:flex;
-      gap:8px;
-      margin-bottom:24px;
+      gap:4px;
+      margin-bottom:28px;
       border-bottom:2px solid var(--line);
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    
+    .account-tabs::-webkit-scrollbar{
+      display:none;
+    }
+    
+    @media (min-width: 640px){
+      .account-tabs{
+        gap:8px;
+      }
     }
     
     .account-tab{
-      padding:12px 20px;
+      padding:12px 16px;
       background:transparent;
       border:none;
       border-bottom:3px solid transparent;
-      font-size:15px;
+      font-size:14px;
       font-weight:600;
       color:var(--muted);
       cursor:pointer;
       transition:all .3s ease;
       margin-bottom:-2px;
+      white-space:nowrap;
+      flex-shrink:0;
+    }
+    
+    @media (min-width: 640px){
+      .account-tab{
+        padding:12px 20px;
+        font-size:15px;
+      }
     }
     
     .account-tab:hover{
       color:var(--text);
+      background:rgba(255,179,211,.05);
     }
     
     .account-tab.active{
       color:var(--pink);
       border-bottom-color:var(--pink);
+      background:rgba(255,179,211,.08);
     }
     
     .account-tab-content{
@@ -1458,23 +1581,44 @@
       margin-bottom:32px;
     }
     
+    .account-section:last-child{
+      margin-bottom:0;
+    }
+    
     .account-section-title{
-      font-size:18px;
+      font-size:17px;
       font-weight:700;
-      margin-bottom:16px;
+      margin-bottom:18px;
       color:var(--text);
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    
+    @media (min-width: 640px){
+      .account-section-title{
+        font-size:18px;
+        margin-bottom:20px;
+      }
     }
     
     .account-info-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1fr;
       gap:16px;
+    }
+    
+    @media (min-width: 640px){
+      .account-info-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:18px;
+      }
     }
     
     .info-item{
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
     
     .info-item.full-width{
@@ -1482,59 +1626,124 @@
     }
     
     .info-item label{
-      font-size:13px;
+      font-size:12px;
       font-weight:600;
       color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    
+    @media (min-width: 640px){
+      .info-item label{
+        font-size:13px;
+      }
     }
     
     .info-value{
-      font-size:15px;
+      font-size:14px;
       color:var(--text);
-      padding:10px;
-      background:white;
-      border-radius:8px;
+      padding:12px 14px;
+      background:var(--bg);
+      border-radius:10px;
       border:1px solid var(--line);
-      min-height:20px;
+      min-height:24px;
+      line-height:1.5;
+      word-break:break-word;
+    }
+    
+    @media (min-width: 640px){
+      .info-value{
+        font-size:15px;
+        padding:12px 16px;
+      }
     }
     
     .account-stats{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+    
+    @media (min-width: 480px){
+      .account-stats{
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 640px){
+      .account-stats{
+        grid-template-columns:repeat(3, 1fr);
+        gap:16px;
+      }
     }
     
     .stat-card{
       padding:20px;
-      background:white;
-      border-radius:12px;
+      background:var(--card);
+      border-radius:14px;
       border:2px solid var(--line);
       text-align:center;
-      transition:all .3s ease;
+      transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    @media (min-width: 640px){
+      .stat-card{
+        padding:24px 20px;
+      }
     }
     
     .stat-card:hover{
       border-color:var(--pink);
-      box-shadow:0 4px 12px rgba(255,179,211,.1);
+      box-shadow:0 6px 20px rgba(255,179,211,.15);
+      transform:translateY(-2px);
     }
     
     .stat-value{
-      font-size:28px;
+      font-size:26px;
       font-weight:800;
       color:var(--pink);
       margin-bottom:8px;
+      line-height:1.2;
+    }
+    
+    @media (min-width: 640px){
+      .stat-value{
+        font-size:28px;
+      }
     }
     
     .stat-label{
-      font-size:13px;
+      font-size:12px;
       color:var(--muted);
       font-weight:600;
+      line-height:1.4;
+    }
+    
+    @media (min-width: 640px){
+      .stat-label{
+        font-size:13px;
+      }
     }
     
     .account-actions{
       margin-top:32px;
+      padding-top:24px;
+      border-top:2px solid var(--line);
       display:flex;
       gap:12px;
       justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    
+    @media (max-width: 639px){
+      .account-actions{
+        justify-content:stretch;
+      }
+      
+      .account-actions .cta{
+        flex:1;
+        min-width:0;
+      }
     }
     
     .orders-list{
@@ -1543,50 +1752,111 @@
       gap:16px;
     }
     
+    @media (min-width: 640px){
+      .orders-list{
+        gap:18px;
+      }
+    }
+    
     .order-card{
-      padding:20px;
-      background:white;
-      border-radius:12px;
+      padding:18px;
+      background:var(--card);
+      border-radius:14px;
       border:2px solid var(--line);
-      transition:all .3s ease;
-      margin-bottom:16px;
+      transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom:0;
+    }
+    
+    @media (min-width: 640px){
+      .order-card{
+        padding:22px;
+      }
     }
     
     .order-card:hover{
       border-color:var(--pink);
-      box-shadow:0 4px 16px rgba(255,179,211,.2);
+      box-shadow:0 6px 24px rgba(255,179,211,.15);
       transform:translateY(-2px);
-    }
-    
-    .order-card:last-child{
-      margin-bottom:0;
     }
     
     .order-card-header{
       display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      margin-bottom:16px;
-      flex-wrap:wrap;
+      flex-direction:column;
       gap:12px;
+      margin-bottom:18px;
+      padding-bottom:16px;
+      border-bottom:1px solid var(--line);
+    }
+    
+    @media (min-width: 640px){
+      .order-card-header{
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:flex-start;
+        gap:16px;
+      }
+    }
+    
+    .order-header-left{
+      flex:1;
+      min-width:0;
     }
     
     .order-id{
-      font-size:16px;
+      font-size:15px;
       font-weight:700;
       color:var(--text);
+      margin-bottom:4px;
+      word-break:break-word;
+    }
+    
+    @media (min-width: 640px){
+      .order-id{
+        font-size:16px;
+        margin-bottom:6px;
+      }
     }
     
     .order-date{
-      font-size:13px;
+      font-size:12px;
       color:var(--muted);
+      line-height:1.4;
+    }
+    
+    @media (min-width: 640px){
+      .order-date{
+        font-size:13px;
+      }
+    }
+    
+    .order-header-right{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+    }
+    
+    @media (min-width: 640px){
+      .order-header-right{
+        align-items:flex-end;
+      }
     }
     
     .order-status{
-      padding:6px 12px;
+      padding:6px 14px;
       border-radius:20px;
-      font-size:12px;
+      font-size:11px;
       font-weight:700;
+      white-space:nowrap;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    
+    @media (min-width: 640px){
+      .order-status{
+        padding:7px 16px;
+        font-size:12px;
+      }
     }
     
     .order-status.pending{
@@ -1620,19 +1890,27 @@
     }
     
     .tracking-number{
-      margin-top:8px;
+      margin-top:0;
       padding:8px 12px;
       background:var(--bg);
       border-radius:8px;
       border:1px solid var(--line);
-      font-size:13px;
+      font-size:12px;
       font-weight:600;
       color:var(--text);
+      word-break:break-all;
+    }
+    
+    @media (min-width: 640px){
+      .tracking-number{
+        font-size:13px;
+      }
     }
     
     .tracking-number strong{
       color:var(--pink);
-      margin-right:8px;
+      margin-right:6px;
+      display:inline-block;
     }
     
     .order-items{
@@ -1642,24 +1920,63 @@
     .order-item-row{
       display:flex;
       justify-content:space-between;
-      padding:8px 0;
-      font-size:14px;
+      align-items:flex-start;
+      padding:10px 0;
+      font-size:13px;
       border-bottom:1px solid var(--line);
+      gap:12px;
+    }
+    
+    @media (min-width: 640px){
+      .order-item-row{
+        font-size:14px;
+        padding:12px 0;
+      }
     }
     
     .order-item-row:last-child{
       border-bottom:none;
     }
     
+    .order-item-name{
+      flex:1;
+      min-width:0;
+      word-break:break-word;
+      color:var(--text);
+      line-height:1.5;
+    }
+    
+    .order-item-qty{
+      color:var(--muted);
+      font-weight:600;
+      flex-shrink:0;
+      margin:0 8px;
+    }
+    
+    .order-item-price{
+      color:var(--text);
+      font-weight:600;
+      flex-shrink:0;
+      text-align:right;
+      min-width:fit-content;
+    }
+    
     .order-total{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding-top:12px;
+      padding-top:16px;
       border-top:2px solid var(--line);
       font-size:16px;
       font-weight:700;
       color:var(--text);
+      gap:16px;
+    }
+    
+    @media (min-width: 640px){
+      .order-total{
+        font-size:17px;
+      }
     }
     
     .empty-state{
@@ -1668,18 +1985,37 @@
       color:var(--muted);
     }
     
+    @media (min-width: 640px){
+      .empty-state{
+        padding:80px 30px;
+      }
+    }
+    
     .empty-state svg{
       width:64px;
       height:64px;
-      margin:0 auto 16px;
+      margin:0 auto 20px;
       stroke:var(--muted);
       opacity:0.5;
+    }
+    
+    @media (min-width: 640px){
+      .empty-state svg{
+        width:80px;
+        height:80px;
+      }
     }
     
     .points-section{
       display:flex;
       flex-direction:column;
-      gap:32px;
+      gap:28px;
+    }
+    
+    @media (min-width: 640px){
+      .points-section{
+        gap:32px;
+      }
     }
     
     .points-display{
@@ -1687,8 +2023,8 @@
     }
     
     .points-circle{
-      width:200px;
-      height:200px;
+      width:160px;
+      height:160px;
       margin:0 auto;
       border-radius:50%;
       background:linear-gradient(135deg, var(--pink), var(--orange));
@@ -1697,47 +2033,111 @@
       align-items:center;
       justify-content:center;
       color:white;
-      box-shadow:0 8px 24px rgba(255,179,211,.3);
+      box-shadow:0 8px 32px rgba(255,179,211,.35);
+      position:relative;
+    }
+    
+    @media (min-width: 640px){
+      .points-circle{
+        width:180px;
+        height:180px;
+      }
+    }
+    
+    @media (min-width: 768px){
+      .points-circle{
+        width:200px;
+        height:200px;
+      }
     }
     
     .points-value{
-      font-size:48px;
+      font-size:40px;
       font-weight:900;
       line-height:1;
     }
     
+    @media (min-width: 640px){
+      .points-value{
+        font-size:44px;
+      }
+    }
+    
+    @media (min-width: 768px){
+      .points-value{
+        font-size:48px;
+      }
+    }
+    
     .points-label{
-      font-size:14px;
+      font-size:12px;
       margin-top:8px;
-      opacity:0.9;
+      opacity:0.95;
+      font-weight:600;
+      letter-spacing:0.5px;
+    }
+    
+    @media (min-width: 640px){
+      .points-label{
+        font-size:13px;
+      }
+    }
+    
+    @media (min-width: 768px){
+      .points-label{
+        font-size:14px;
+      }
     }
     
     .points-info{
       background:var(--bg);
-      padding:24px;
-      border-radius:12px;
+      padding:20px;
+      border-radius:14px;
       border:2px solid var(--line);
     }
     
+    @media (min-width: 640px){
+      .points-info{
+        padding:24px;
+      }
+    }
+    
     .points-info h4{
-      font-size:16px;
+      font-size:15px;
       font-weight:700;
-      margin-bottom:12px;
+      margin-bottom:14px;
       color:var(--text);
+    }
+    
+    @media (min-width: 640px){
+      .points-info h4{
+        font-size:16px;
+        margin-bottom:16px;
+      }
     }
     
     .points-rules{
       list-style:none;
       padding:0;
       margin:0 0 24px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
     
     .points-rules li{
-      padding:8px 0;
-      padding-left:24px;
+      padding:10px 0 10px 28px;
       position:relative;
-      font-size:14px;
+      font-size:13px;
       color:var(--text);
+      line-height:1.6;
+    }
+    
+    @media (min-width: 640px){
+      .points-rules li{
+        font-size:14px;
+        padding-left:32px;
+      }
     }
     
     .points-rules li::before{
@@ -1745,7 +2145,8 @@
       position:absolute;
       left:0;
       color:var(--pink);
-      font-weight:700;
+      font-weight:800;
+      font-size:16px;
     }
     
     .points-history{
@@ -1754,19 +2155,74 @@
       border-top:2px solid var(--line);
     }
     
+    .points-history h4{
+      margin-bottom:16px;
+    }
+    
     .history-list{
-      margin-top:16px;
+      margin-top:0;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
     
     .history-item{
-      padding:12px;
-      background:var(--bg);
-      border-radius:8px;
-      margin-bottom:8px;
+      padding:14px;
+      background:white;
+      border-radius:10px;
+      border:1px solid var(--line);
       display:flex;
       justify-content:space-between;
       align-items:center;
-      font-size:14px;
+      font-size:13px;
+      gap:12px;
+      transition:all .2s ease;
+    }
+    
+    .history-item:hover{
+      border-color:var(--pink);
+      box-shadow:0 2px 8px rgba(255,179,211,.1);
+    }
+    
+    @media (min-width: 640px){
+      .history-item{
+        font-size:14px;
+        padding:16px;
+      }
+    }
+    
+    .history-item-info{
+      flex:1;
+      min-width:0;
+    }
+    
+    .history-item-desc{
+      color:var(--text);
+      margin-bottom:4px;
+      word-break:break-word;
+    }
+    
+    .history-item-date{
+      color:var(--muted);
+      font-size:11px;
+    }
+    
+    @media (min-width: 640px){
+      .history-item-date{
+        font-size:12px;
+      }
+    }
+    
+    .history-points{
+      font-weight:700;
+      font-size:15px;
+      flex-shrink:0;
+    }
+    
+    @media (min-width: 640px){
+      .history-points{
+        font-size:16px;
+      }
     }
     
     .history-item.earned .history-points{
@@ -1780,8 +2236,16 @@
     .empty-text{
       text-align:center;
       color:var(--muted);
-      padding:20px;
-      font-size:14px;
+      padding:30px 20px;
+      font-size:13px;
+      line-height:1.6;
+    }
+    
+    @media (min-width: 640px){
+      .empty-text{
+        padding:40px 30px;
+        font-size:14px;
+      }
     }
     
     /* Order Summary */
@@ -4242,6 +4706,29 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      position:relative;
+      z-index:1;
+    }
+    
+    .plan.reco h3{
+      margin-top: 58px;
+      margin-bottom: 10px;
+    }
+    
+    @media (max-width: 767px){
+      .plan.reco h3{
+        margin-top: 52px;
+      }
+      .badge{
+        top:20px;
+        right:20px;
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+      .badge svg{
+        width:16px;
+        height:16px;
+      }
     }
     .plan p{ 
       margin:0 0 20px; 
@@ -5617,6 +6104,7 @@
           <a href="#loi-ich" class="menu-item">Lợi ích</a>
           <a href="#gia" class="menu-item">Giá</a>
           <a href="#lien-he" class="menu-item">Liên hệ</a>
+          <a href="#chinh-sach-doi-tra" class="menu-item">Đổi trả</a>
         </nav>
 
         <!-- Right Actions -->
@@ -6829,6 +7317,107 @@
       </div>
     </section>
 
+    <!-- Chính sách đổi trả -->
+    <section id="chinh-sach-doi-tra" style="padding:80px 20px; background:var(--bg);">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Chính Sách Đổi Trả 🔄</h2>
+          <p>Để khách hàng có thể an tâm mua sắm, chúng tôi có các chính sách đổi trả hàng như sau</p>
+        </div>
+
+        <div class="card reveal" style="max-width:900px; margin:0 auto; padding:40px 30px;">
+          <div style="margin-bottom:32px;">
+            <h3 style="font-size:20px; font-weight:800; color:var(--text); margin-bottom:20px; display:flex; align-items:center; gap:8px;">
+              <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;"><path d="M12 2.8c5.1 0 9.2 4.1 9.2 9.2 0 5.1-4.1 9.2-9.2 9.2S2.8 17.1 2.8 12C2.8 6.9 6.9 2.8 12 2.8Z" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Điều Kiện Đổi Trả
+            </h3>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px;">
+              <li style="display:flex; gap:12px; align-items:flex-start;">
+                <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px; flex-shrink:0; margin-top:2px; color:var(--brand3);"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span style="color:var(--text); line-height:1.6;">Thời gian giải quyết đổi trả trong thời hạn tối đa là <strong>3 ngày làm việc</strong> kể từ khi nhận hàng.</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:flex-start;">
+                <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px; flex-shrink:0; margin-top:2px; color:var(--brand3);"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span style="color:var(--text); line-height:1.6;">Điều kiện đổi hàng chỉ được chấp nhận khi sản phẩm <strong>bị lỗi, hư hỏng do nhà sản xuất, do quá trình vận chuyển, không đúng số lượng</strong>. Khách hàng cảm thấy không hợp hoặc không vừa ý thì không được chấp nhận.</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:flex-start;">
+                <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px; flex-shrink:0; margin-top:2px; color:var(--brand3);"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span style="color:var(--text); line-height:1.6;">Không chấp nhận việc đổi hàng như <strong>hàng đã qua sử dụng, móp méo, hư, vỡ</strong>. Đảm bảo sản phẩm hoàn trả phải còn mới, nguyên vẹn.</span>
+              </li>
+              <li style="display:flex; gap:12px; align-items:flex-start;">
+                <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px; flex-shrink:0; margin-top:2px; color:var(--brand3);"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span style="color:var(--text); line-height:1.6;">Khi có yêu cầu đổi trả hàng, yêu cầu khách hàng phải có <strong>thông tin hóa đơn mua hàng, giấy tờ liên quan</strong> chứng minh sự thiếu sót trên để hoàn thành việc hoàn trả/đổi trả hàng hóa.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom:32px; padding-top:32px; border-top:2px solid var(--line);">
+            <h3 style="font-size:20px; font-weight:800; color:var(--text); margin-bottom:20px; display:flex; align-items:center; gap:8px;">
+              <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;"><path d="M9 11 12 14l6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.8"/></svg>
+              Cách Thức Đổi Trả Hàng
+            </h3>
+            
+            <div style="display:flex; flex-direction:column; gap:24px;">
+              <div style="padding:20px; background:var(--pink-light); border-radius:16px; border:2px solid var(--line);">
+                <h4 style="font-size:18px; font-weight:700; color:var(--text); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+                  <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; background:var(--pink); color:white; border-radius:50%; font-weight:800; font-size:16px;">1</span>
+                  Bước 1: Liên hệ bộ phận chăm sóc khách hàng
+                </h4>
+                <p style="color:var(--text); line-height:1.6; margin:0;">
+                  Liên hệ đến bộ phận chăm sóc khách hàng của chúng tôi theo số <strong style="color:var(--brand3);">hotline 090.2435.838</strong> để thông báo sản phẩm cần đổi trả và tình trạng của sản phẩm.
+                </p>
+              </div>
+
+              <div style="padding:20px; background:var(--mint-light); border-radius:16px; border:2px solid var(--line);">
+                <h4 style="font-size:18px; font-weight:700; color:var(--text); margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+                  <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; background:var(--mint); color:var(--text); border-radius:50%; font-weight:800; font-size:16px;">2</span>
+                  Bước 2: Chọn hình thức trả hàng
+                </h4>
+                <p style="color:var(--text); line-height:1.6; margin-bottom:16px;">
+                  Người mua có thể chọn trả hàng theo một trong hai hình thức sau:
+                </p>
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                  <div style="padding:16px; background:white; border-radius:12px; border:2px solid var(--line);">
+                    <strong style="color:var(--brand3); display:block; margin-bottom:8px;">📦 Tự gửi hàng:</strong>
+                    <p style="color:var(--text); line-height:1.6; margin:0 0 12px 0;">
+                      Quý khách gửi trả lại sản phẩm bao gồm đầy đủ phụ kiện, đã đóng gói lại chắc chắn theo địa chỉ:
+                    </p>
+                    <div style="padding:12px; background:var(--bg); border-radius:8px; border-left:4px solid var(--brand3);">
+                      <p style="margin:0; color:var(--text); line-height:1.8;">
+                        <strong>Cung Cung Pet Shop</strong><br/>
+                        Địa chỉ: 71 đường số 13, phường Tân Thuận Tây, quận 7<br/>
+                        Điện thoại: 090.2435.838
+                      </p>
+                    </div>
+                    <p style="color:var(--muted); font-size:14px; margin-top:8px; margin-bottom:0; font-style:italic;">
+                      (Shop sẽ chịu phí vận chuyển trả hàng trong trường hợp này)
+                    </p>
+                  </div>
+                  <div style="padding:16px; background:white; border-radius:12px; border:2px solid var(--line);">
+                    <strong style="color:var(--brand3); display:block; margin-bottom:8px;">🚚 Nhân viên đến lấy hàng trả tại nhà:</strong>
+                    <p style="color:var(--text); line-height:1.6; margin:0;">
+                      Nhân viên sẽ đến lấy lại hàng trả hoặc đổi lại sản phẩm khác cho khách trong vòng <strong>2 ngày</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding:20px; background:var(--orange-light); border-radius:16px; border:2px solid var(--line); margin-top:32px;">
+            <p style="color:var(--text); line-height:1.6; margin:0; display:flex; align-items:flex-start; gap:12px;">
+              <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px; flex-shrink:0; margin-top:2px; color:var(--orange);"><path d="M12 2.8c5.1 0 9.2 4.1 9.2 9.2 0 5.1-4.1 9.2-9.2 9.2S2.8 17.1 2.8 12C2.8 6.9 6.9 2.8 12 2.8Z" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span>Trong trường hợp Quý Khách hàng có ý kiến đóng góp/khiếu nại liên quan đến chất lượng sản phẩm, Quý Khách hàng vui lòng liên hệ đường dây chăm sóc khách hàng của chúng tôi: <strong style="color:var(--brand3);">090.2435.838</strong></span>
+            </p>
+          </div>
+
+          <p style="text-align:center; margin-top:32px; color:var(--muted); font-style:italic;">
+            <strong>Trân trọng cảm ơn!</strong> 🐾
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -6891,6 +7480,7 @@
               <a href="#loi-ich">Lợi ích</a>
               <a href="#gia">Bảng giá</a>
               <a href="#lien-he">Liên hệ</a>
+              <a href="#chinh-sach-doi-tra">Chính sách đổi trả</a>
             </nav>
           </div>
         </div>
@@ -8039,22 +8629,25 @@
           return `
             <div class="order-card">
               <div class="order-card-header">
-                <div>
+                <div class="order-header-left">
                   <div class="order-id">${order.id}</div>
                   <div class="order-date">${dateStr}</div>
                 </div>
-                <span class="order-status ${order.status}">${statusNames[order.status] || order.status}</span>
-              </div>
-              ${order.trackingNumber ? `
-                <div class="tracking-number">
-                  <strong>Mã vận đơn:</strong> ${order.trackingNumber}
+                <div class="order-header-right">
+                  <span class="order-status ${order.status}">${statusNames[order.status] || order.status}</span>
+                  ${order.trackingNumber ? `
+                    <div class="tracking-number">
+                      <strong>Mã vận đơn:</strong> ${order.trackingNumber}
+                    </div>
+                  ` : ''}
                 </div>
-              ` : ''}
+              </div>
               <div class="order-items">
                 ${order.items.map(item => `
                   <div class="order-item-row">
-                    <span>${item.name} x${item.quantity}</span>
-                    <span>${formatVND(item.price * item.quantity)}</span>
+                    <span class="order-item-name">${item.name}</span>
+                    <span class="order-item-qty">x${item.quantity}</span>
+                    <span class="order-item-price">${formatVND(item.price * item.quantity)}</span>
                   </div>
                 `).join('')}
               </div>
@@ -8093,11 +8686,11 @@
         
         historyList.innerHTML = history.map(h => `
           <div class="history-item ${h.type}">
-            <div>
-              <div style="font-weight:600; margin-bottom:4px;">${h.description}</div>
-              <div style="font-size:12px; color:var(--muted);">${h.date}</div>
+            <div class="history-item-info">
+              <div class="history-item-desc">${h.description}</div>
+              <div class="history-item-date">${h.date}</div>
             </div>
-            <div class="history-points" style="font-weight:700;">+${h.points} điểm</div>
+            <div class="history-points">+${h.points} điểm</div>
           </div>
         `).join('');
       }
